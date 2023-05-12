@@ -1,13 +1,6 @@
 {
   "canisters": {
-    "rakeoff_landing_backend": {
-      "main": "src/rakeoff_landing_backend/main.mo",
-      "type": "motoko"
-    },
     "rakeoff_landing_frontend": {
-      "dependencies": [
-        "rakeoff_landing_backend"
-      ],
       "frontend": {
         "entrypoint": "src/rakeoff_landing_frontend/src/index.html"
       },

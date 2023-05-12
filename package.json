@@ -5,10 +5,7 @@
   "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
   "scripts": {
     "build": "webpack",
-    "prebuild": "npm run generate",
-    "start": "webpack serve --mode development --env development",
-    "prestart": "npm run generate",
-    "generate": "dfx generate rakeoff_landing_backend"
+    "start": "webpack serve --mode development --env development"
   },
   "devDependencies": {
     "@dfinity/agent": "0.15.4",
@@ -35,5 +32,14 @@
     "last 2 firefox version",
     "last 2 safari version",
     "last 2 edge version"
-  ]
+  ],
+    "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^10.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-loader": "^9.4.2"
+  }
 }
