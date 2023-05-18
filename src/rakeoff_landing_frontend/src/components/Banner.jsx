@@ -55,7 +55,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1 style={{color: "white"}}>{`WELCOME TO RAKEOFF`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Rewards", "No-Loss", "ICP First" ]'><span className="wrap">{text}</span></span></h1>
+                <h1 style={{color: "white"}}>{``} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Rewards", "No-Loss", "ICP First" ]'><span className="wrap">{text}</span></span></h1>
                   <h3>Stake your ICP on our decentralized app, hosted on the ICP blockchain. Even with a small investment, you can enjoy rewards and have fun! Our platform simplifies the staking process, making it enjoyable and user-friendly for all.</h3>
               </div>}
             </TrackVisibility>

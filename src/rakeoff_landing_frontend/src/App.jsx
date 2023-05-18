@@ -1,10 +1,11 @@
 import React from "react";
 import { Flex, Button, Heading, VStack, Box } from "@chakra-ui/react";
 import Slider from "react-slick";
-import { Navbar } from "./components"
+import { CustomNavbar } from "./components"
 import { Banner } from "./components/";
 import { Footer } from "./components/";
-import { Business } from "./components/";
+import { Services } from "./components/";
+
 import './App.css';
 
 const App = () => {
@@ -17,38 +18,16 @@ const App = () => {
         alignItems="center"
         flexGrow={0}
       >
-      < Navbar/>
-     
-        <Heading
-          as="h1"
-          color="white"
-          fontSize="2xl"
-          fontWeight="bold"
-          letterSpacing="wide"
-          flexGrow={0}
-        >
-          RakeOff
-        </Heading>
-        <Flex>
-          <Button variant="ghost" color="white" mr={4}>
-            Tools
-          </Button>
-          <Button variant="ghost" color="white" mr={4}>
-            GitHub
-          </Button>
-          {/* Add more buttons as needed */}
-        </Flex>
-
-      </Flex>
+      < CustomNavbar/>
+  
+    </Flex>
       <Flex
         flexGrow={1}
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
       >
-        <Heading as="h1" color="white" fontSize="5xl" fontWeight="extrabold" textTransform="uppercase" textAlign="center">
-          FIRST ICP REWARDS CONCEPT
-        </Heading>
+       
         < Banner />
         <Button
           as="a"
@@ -59,7 +38,8 @@ const App = () => {
         >
           Enter dApp
         </Button>
-        < Business />
+        < Services />
+       
       </Flex>
       < Footer />
     </Flex>
