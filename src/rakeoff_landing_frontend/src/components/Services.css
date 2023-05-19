@@ -2,6 +2,8 @@
     padding: 0 3rem 0 3rem;
     display: flex;
     height: 30rem;
+    font-weight: 700;
+    color: #fff;
     margin-bottom: 8rem;
     margin-top: 9rem;
     margin-bottom: 13rem;
@@ -39,6 +41,12 @@
   /* right sided */
   .cards {
     position: relative;
+    font-weight: 700;
+    color: #fff;
+    
+    font-size: 18px;
+    margin-left: 18px;
+    
   }
   .cards > * {
     position: absolute;

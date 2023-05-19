@@ -10,7 +10,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <Flex direction="column" minHeight="100vh" bgGradient="linear-gradient(180deg, #8B0000, #000000)">
+    <Flex direction="column" minHeight="100vh"  bg="#121212">
       <Flex
         py={4}
         px={8}

@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import "./Services.css";
 import Card from "./Card";
-import Crypto from "../assets/Crypto.png";
+import cryptologo from "../assets/cryptologo.png";
 import { themeContext } from "../Context";
 import { motion } from "framer-motion";
+import one from "../assets/one.png";
+import fix1 from "../assets/fix1.png";
+
 
 const Services = () => {
   const theme = useContext(themeContext);
@@ -20,12 +23,16 @@ const Services = () => {
       {/* left side */}
       <div className="awesome">
         {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>WHAT WE OFFER</span>
-        <span>services</span>
+        <span style={{ color: darkMode ? "white" : "" }}>Services</span>
+        <span>Rakeoff, the First Rewards Concept in ICP.</span>
         <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
           <br />
-          ispum is simpley dummy text of printing
+          Deposit for daily prize opportunities, keep your funds even if you don't win.
+          <br />
+          Exchange ICP for other cryptos with low fees.
+          <br />
+          Join Rakeoff for growth and rewards.
+          <br />
         </spane>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
@@ -38,9 +45,9 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={Crypto}
-            heading={"Design"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
+            emoji={one}
+            heading={"Earn ICP Rewards"}
+            detail={"Pooled investments together to earn some ICP!"}
           />
         </motion.div>
         {/* second card */}
@@ -50,9 +57,9 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={Crypto}
-            heading={"Developer"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
+            emoji={fix1}
+            heading={"100% No loss"}
+            detail={"We provided a completely secure and safe service to invest your money and best part you can never lose!"}
           />
         </motion.div>
         {/* 3rd */}
@@ -62,10 +69,10 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={Crypto}
-            heading={"UI/UX"}
+            emoji={cryptologo}
+            heading={"Convert ICP to BTC at low fees"}
             detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
+              "Exchange your ICP money into BTC for a low rate of 3%"
             }
             color="rgba(252, 166, 31, 0.45)"
           />
