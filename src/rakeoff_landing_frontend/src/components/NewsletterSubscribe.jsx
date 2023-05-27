@@ -1,28 +1,35 @@
-import React from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import Newsletter from "./Newsletter";
+import React, { Component } from 'react';
 
-const NewsletterSubscribe = () => {
-  const postUrl = `${process.env.REACT_APP_MAILCHIMP_URL}?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
+import Mailchimp from 'react-mailchimp-form'
+ 
+class NewsletterSubscribe extends Component {
+  render() {
+    return (
+        <Mailchimp
+        action="https://rakeoff.us21.list-manage.com/subscribe/post?u=ef0fad5ed1a6285ffe9c45838&amp;id=977ae0a44a&amp;f_id=00af50e1f0"
+        fields={[
+          {
+            name: 'EMAIL',
+            placeholder: 'Email',
+            type: 'email',
+            required: true
+          }
+        ]}
 
-  const handleSubmit = (formData) => {
-    console.log("Form data:", formData);
-    // Perform any additional logic or API calls here
-  };
-
-  return (
-    <MailchimpSubscribe
-      url={postUrl}
-      render={({ subscribe, status, message }) => (
-        <Newsletter
-          status={status}
-          message={message}
-          onValidated={handleSubmit}
-          subscribe={subscribe}
+        messages = {
+          {
+            sending: "Sending...",
+            success: "Thank you for subscribing!",
+            error: "An unexpected internal error has occurred.",
+            empty: "You must write an e-mail.",
+            duplicate: "Too many subscribe attempts for this email address",
+            button: "Subscribe!"
+          }
+        }
+        
         />
-      )}
-    />
-  );
-};
-
+    );
+  }
+}
+ 
 export default NewsletterSubscribe;

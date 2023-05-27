@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { logo } from "../assets/";
+import logowhite from "../assets/logowhite.png";
 import { github } from "../assets/";
 import { twitter } from "../assets/";
-import Newsletter  from "./Newsletter";
+import NewsletterSubscribe  from "./NewsletterSubscribe";
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-        < Newsletter />
-          {/* <Col size={12} sm={6}>
-            <img src={logo} alt="Logo" />
-          </Col> */}
+        < NewsletterSubscribe />
+          <Col size={12} sm={6}>
+            <img src={logowhite} alt="Logo" />
+          </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">
               <a href="#"><img src={github} alt="Icon" /></a>

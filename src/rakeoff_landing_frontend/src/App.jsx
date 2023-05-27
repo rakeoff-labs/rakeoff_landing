@@ -5,6 +5,9 @@ import { CustomNavbar } from "./components"
 import { Banner } from "./components/";
 import { Footer } from "./components/";
 import { Services } from "./components/";
+import {Statistics} from "./components/";
+import {FAQ} from "./components/";
+
 
 import './App.css';
 
@@ -18,8 +21,8 @@ const App = () => {
         alignItems="center"
         flexGrow={0}
       >
+      
       < CustomNavbar/>
-  
     </Flex>
       <Flex
         flexGrow={1}
@@ -27,19 +30,11 @@ const App = () => {
         alignItems="center"
         flexDirection="column"
       >
-       
-        < Banner />
-        <Button
-          as="a"
-          href="https://app.rakeoff.io/"
-          colorScheme="red"
-          size="lg"
-          mt={8}
-        >
-          Enter dApp
-        </Button>
+          < Banner />
+
+        < Statistics />
         < Services />
-       
+        < FAQ />
       </Flex>
       < Footer />
     </Flex>

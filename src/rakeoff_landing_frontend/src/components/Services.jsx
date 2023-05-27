@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import "./Services.css";
+import { Box, Container, Text, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import cryptologo from "../assets/cryptologo.png";
 import { themeContext } from "../Context";
 import { motion } from "framer-motion";
 import one from "../assets/one.png";
 import fix1 from "../assets/fix1.png";
+import icpbit from "../assets/icpbit.png";
+import Logo_MAIN from "../assets/Logo_MAIN.png";
+import ICP from "../assets/ICP.png";
 
 
 const Services = () => {
@@ -19,23 +22,43 @@ const Services = () => {
   };
 
   return (
-    <div className="services" id="services">
+    <Box
+      className="services"
+      id="services"
+      padding="0 3rem 0 3rem"
+      display="flex"
+      height="30rem"
+      fontWeight="700"
+      color="white"
+      marginBottom="8rem"
+      marginTop="9rem"
+     
+      /* scroll view */
+      paddingTop="3rem"
+    >
       {/* left side */}
-      <div className="awesome">
+      <Box className="awesome" display="flex" flexDirection="column" position="relative">
         {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>Services</span>
-        <span>Rakeoff, the First Rewards Concept in ICP.</span>
-        <spane>
-          <br />
-          Deposit for daily prize opportunities, keep your funds even if you don't win.
-          <br />
-          Exchange ICP for other cryptos with low fees.
-          <br />
-          Join Rakeoff for growth and rewards.
-          <br />
-        </spane>
+        <Heading
+          as="h3"
+          size="xl"
+          fontWeight="800"
+          fontSize="56px"
+          lineHeight="56px"
+          width="max-content"
+          maxW="100%"
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          color="transparent"
+          marginBottom="16px"
+          padding="0"
+          textAlign="center"
+        >
+          Services
+        </Heading>
+
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
-      </div>
+      </Box>
       {/* right */}
       <div className="cards">
         {/* first card */}
@@ -45,7 +68,7 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={one}
+            emoji={ICP}
             heading={"Earn ICP Rewards"}
             detail={"Pooled investments together to earn some ICP!"}
           />
@@ -59,7 +82,7 @@ const Services = () => {
           <Card
             emoji={fix1}
             heading={"100% No loss"}
-            detail={"We provided a completely secure and safe service to invest your money and best part you can never lose!"}
+            detail={"a completely secure and safe service to invest your money"}
           />
         </motion.div>
         {/* 3rd */}
@@ -69,8 +92,8 @@ const Services = () => {
           transition={transition}
         >
           <Card
-            emoji={cryptologo}
-            heading={"Convert ICP to BTC at low fees"}
+            emoji={icpbit}
+            heading={"Convert BTC at low fees"}
             detail={
               "Exchange your ICP money into BTC for a low rate of 3%"
             }
@@ -82,7 +105,7 @@ const Services = () => {
           style={{ background: "var(--purple)" }}
         ></div>
       </div>
-    </div>
+    </Box>
   );
 };
 

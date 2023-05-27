@@ -177,26 +177,17 @@
     transform: translateY(-5px); /* Move the social icons up by 5px */
   }
   
-  
-  nav.navbar {
-    padding: 18px 0;
-    position: fixed;
+  .navbar {
     width: 100%;
-    top: 0;
-    z-index: 9999;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
     display: flex;
-    justify-content: center; /* Align navbar links to the center */
+    align-items: center;
+    justify-content: space-between;
   }
   
   nav.navbar .navbar-nav {
     margin-left: auto; /* Move the navbar links towards the right */
   }
   
-  nav.navbar.scrolled {
-    background-color: #121212;
-  }
   
   nav.navbar a.navbar-brand {
     width: 9%;
@@ -291,26 +282,22 @@
     z-index: 2;
     transition: all 300ms linear;
   }
-  
-  nav.navbar .navbar-toggler-icon:after {
-    top: 8px;
+
+  .ms-auto {
+    display: flex;
+    align-items: center;
   }
   
-  nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-    transform: rotate(45deg);
-    background-color: #fff;
-    height: 2px;
+  .logo {
+    display: flex;
+    align-items: center;
   }
   
-  nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-    transform: translateY(8px) rotate(-45deg);
-    background-color: #fff;
-    height: 2px;
+  .navbar-link {
+    margin-left: 15px; /* Adjust the margin as per your requirements */
   }
+
   
-  nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    border-color: transparent;
-  }
   
   @font-face {
     font-family: Centra;
