@@ -1,6 +1,9 @@
+
 import React from "react";
 import { NavLink } from "react-router-dom";
-import rakeofflogo from "../assets/rakeofflogo.svg";
+import logowhite from "../assets/logowhite.png";
+import githubwhite from "../assets/githubwhite.png";
+import twitterwhite from "../assets/twitterwhite.png";
 import {
   useBreakpointValue,
   Box,
@@ -18,49 +21,47 @@ import {
   DrawerCloseButton,
   useDisclosure,
   VStack,
+  Button as ChakraButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-
+import { FaArrowRight } from "react-icons/fa";
+import { Icon } from "@chakra-ui/react";
 
 const LinkItems = [
-  { name: "Stories", link: "/stories" },
-  {
-    name: "Marketplace",
-    link: "/marketplace",
-  },
-  { name: "Mint", link: "/mint" },
-  // { name: "NobleBright", link: "/noblebright" },
+  { name: "About", link: "/stories" },
+  { name: "Statistics", link: "/marketplace" },
+  { name: "Services", link: "/mint" },
+  { name: "FAQ", link: "/mint" },
 ];
 
 const NavItem = ({ link, name }) => {
   return (
-    <NavLink to={link}>
-      {({ isActive }) => (
-        <Box
-          borderBottom="3px solid"
-          borderColor={isActive ? "#12bdde" : "transparent"}
-          pb={0.5}
+    <NavLink to={link} exact>
+      <Box
+        borderBottom="3px solid"
+        borderColor="transparent"
+        pb={0.5}
+        sx={{
+          backgroundImage:
+            "linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          color: "transparent",
+        }}
+      >
+        <Flex
+          align="center"
+          py="2"
+          px="3"
+          m="1"
+          borderRadius="md"
+          role="group"
+          cursor="pointer"
+          fontWeight={600}
         >
-          <Flex
-            align="center"
-            py="2"
-            px="3"
-            m="1"
-            borderRadius="md"
-            role="group"
-            cursor="pointer"
-            fontWeight={600}
-            _hover={{
-              bg: "#282828",
-            }}
-            color="white"
-            bg={isActive ? "#282828" : null}
-            borderColor="#12bdde"
-          >
-            {name}
-          </Flex>
-        </Box>
-      )}
+          {name}
+        </Flex>
+      </Box>
     </NavLink>
   );
 };
@@ -88,29 +89,37 @@ const CustomNavbar = () => {
           <Flex align="center">
             <NavLink to={"/"}>
               <Flex align="center" me={5}>
-                <ChakraImage h={30} src={rakeofflogo} />
-                <Text fontSize={20} as="samp" color="white">
-                  ontribute
-                </Text>
+                <ChakraImage h={50} src={logowhite} />
               </Flex>
             </NavLink>
-            <HStack fontWeight={700} fontSize={16}>
+            <HStack fontWeight={700} fontSize={21}>
               {LinkItems.map((link) => (
                 <NavItem key={link.name} name={link.name} link={link.link} />
               ))}
             </HStack>
             <Spacer />
-          
-            
+            <HStack spacing={3}>
+              <Icon as={ChakraImage} boxSize={9} src={githubwhite} />
+              <Icon as={ChakraImage} boxSize={9} src={twitterwhite} />
+              <ChakraButton
+                as="a"
+                href="https://app.rakeoff.io/"
+                colorScheme="red"
+                size="lg"
+                rightIcon={<FaArrowRight color="#ffffff" />}
+                bgGradient="linear(to-r, #FF0000, #000000)"
+                _hover={{ bgGradient: "none", bg: "#000000" }}
+                mr={3}
+              >
+                Launch dApp
+              </ChakraButton>
+            </HStack>
           </Flex>
         ) : (
           <Flex align="center">
             <NavLink to={"/"}>
               <Flex align="center" me={5}>
-                <ChakraImage h={25} src={rakeofflogo} />
-                <Text fontSize={20} as="samp" color="white">
-                  ontribute
-                </Text>
+                <ChakraImage h={40} src={logowhite} />
               </Flex>
             </NavLink>
             <Spacer />
@@ -134,8 +143,7 @@ const MobileMenu = () => {
         <DrawerOverlay />
         <DrawerContent bg={"#111111"} borderColor="#1a1a1a">
           <DrawerCloseButton color="white" />
-          <DrawerHeader>
-          </DrawerHeader>
+          <DrawerHeader></DrawerHeader>
           <DrawerBody>
             <VStack fontWeight={700} fontSize={28} onClick={() => onClose()}>
               {LinkItems.map((link) => (
@@ -148,4 +156,3 @@ const MobileMenu = () => {
     </>
   );
 };
-

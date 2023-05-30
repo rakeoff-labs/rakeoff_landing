@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -7,13 +7,31 @@ import {
   Grid,
   GridItem,
   Icon,
+  Collapse,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { FaPaperPlane, FaPenAlt, FaUser, FaRocket, FaHome, FaBookOpen } from "react-icons/fa";
+import {
+  FaPaperPlane,
+  FaPenAlt,
+  FaUser,
+  FaRocket,
+  FaHome,
+  FaBookOpen,
+  FaAngleDown,
+} from "react-icons/fa";
 
 const FAQ = () => {
+  const { isOpen, onToggle } = useDisclosure();
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleItemClick = (index) => {
+    setActiveItem(index === activeItem ? null : index);
+    onToggle();
+  };
+
   return (
     <Container maxW="container.lg" py={8}>
-       <Box textAlign="center" mb={4}>
+      <Box textAlign="center" mb={4}>
         <Heading
           as="h3"
           size="xl"
@@ -31,13 +49,10 @@ const FAQ = () => {
         >
           FAQ
         </Heading>
-        <Text color="gray.500" fontSize="lg">
-          Find the answers for the most frequently asked questions below
-        </Text>
       </Box>
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(0)} position="relative">
             <Icon as={FaPaperPlane} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -48,16 +63,24 @@ const FAQ = () => {
               mb={2}
             >
               A simple question?
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              <strong>Absolutely!</strong> We work with top payment companies
-              which guarantees your safety and security. All billing information
-              is stored on our payment processing partner.
-            </Text>
+            <Collapse in={activeItem === 0}>
+              <Text color="white">
+                <strong>Absolutely!</strong> We work with top payment companies
+                which guarantees your safety and security. All billing information
+                is stored on our payment processing partner.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(1)} position="relative">
             <Icon as={FaPenAlt} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -68,16 +91,24 @@ const FAQ = () => {
               mb={2}
             >
               A question that is longer than the previous one?
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              <strong>Yes, it is possible!</strong> You can cancel your
-              subscription anytime in your account. Once the subscription is
-              cancelled, you will not be charged next month.
-            </Text>
+            <Collapse in={activeItem === 1}>
+              <Text color="white">
+                <strong>Yes, it is possible!</strong> You can cancel your
+                subscription anytime in your account. Once the subscription is
+                cancelled, you will not be charged next month.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(2)} position="relative">
             <Icon as={FaUser} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -88,16 +119,24 @@ const FAQ = () => {
               mb={2}
             >
               A simple question?
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              Currently, we only offer monthly subscription. You can upgrade or
-              cancel your monthly account at any time with no further
-              obligation.
-            </Text>
+            <Collapse in={activeItem === 2}>
+              <Text color="white">
+                Currently, we only offer monthly subscription. You can upgrade or
+                cancel your monthly account at any time with no further
+                obligation.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(3)} position="relative">
             <Icon as={FaRocket} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -108,15 +147,23 @@ const FAQ = () => {
               mb={2}
             >
               A simple question?
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              Yes. Go to the billing section of your dashboard and update your
-              payment information.
-            </Text>
+            <Collapse in={activeItem === 3}>
+              <Text color="white">
+                Yes. Go to the billing section of your dashboard and update your
+                payment information.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(4)} position="relative">
             <Icon as={FaHome} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -127,15 +174,23 @@ const FAQ = () => {
               mb={2}
             >
               A simple question?
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              <strong>Unfortunately no</strong>. We do not issue full or partial
-              refunds for any reason.
-            </Text>
+            <Collapse in={activeItem === 4}>
+              <Text color="white">
+                <strong>Unfortunately no</strong>. We do not issue full or partial
+                refunds for any reason.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
         <GridItem>
-          <Box>
+          <Box onClick={() => handleItemClick(5)} position="relative">
             <Icon as={FaBookOpen} boxSize={6} color="#A5B4C4" mb={2} />
             <Heading
               as="h6"
@@ -146,11 +201,19 @@ const FAQ = () => {
               mb={2}
             >
               Another question that is longer than usual
+              <Icon
+                as={FaAngleDown}
+                boxSize={4}
+                color="gray.400"
+                ml={1}
+              />
             </Heading>
-            <Text color="white">
-              Of course! We’re happy to offer a free plan to anyone who wants
-              to try our service.
-            </Text>
+            <Collapse in={activeItem === 5}>
+              <Text color="white">
+                Of course! We’re happy to offer a free plan to anyone who wants
+                to try our service.
+              </Text>
+            </Collapse>
           </Box>
         </GridItem>
       </Grid>
@@ -159,4 +222,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import logowhite from "../assets/logowhite.png";
-import { github } from "../assets/";
-import { twitter } from "../assets/";
+import githubwhite from "../assets/githubwhite.png";
+import twitterwhite from "../assets/twitterwhite.png";
 import NewsletterSubscribe  from "./NewsletterSubscribe";
 
 export const Footer = () => {
@@ -16,8 +16,8 @@ export const Footer = () => {
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">
-              <a href="#"><img src={github} alt="Icon" /></a>
-              <a href="#"><img src={twitter} alt="Icon" /></a>
+              <a href="#"><img src={githubwhite} alt="Icon" /></a>
+              <a href="#"><img src={twitterwhite} alt="Icon" /></a>
             </div>
             <p>RakeOff. Copyright 2023. All Rights Reserved</p>
           </Col>
