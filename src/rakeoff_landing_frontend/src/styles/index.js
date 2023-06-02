@@ -3,17 +3,20 @@ import React from 'react';
 
 export const Section = (props) => (
   <Flex
-    display={props.grid ? "grid" : "flex"}
-    flexDirection={props.row ? "row" : "column"}
-    padding={props.nopadding ? "0" : "32px 48px 0"}
-    margin="0 auto"
-    maxW="1040px"
-    boxSizing="content-box"
-    position="relative"
-    overflow="hidden"
-    gridTemplateColumns="1fr 1fr"
-    {...props}
-  />
+  display={props.grid ? "grid" : "flex"}
+  flexDirection={props.row ? "row" : "column"}
+  padding={props.nopadding ? "0" : "32px 48px 0"}
+  margin="0 auto"
+  maxW="1200px" // Updated max width to match Services section
+  boxSizing="content-box"
+  position="relative"
+  overflow="hidden"
+  justifyContent="center" // Center the content horizontally
+  alignItems="center" // Center the content vertically
+  gridTemplateColumns="repeat(4, 1fr)" // Adjust the number of columns if needed
+  gap="24px" // Adjust the gap between items if needed
+  {...props}
+/>
 );
 
 export const SectionTitle = (props) => (

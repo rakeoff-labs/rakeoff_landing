@@ -1,4 +1,3 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logowhite from "../assets/logowhite.png";
@@ -36,7 +35,12 @@ const LinkItems = [
 
 const NavItem = ({ link, name }) => {
   return (
-    <NavLink to={link} exact>
+    <NavLink
+      to={link}
+      exact
+      activeStyle={{ color: "white", opacity: 1 }} 
+      style={{ textDecoration: "none", display: "inline-block" }}
+    >
       <Box
         borderBottom="3px solid"
         borderColor="transparent"
@@ -48,6 +52,7 @@ const NavItem = ({ link, name }) => {
           backgroundClip: "text",
           color: "transparent",
         }}
+        _hover={{ color: "white", opacity: 0.8 }} 
       >
         <Flex
           align="center"
@@ -65,6 +70,7 @@ const NavItem = ({ link, name }) => {
     </NavLink>
   );
 };
+
 
 const CustomNavbar = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -84,6 +90,7 @@ const CustomNavbar = () => {
         bg={"#111111"}
         borderBottom={isDesktop ? "5px double" : "4px double"}
         borderColor="#1a1a1a"
+        left={0} // Add this line to align the navbar to the left
       >
         {isDesktop ? (
           <Flex align="center">
@@ -97,10 +104,24 @@ const CustomNavbar = () => {
                 <NavItem key={link.name} name={link.name} link={link.link} />
               ))}
             </HStack>
-            <Spacer />
+            <Spacer ml="auto" />
             <HStack spacing={3}>
-              <Icon as={ChakraImage} boxSize={9} src={githubwhite} />
-              <Icon as={ChakraImage} boxSize={9} src={twitterwhite} />
+              <a href="https://github.com" style={{ display: "flex", alignItems: "center" }}>
+                <Icon
+                  as={ChakraImage}
+                  boxSize={9}
+                  src={githubwhite}
+                  _hover={{ opacity: 0.8 }}
+                />
+              </a>
+              <a href="https://twitter.com/rakeoff_app" style={{ display: "flex", alignItems: "center" }} >
+                <Icon
+                  as={ChakraImage}
+                  boxSize={9}
+                  src={twitterwhite}
+                  _hover={{ opacity: 0.8 }} 
+                />
+              </a>
               <ChakraButton
                 as="a"
                 href="https://app.rakeoff.io/"
@@ -133,19 +154,31 @@ const CustomNavbar = () => {
 
 export default CustomNavbar;
 
+
 const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <IconButton ms={2} icon={<HamburgerIcon />} onClick={onOpen} />
+      <IconButton
+        ms={2}
+        icon={<HamburgerIcon />}
+        onClick={onOpen}
+        alignSelf="center"
+      />
       <Drawer onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent bg={"#111111"} borderColor="#1a1a1a">
           <DrawerCloseButton color="white" />
           <DrawerHeader></DrawerHeader>
           <DrawerBody>
-            <VStack fontWeight={700} fontSize={28} onClick={() => onClose()}>
+            <VStack
+              fontWeight={700}
+              fontSize={28}
+              onClick={() => onClose()}
+              align="center"
+              mt={8}
+            >
               {LinkItems.map((link) => (
                 <NavItem key={link.name} name={link.name} link={link.link} />
               ))}

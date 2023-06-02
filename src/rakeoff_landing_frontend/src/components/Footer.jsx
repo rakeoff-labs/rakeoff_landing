@@ -1,29 +1,110 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import logowhite from "../assets/logowhite.png";
+import React from 'react';
+import {
+  Box,
+  chakra,
+  Container,
+  Link,
+  Stack,
+  Text,
+  useColorModeValue,
+  VisuallyHidden,
+  Image,
+  Image as ChakraImage,
+} from '@chakra-ui/react';
+
+import { ReactNode } from 'react';
+import logowhite from '../assets/logowhite.png';
 import githubwhite from "../assets/githubwhite.png";
 import twitterwhite from "../assets/twitterwhite.png";
-import NewsletterSubscribe  from "./NewsletterSubscribe";
+import discord from "../assets/discord.png";
+import { Icon } from "@chakra-ui/react";
+import NewsletterSubscribe from './NewsletterSubscribe';
 
-export const Footer = () => {
+const Logo = (props) => {
   return (
-    <footer className="footer">
-      <Container>
-        <Row className="align-items-center">
+    <Box {...props}>
+      <Image src={logowhite} alt="Logo" height={32} />
+    </Box>
+  );
+};
+
+const SocialButton = ({ children, label, href }) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue('gray.700', 'gray.200')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
+      href={href}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      _hover={{
+        bg: useColorModeValue('gray.600', 'gray.300'),
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  );
+};
+
+const Footer = () => {
+  return (
+    <Box
+      bg={'#111111'}
+      color={useColorModeValue('gray.200', 'gray.700')}
+    >
+      <Container
+        as={Stack}
+        maxW={'6xl'}
+        py={4}
+        spacing={4}
+        justify={'center'}
+        align={'center'}
+      >
         < NewsletterSubscribe />
-          <Col size={12} sm={6}>
-            <img src={logowhite} alt="Logo" />
-          </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
-            <div className="social-icon">
-              <a href="#"><img src={githubwhite} alt="Icon" /></a>
-              <a href="#"><img src={twitterwhite} alt="Icon" /></a>
-            </div>
-            <p>RakeOff. Copyright 2023. All Rights Reserved</p>
-          </Col>
-        </Row>
+        <Logo />
+        <Stack direction={'row'} spacing={6}>
+          <Link href={'#'}>Home</Link>
+          <Link href={'#'}>About</Link>
+          <Link href={'#'}>Blog</Link>
+          <Link href={'#'}>Contact</Link>
+        </Stack>
       </Container>
-    </footer>
+
+      <Box
+        borderTopWidth={1}
+        borderStyle={'solid'}
+        borderColor={useColorModeValue('gray.200', 'gray.700')}
+      >
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={4}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify={{ base: 'center', md: 'space-between' }}
+          align={{ base: 'center', md: 'center' }}
+        >
+          <Text>© 2023 Rakeoff. All rights reserved</Text>
+          <Stack direction="row" spacing={6} justify="center" mt={4}>
+        <a href="https://github.com" style={{ display: "flex", alignItems: "center" }}>
+          <Icon as={ChakraImage} boxSize={8} src={githubwhite} _hover={{ opacity: 0.8 }} />
+        </a>
+        <a href="https://twitter.com/rakeoff_app" style={{ display: "flex", alignItems: "center" }}>
+          <Icon as={ChakraImage} boxSize={8} src={twitterwhite} _hover={{ opacity: 0.8 }} />
+        </a>
+        <a href="https://discord.com" style={{ display: "flex", alignItems: "center" }}>
+          <Icon as={ChakraImage} boxSize={8} src={discord} _hover={{ opacity: 0.8 }} />
+        </a>
+      </Stack>
+        </Container>
+      </Box>
+    </Box>
   );
 };
 

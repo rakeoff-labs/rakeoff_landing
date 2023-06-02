@@ -8,6 +8,7 @@ import { Box, Button as ChakraButton, Flex, Center } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
 import React from "react";
 import Rakoff_logo_white from "../assets/Rakoff_logo_white.png";
+
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -57,9 +58,9 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Center>
-        <Container>
+        <Container style={{ marginTop: "-2rem" }}> {/* Adjust the top margin here */}
           <Row className="justify-content-center">
-            <Col xs={12} md={6} xl={5}>
+            <Col xs={12} md={6} xl={5} className="d-flex align-items-center justify-content-center">
               <TrackVisibility>
                 {({ isVisible }) => (
                   <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>

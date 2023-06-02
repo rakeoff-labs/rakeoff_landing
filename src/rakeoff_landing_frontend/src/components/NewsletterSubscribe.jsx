@@ -1,5 +1,14 @@
 import React from 'react';
-import { Box, Container, Heading, Text, FormControl, FormErrorMessage, Input, useToast } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  FormControl,
+  FormErrorMessage,
+  Input,
+  useToast,
+} from '@chakra-ui/react';
 import { Button as ChakraButton } from '@chakra-ui/react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
@@ -46,10 +55,11 @@ const NewsletterSubscribe = () => {
         </FormControl>
         <ChakraButton
           type="submit"
-          colorScheme="red"
+          colorScheme="gray"
           variant="solid"
           borderRadius="md"
           px={8}
+          bgGradient="linear(to-r, #BDBDBD, #757575)"
         >
           Subscribe
         </ChakraButton>
@@ -57,7 +67,7 @@ const NewsletterSubscribe = () => {
     );
   };
 
-  const url = 'https://your-mailchimp-url.us18.list-manage.com/subscribe/post?u=XXXXXXXXXXXXXX&id=XXXXXXXXXX'; // Replace with your Mailchimp URL
+  const url = 'https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0'; 
 
   return (
     <Box
@@ -67,6 +77,7 @@ const NewsletterSubscribe = () => {
       color="white"
       borderRadius="md"
       px={4}
+      width="100%" 
     >
       <Container maxW="container.md">
         <Heading as="h2" size="lg" mb={4}>

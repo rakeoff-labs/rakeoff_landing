@@ -9,6 +9,7 @@ import {
   Icon,
   Collapse,
   useDisclosure,
+  Center,
 } from "@chakra-ui/react";
 import {
   FaPaperPlane,
@@ -31,25 +32,27 @@ const FAQ = () => {
 
   return (
     <Container maxW="container.lg" py={8}>
-      <Box textAlign="center" mb={4}>
-        <Heading
-          as="h3"
-          size="xl"
-          fontWeight="800"
-          fontSize="56px"
-          lineHeight="56px"
-          width="max-content"
-          maxW="100%"
-          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-          bgClip="text"
-          color="transparent"
-          marginBottom="16px"
-          padding="0"
-          textAlign="center"
-        >
-          FAQ
-        </Heading>
-      </Box>
+      <Center> {/* Wrap the content in a Center component */}
+        <Box textAlign="center" mb={4}>
+          <Heading
+            as="h3"
+            size="xl"
+            fontWeight="800"
+            fontSize={["40px", "40px", "48px"]}
+            lineHeight={["44px", "48px", "56px"]}
+            width="max-content"
+            maxW="100%"
+            bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+            bgClip="text"
+            color="transparent"
+            marginBottom="16px"
+            padding="0"
+            textAlign="center"
+          >
+            FAQ
+          </Heading>
+        </Box>
+      </Center>
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         <GridItem>
           <Box onClick={() => handleItemClick(0)} position="relative">
@@ -62,7 +65,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              A simple question?
+              Can I lose my money?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}
@@ -90,7 +93,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              A question that is longer than the previous one?
+              Where does the prize money come from?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}
@@ -118,7 +121,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              A simple question?
+              How are winners chosen? How many?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}
@@ -146,7 +149,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              A simple question?
+              Can I see the winners?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}
@@ -173,7 +176,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              A simple question?
+             Can I convert my ICP reward to BTC?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}
@@ -200,7 +203,7 @@ const FAQ = () => {
               bgClip="text"
               mb={2}
             >
-              Another question that is longer than usual
+              How long do I have to claim my reward?
               <Icon
                 as={FaAngleDown}
                 boxSize={4}

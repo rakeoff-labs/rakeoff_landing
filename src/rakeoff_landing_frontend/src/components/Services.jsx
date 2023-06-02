@@ -1,6 +1,5 @@
-
 import React, { useContext } from "react";
-import { Box, Container, Text, Heading, HStack } from "@chakra-ui/react";
+import { Box, Container, Text, Heading, HStack, Center } from "@chakra-ui/react";
 import Card from "./Card";
 import cryptologo from "../assets/cryptologo.png";
 import { themeContext } from "../Context";
@@ -24,28 +23,30 @@ const Services = () => {
   return (
     <Container as="section" py={["4", "8", "12"]} textAlign="center">
       {/* heading */}
-      <Heading
-        as="h3"
-        size="xl"
-        fontWeight="800"
-        fontSize={["28px", "32px", "40px"]}
-        lineHeight={["36px", "40px", "48px"]}
-        width="max-content"
-        maxW="100%"
-        bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-        bgClip="text"
-        color="transparent"
-        marginBottom="16px"
-        padding="0"
-      >
-        Services
-      </Heading>
+      <Center>
+        <Heading
+          as="h3"
+          size="xl"
+          fontWeight="800"
+          fontSize={["40px", "40px", "48px"]}
+          lineHeight={["44px", "48px", "56px"]}
+          width="max-content"
+          maxW="100%"
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          color="transparent"
+          marginBottom="16px" // Add margin-bottom for spacing
+          padding="0"
+        >
+          Services
+        </Heading>
+      </Center>
 
       {/* cards */}
       <HStack spacing={["2", "4", "6"]} justifyContent="center">
         {/* first card */}
         <motion.div
-          initial={{ left: ["50%", "25%", "14%"] }}
+          initial={{ left: ["50%", "25%", "14%"], top: ["0", "0", "0"] }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={transition}
@@ -58,7 +59,7 @@ const Services = () => {
         </motion.div>
         {/* second card */}
         <motion.div
-          initial={{ left: ["50%", "-11%", "-4%"], top: ["12rem", "12rem", "12rem"] }}
+          initial={{ left: ["50%", "-11%", "-4%"], top: ["0", "0", "0"] }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={transition}
@@ -71,7 +72,7 @@ const Services = () => {
         </motion.div>
         {/* 3rd */}
         <motion.div
-          initial={{ top: ["12rem", "19rem", "19rem"], left: ["50%", "25%", "12%"] }}
+          initial={{ top: ["0", "0", "0"], left: ["50%", "25%", "12%"] }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={transition}
@@ -86,7 +87,7 @@ const Services = () => {
 
         {/* fourth */}
         <motion.div
-          initial={{ top: ["12rem", "24rem", "18rem"] }}
+          initial={{ top: ["0", "0", "0"], left: ["0", "0", "0"] }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={transition}
@@ -104,5 +105,3 @@ const Services = () => {
 };
 
 export default Services;
-
-
