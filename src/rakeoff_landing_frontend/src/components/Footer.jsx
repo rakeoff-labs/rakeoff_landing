@@ -10,8 +10,11 @@ import {
   VisuallyHidden,
   Image,
   Image as ChakraImage,
+  SimpleGrid,
 } from '@chakra-ui/react';
-
+import sign from "../assets/sign.png";
+import stake from "../assets/stake.png";
+import reward from "../assets/reward.png";
 import { ReactNode } from 'react';
 import logowhite from '../assets/logowhite.png';
 import githubwhite from "../assets/githubwhite.png";
@@ -19,6 +22,7 @@ import twitterwhite from "../assets/twitterwhite.png";
 import discord from "../assets/discord.png";
 import { Icon } from "@chakra-ui/react";
 import NewsletterSubscribe from './NewsletterSubscribe';
+
 
 const Logo = (props) => {
   return (
@@ -66,7 +70,7 @@ const Footer = () => {
         justify={'center'}
         align={'center'}
       >
-        < NewsletterSubscribe />
+           <NewsletterSubscribe />
         <Logo />
         <Stack direction={'row'} spacing={6}>
           <Link href={'#'}>Home</Link>
@@ -92,16 +96,16 @@ const Footer = () => {
         >
           <Text>© 2023 Rakeoff. All rights reserved</Text>
           <Stack direction="row" spacing={6} justify="center" mt={4}>
-        <a href="https://github.com" style={{ display: "flex", alignItems: "center" }}>
-          <Icon as={ChakraImage} boxSize={8} src={githubwhite} _hover={{ opacity: 0.8 }} />
-        </a>
-        <a href="https://twitter.com/rakeoff_app" style={{ display: "flex", alignItems: "center" }}>
-          <Icon as={ChakraImage} boxSize={8} src={twitterwhite} _hover={{ opacity: 0.8 }} />
-        </a>
-        <a href="https://discord.com" style={{ display: "flex", alignItems: "center" }}>
-          <Icon as={ChakraImage} boxSize={8} src={discord} _hover={{ opacity: 0.8 }} />
-        </a>
-      </Stack>
+            <a href="https://github.com" style={{ display: "flex", alignItems: "center" }}>
+              <Icon as={ChakraImage} boxSize={8} src={githubwhite} _hover={{ opacity: 0.8 }} />
+            </a>
+            <a href="https://twitter.com/rakeoff_app" style={{ display: "flex", alignItems: "center" }}>
+              <Icon as={ChakraImage} boxSize={8} src={twitterwhite} _hover={{ opacity: 0.8 }} />
+            </a>
+            <a href="https://discord.com" style={{ display: "flex", alignItems: "center" }}>
+              <Icon as={ChakraImage} boxSize={8} src={discord} _hover={{ opacity: 0.8 }} />
+            </a>
+          </Stack>
         </Container>
       </Box>
     </Box>

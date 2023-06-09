@@ -1,65 +1,65 @@
-import { Box, Flex } from "@chakra-ui/react";
-import React from 'react';
-import { Section, SectionDivider, SectionTitle } from '../styles/';
+import { SimpleGrid, Box, Heading, Text } from "@chakra-ui/react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const data = [
-  { number: 20, text: 'Open Source Projects'},
-  { number: 1000, text: 'Students' },
-  { number: 1900, text: 'Github Followers' },
-  { number: 5000, text: 'Github Stars' }
+  { text: "Open Source Projects", number: 20 },
+  { text: "Students", number: 1000 },
+  { text: "Github Followers", number: 1900 },
+  { text: "Github Stars", number: 5000 }
 ];
 
 const Statistics = () => (
-  <Section>
-    <SectionTitle>Rakeoff Statistics</SectionTitle>
-    <Flex
-      width="100%"
-      display="grid"
-      gridTemplateColumns="repeat(4, 1fr)"
-      gap="24px"
-      margin="24px 0 40px"
+  <Box as="section" py={["4", "8", "12"]} textAlign="center">
+    <Heading
+      as="h3"
+      size="xl"
+      fontWeight="800"
+      fontSize={["48px", "48px", "56px"]}
+      lineHeight={["56px", "48px", "56px"]}
+      width="max-content"
+      maxW="100%"
+      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+      bgClip="text"
+      color="transparent"
+      marginBottom="16px"
+      padding="0"
+      mx="auto"
+      textAlign="center"
     >
-      {data.map((card, index) => (
-        <Box
+      Statistics
+    </Heading>
+
+    <SimpleGrid spacing={10} columns={[1, 2, 4]} mx="auto">
+      {data.map((stat, index) => (
+        <motion.div
           key={index}
-          background="rgba(255, 255, 255, 0.26)" // Set the desired grey background color here
-          borderRadius="12px"
-          height="234px"
-          width="253px"
-          padding="24px"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          transition="transform 0.3s" // Add transition property for smooth movement
-          _hover={{ transform: "translateY(-5px)" }} // Define hover effect using _hover pseudo-selector
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.3 }}
         >
           <Box
-            fontStyle="normal"
-            fontWeight="600"
-            fontSize="36px"
-            lineHeight="40px"
-            letterSpacing="0.01em"
-            color="#FFFFFF"
-            marginBottom="8px"
+            bg="rgb(18,28,35)"
+            p={8}
+            borderRadius="lg"
+            textAlign="center"
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            color="white"
+            width="250px"
+            minH="250px"
           >
-            {`${card.number}+`}
+            <Heading size="lg" mb={4} fontSize={["xl", "xl", "2xl"]}>
+              {stat.text}
+            </Heading>
+            <Text fontSize={["xl", "xl", "2xl"]}>{`${stat.number}+`}</Text>
           </Box>
-          <Box
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="18px"
-            lineHeight="24px"
-            letterSpacing="0.02em"
-            color="rgba(255, 255, 255, 0.75)"
-          >
-            {card.text}
-          </Box>
-        </Box>
+        </motion.div>
       ))}
-    </Flex>
-    <SectionDivider/>
-  </Section>
+    </SimpleGrid>
+  </Box>
 );
 
 export default Statistics;

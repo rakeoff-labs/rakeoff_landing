@@ -3,14 +3,17 @@ import {
   Box,
   Container,
   Heading,
-  Text,
   FormControl,
   FormErrorMessage,
   Input,
   useToast,
+  Image,
+  Flex,
+  Stack,
 } from '@chakra-ui/react';
 import { Button as ChakraButton } from '@chakra-ui/react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import rakeoff from '../assets/rakeoff.png';
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
@@ -42,32 +45,50 @@ const NewsletterSubscribe = () => {
 
     return (
       <form onSubmit={handleSubmit}>
-        <FormControl isInvalid={status === 'error'} mb={4}>
-          <Input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            borderRadius="md"
-            p={2}
-            _focus={{ outline: 'none' }}
-          />
-          <FormErrorMessage>{message}</FormErrorMessage>
-        </FormControl>
-        <ChakraButton
-          type="submit"
-          colorScheme="gray"
-          variant="solid"
-          borderRadius="md"
-          px={8}
-          bgGradient="linear(to-r, #BDBDBD, #757575)"
-        >
-          Subscribe
-        </ChakraButton>
+        <Flex direction={{ base: 'column', md: 'row' }} align={{ base: 'stretch', md: 'center' }}>
+          <Flex direction="column" flex="1" mb={4} mr={{ base: 0, md: 2 }}>
+            <Heading as="h2" size="lg" mb={4}>
+              Subscribe to our Newsletter
+            </Heading>
+            <Stack direction={{ base: 'column', md: 'row' }} spacing={2}>
+              <FormControl isInvalid={status === 'error'}>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  borderRadius="md"
+                  p={2}
+                  _focus={{ outline: 'none' }}
+                  bg="white"
+                  color="black"
+                />
+                <FormErrorMessage>{message}</FormErrorMessage>
+              </FormControl>
+              <ChakraButton
+                type="submit"
+                colorScheme="gray"
+                variant="solid"
+                borderRadius="md"
+                px={8}
+                bgGradient="linear(to-r, #BDBDBD, #757575)"
+                flexShrink={0}
+                width={{ base: '100%', md: 'auto' }}
+                mt={{ base: 2, md: 0 }}
+              >
+                Subscribe
+              </ChakraButton>
+            </Stack>
+          </Flex>
+          <Box flex="1" mt={{ base: 0, md: 0 }}>
+            <Image src={rakeoff} alt="Rakeoff" objectFit="contain" width="100%" height="auto" maxH="300px" />
+          </Box>
+        </Flex>
       </form>
     );
   };
 
-  const url = 'https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0'; 
+  const url =
+    'https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0';
 
   return (
     <Box
@@ -77,19 +98,20 @@ const NewsletterSubscribe = () => {
       color="white"
       borderRadius="md"
       px={4}
-      width="100%" 
+      width="100%"
+      maxW="1100px"
+      position="relative"
     >
       <Container maxW="container.md">
-        <Heading as="h2" size="lg" mb={4}>
-          Subscribe to our Newsletter
-        </Heading>
-        <MailchimpSubscribe url={url} render={({ subscribe, status, message }) => (
-          <CustomForm subscribe={subscribe} status={status} message={message} />
-        )} />
+        <MailchimpSubscribe
+          url={url}
+          render={({ subscribe, status, message }) => (
+            <CustomForm subscribe={subscribe} status={status} message={message} />
+          )}
+        />
       </Container>
     </Box>
   );
 };
 
 export default NewsletterSubscribe;
-

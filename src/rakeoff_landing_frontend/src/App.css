@@ -1,9 +1,10 @@
 .banner {
-    margin-top: 0;
-    padding: 260px 0 100px 0;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  margin-top: 0;
+  padding: 200px 0 80px 0; /* Reduce the top and bottom padding */
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center; /* Add text alignment to center */
+    
   }
   .banner .tagline {
     font-weight: 700;
@@ -49,6 +50,9 @@
     margin-left: 25px;
   }
   .banner img {
+    max-height: 300px; /* Reduce the max-height of the image */
+    display: inline-block; /* Change the display property to inline-block */
+    margin-bottom: 30px; /* Add margin-bottom to create space between the image and tagline */
     animation: updown 3s linear infinite;
   }
   @keyframes updown {

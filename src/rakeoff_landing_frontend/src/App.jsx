@@ -8,6 +8,8 @@ import { Footer } from "./components/";
 import { Services } from "./components/";
 import { Statistics } from "./components/";
 import { FAQ } from "./components/";
+import { ThreeSteps } from "./components";
+
 import "./App.css";
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
           <Banner />
           <Statistics />
           <Services />
+          <ThreeSteps />
           <FAQ />
         </Flex>
         <Footer />

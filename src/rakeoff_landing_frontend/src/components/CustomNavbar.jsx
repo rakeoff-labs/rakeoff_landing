@@ -23,7 +23,7 @@ import {
   Button as ChakraButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { FaArrowRight } from "react-icons/fa";
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Icon } from "@chakra-ui/react";
 
 const LinkItems = [
@@ -127,7 +127,7 @@ const CustomNavbar = () => {
                 href="https://app.rakeoff.io/"
                 colorScheme="red"
                 size="lg"
-                rightIcon={<FaArrowRight color="#ffffff" />}
+                rightIcon={<ArrowForwardIcon color="#ffffff" />}
                 bgGradient="linear(to-r, #FF0000, #000000)"
                 _hover={{ bgGradient: "none", bg: "#000000" }}
                 mr={3}
