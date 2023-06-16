@@ -29,7 +29,7 @@ const Social = () => {
         <SimpleGrid columns={[1, 2, 3]} spacing={8}>
           <SocialBoxAndImage
             heading={"Twitter"}
-            content={"Keep up to date with our announcements @rakeoff_app"}
+            content={"Keep up to date with us on Twitter @rakeoff_app"}
             image={redtwit}
             link={"https://twitter.com/rakeoff_app"}
           />
