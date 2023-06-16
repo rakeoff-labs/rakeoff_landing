@@ -54,11 +54,11 @@ const Social = () => {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <Heading size="lg" textAlign="center">
+                <Heading size="lg" textAlign="center" color="white">
                   Read the Rakeoff Litepaper{" "}
                   <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
                 </Heading>
-                <Text textAlign="center" my={5}>
+                <Text textAlign="center" my={5} color="white">
                   Read our overview of the Rakeoff dApp
                 </Text>
               </Box>
@@ -112,11 +112,13 @@ const StoryBoxAndImage = ({ heading, link }) => {
         _hover={{ transform: "translateY(-5px)" }}
         cursor="pointer"
       >
-        <Heading size="lg" textAlign="center" mb={3}>
+        <Heading size="lg" textAlign="center" mb={3} color="white">
           {heading}{" "}
           <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
         </Heading>
-        <Text textAlign="center">Read here for more</Text>
+        <Text textAlign="center" color="white">
+          Read here for more
+        </Text>
       </Box>
     </a>
   );

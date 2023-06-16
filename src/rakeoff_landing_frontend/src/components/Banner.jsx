@@ -70,7 +70,7 @@ const Banner = () => {
               >
                 <Image
                   src={Rakoff_logo_white}
-                  h={[170, null, 220]}
+                  h={[160, null, 220]}
                   alt="Rakeoff logo"
                 />
               </Box>
@@ -94,7 +94,13 @@ const Banner = () => {
             {text}
           </Heading>
         </Center>
-        <Text textAlign="center" maxW="2xl" color="white" mt={5}>
+        <Text
+          textAlign="center"
+          maxW="2xl"
+          fontSize={{ base: "xl", md: "2xl" }}
+          color="white"
+          mt={3}
+        >
           Rakeoff is a cryptocurrency staking rewards platform built on the
           Internet Computer Protocol (ICP) blockchain.
         </Text>
@@ -103,7 +109,7 @@ const Banner = () => {
           direction={{ base: "column", md: "row" }}
           justify="center"
           align="center"
-          mt={8}
+          mt={5}
           gap={3}
         >
           {/* <Box>
@@ -124,7 +130,8 @@ const Banner = () => {
               as="a"
               href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
               target="_blank"
-              rightIcon={<ExternalLinkIcon />}
+              rightIcon={<ExternalLinkIcon color="white" />}
+              color="white"
             >
               About Rakeoff
             </Button>

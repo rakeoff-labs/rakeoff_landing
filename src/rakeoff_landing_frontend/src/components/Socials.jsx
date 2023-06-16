@@ -75,11 +75,13 @@ const SocialBoxAndImage = ({ heading, image, link, content }) => {
           maxH="200px"
           mx="auto"
         />
-        <Heading size="lg" textAlign="center" mb={3}>
-          {heading}{" "}
+        <Heading size="lg" textAlign="center" color="white" mb={3}>
+          {heading}
           <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
         </Heading>
-        <Text textAlign="center">{content}</Text>
+        <Text textAlign="center" color="white">
+          {content}
+        </Text>
       </Box>
     </a>
   );
