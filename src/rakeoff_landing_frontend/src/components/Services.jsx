@@ -15,8 +15,12 @@ import icpbit from "../assets/icpbit.png";
 const Services = () => {
   return (
     <Box py={["4", "8", "12"]}>
-      <Center mb={5}>
-        <Heading>What do we offer?</Heading>
+       <Center mb={5}>
+    <Heading
+      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+      bgClip="text"
+      size="xl"
+    >What do we offer?</Heading>
       </Center>
 
       <Center>
@@ -53,6 +57,7 @@ const BoxAndImage = ({ image, heading, content }) => {
         borderRadius="3xl"
         py={12}
         px={8}
+        color="white"
       >
         <Image
           src={image}

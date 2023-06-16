@@ -21,12 +21,16 @@ const Social = () => {
 
   return (
     <Box py={["4", "8", "12"]}>
-      <Center mb={5}>
-        <Heading>More on Rakeoff</Heading>
+       <Center mb={5}>
+    <Heading
+      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+      bgClip="text"
+      size="xl"
+    >More on Rakeoff</Heading>
       </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 2, 3]} spacing="110px" mx="auto">
+        <SimpleGrid columns={[1, 2, 3]} spacing="178px" mx="auto">
           <Card
             p={8}
             boxShadow="lg"
@@ -85,6 +89,7 @@ const Social = () => {
             bg={"#1e1f23"}
             border={"1px solid #a5a6a7"}
             borderRadius="3xl"
+            color="white"
             textAlign="left"
             height="320px"
             width="300px"
@@ -136,6 +141,7 @@ const Social = () => {
             border={"1px solid #a5a6a7"}
             borderRadius="3xl"
             textAlign="left"
+            color="white"
             height="320px"
             width="300px"
             transition="transform 0.3s"

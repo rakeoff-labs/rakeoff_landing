@@ -16,8 +16,12 @@ const ThreeSteps = () => {
 
   return (
     <Box py={["4", "8", "12"]}>
-      <Center mb={5}>
-        <Heading>Three simple steps...</Heading>
+    <Center mb={5}>
+ <Heading
+   bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+   bgClip="text"
+   size="xl"
+ >Three simple steps...</Heading>
       </Center>
 
       <SimpleGrid

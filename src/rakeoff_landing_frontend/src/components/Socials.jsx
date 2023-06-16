@@ -20,12 +20,18 @@ const Social = () => {
 
   return (
     <Box py={["4", "8", "12"]}>
-      <Center mb={5}>
-        <Heading>Join the Rakeoff Community</Heading>
-      </Center>
+       <Center mb={5}>
+    <Heading
+      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+      bgClip="text"
+      size="xl"
+    >
+      Join the Community
+    </Heading>
+  </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 2, 3]} spacing={8} mx="auto">
+        <SimpleGrid columns={[1, 2, 3]}spacing="105px"  mx="auto">
           <Card
             p={8}
             boxShadow="md"
@@ -35,6 +41,7 @@ const Social = () => {
             textAlign="center"
             height="320px"
             width="350px"
+            color="white"
             transition="transform 0.3s"
             _hover={{ transform: "translateY(-5px)" }}
             onClick={() => handleCardClick("https://twitter.com/rakeoff_app")}
@@ -66,6 +73,7 @@ const Social = () => {
             border={"1px solid #a5a6a7"}
             borderRadius="3xl"
             textAlign="center"
+            color="white"
             height="320px"
             width="350px"
             transition="transform 0.3s"
@@ -100,6 +108,7 @@ const Social = () => {
             borderRadius="3xl"
             textAlign="center"
             height="320px"
+            color="white"
             width="350px"
             transition="transform 0.3s"
             _hover={{ transform: "translateY(-5px)" }}

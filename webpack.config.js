@@ -74,6 +74,7 @@ module.exports = {
       { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
       { test: /\.(gif|svg|jpg|png|ico|jpeg)$/, loader: "file-loader" },
+      { test: /\.webp$/, loader: "file-loader" }, // Added rule for .webp files
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -86,6 +87,7 @@ module.exports = {
       },
     ],
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),

@@ -12,16 +12,16 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import Rakoff_logo_white from "../assets/Rakoff_logo_white.png";
-
+import astronot from "../assets/astronot.webp";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(150 - Math.random() * 50);
   const toRotate = [
-    "Staking rewards",
-    "No-Loss prize pool",
-    "ckBTC integration",
+    "Staking ICP Rewards",
+    "No-Loss Prize Pool",
+    "ckBTC Integration",
   ];
   const period = 500;
 
@@ -57,10 +57,9 @@ const Banner = () => {
       setDelta(500);
     }
   };
-
   return (
     <Flex className="banner" justify="center" align="center" height="90vh">
-      <Box>
+      <Box position="relative"> 
         <Flex justify="center" align="center">
           <TrackVisibility>
             {({ isVisible }) => (
@@ -69,19 +68,34 @@ const Banner = () => {
               >
                 <Image
                   src={Rakoff_logo_white}
-                  h={[150, null, 200]}
+                  h={[260, null, 260]}
                   alt="Rakeoff logo"
                 />
               </Box>
             )}
           </TrackVisibility>
         </Flex>
+        <Image
+          src={astronot}
+          alt="Astronaut"
+          style={{
+            position: "absolute",
+            top: "-10rem",
+            right: "8rem",
+            width: "200px",
+            height: "200px",
+          }}
+          />
         <Center h={"50px"}>
-          <Heading fontWeight="bold">{text}</Heading>
+        <Heading
+      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+      bgClip="text"
+      size="2xl"
+    >{text}</Heading>
         </Center>
-        <Text textAlign="center" maxW="2xl" mt={5}>
+        <Text textAlign="center" maxW="2xl"  color="white"mt={5}>
           Rakeoff is a cryptocurrency staking rewards platform built on the
-          Internet Computer Protocol blockchain.
+          Internet Computer Protocol (ICP) blockchain.
         </Text>
 
         <Flex justify="center" mt={8} gap={3}>
@@ -110,3 +124,6 @@ const Banner = () => {
 };
 
 export default Banner;
+
+
+
