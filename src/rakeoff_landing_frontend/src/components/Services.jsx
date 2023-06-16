@@ -1,87 +1,41 @@
 import React from "react";
-import { Box, Heading, SimpleGrid, Card, Image, Text, Center } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  SimpleGrid,
+  Image,
+  Text,
+  Center,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import icp from "../assets/icp.png";
-import fix1 from "../assets/fix1.png";
+import fix from "../assets/fix.png";
 import icpbit from "../assets/icpbit.png";
 
 const Services = () => {
   return (
-    <Box as="section" py={["4", "8", "12"]} textAlign="center">
-      <Heading
-        as="h3"
-        size="xl"
-        fontWeight="800"
-        fontSize={["40px", "40px", "48px"]}
-        lineHeight={["44px", "48px", "56px"]}
-        width="max-content"
-        maxW="100%"
-        bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-        bgClip="text"
-        color="transparent"
-        marginBottom="16px"
-        padding="0"
-        mx="auto"
-        textAlign="center"
-      >
-        Services
-      </Heading>
+    <Box py={["4", "8", "12"]}>
+      <Center mb={5}>
+        <Heading>What do we offer?</Heading>
+      </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 2, 3]} spacing={8} mx="auto">
-          <Card
-            p={8}
-            borderRadius="md"
-            boxShadow="md"
-            bg="rgb(18,28,35)"
-            color="white"
-            textAlign="center"
-            height="460px"
-            width="350px"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-          >
-            <Image src={icp} alt="Earn ICP Rewards" fit="contain" maxHeight="200px" mx="auto" my={4} />
-            <Heading size="lg" mb={4}>
-              Earn ICP Rewards
-            </Heading>
-            <Text>Pooled investments together to earn some ICP!</Text>
-          </Card>
-          <Card
-            p={8}
-            borderRadius="md"
-            boxShadow="md"
-            bg="rgb(18,28,35)"
-            color="white"
-            textAlign="center"
-            height="460px"
-            width="350px"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-          >
-            <Image src={fix1} alt="100% No loss" fit="contain" maxHeight="200px" mx="auto" my={4} />
-            <Heading size="lg" mb={4}>
-              100% No loss
-            </Heading>
-            <Text>A completely secure and safe service to invest your money</Text>
-          </Card>
-          <Card
-            p={8}
-            borderRadius="md"
-            boxShadow="md"
-            bg="rgb(18,28,35)"
-            color="white"
-            textAlign="center"
-            height="460px"
-            width="350px"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-          >
-            <Image src={icpbit} alt="Convert BTC at low fees" fit="contain" maxHeight="200px" mx="auto" my={4} />
-            <Heading size="lg" mb={4}>
-              Convert BTC at low fees
-            </Heading>
-            <Text>Exchange your ICP money into BTC for a low rate of 3%</Text>
-          </Card>
+        <SimpleGrid columns={[1, 3, 3]} spacing={8}>
+          <BoxAndImage
+            image={icp}
+            heading={"Stake your ICP"}
+            content="A simplified and streamlined staking experience"
+          />
+          <BoxAndImage
+            image={fix}
+            heading={"Pool your rewards"}
+            content="Pool your ICP staking rewards and win the No-loss prize pool"
+          />
+          <BoxAndImage
+            image={icpbit}
+            heading={"Earn ckBTC"}
+            content="Disburse your ICP staking rewards as ckBTC"
+          />
         </SimpleGrid>
       </Center>
     </Box>
@@ -89,3 +43,30 @@ const Services = () => {
 };
 
 export default Services;
+
+const BoxAndImage = ({ image, heading, content }) => {
+  return (
+    <motion.div whileHover={{ scale: 1.05 }}>
+      <Box
+        bg={"#1e1f23"}
+        border={"1px solid #a5a6a7"}
+        borderRadius="3xl"
+        py={12}
+        px={8}
+      >
+        <Image
+          src={image}
+          alt={heading}
+          h={200}
+          bg="white"
+          borderRadius="full"
+          p={3}
+        />
+        <Heading size="lg" textAlign="center" my={5}>
+          {heading}
+        </Heading>
+        <Text textAlign="center">{content}</Text>
+      </Box>
+    </motion.div>
+  );
+};

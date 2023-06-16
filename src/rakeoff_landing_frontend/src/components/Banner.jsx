@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Container, Box, Flex, Text, Button, Center, Image } from "@chakra-ui/react";
-import { ArrowForwardIcon } from '@chakra-ui/icons'
+import {
+  Box,
+  Flex,
+  Text,
+  Button,
+  Heading,
+  Center,
+  Image,
+} from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import Rakoff_logo_white from "../assets/Rakoff_logo_white.png";
-import background from "../assets/Rakoff_logo_white.png";
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["Rewards", "No-Loss", "ICP First"];
-  const period = 2000;
+  const [delta, setDelta] = useState(150 - Math.random() * 50);
+  const toRotate = [
+    "Staking rewards",
+    "No-Loss prize pool",
+    "ckBTC integration",
+  ];
+  const period = 500;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -29,8 +39,8 @@ const Banner = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
+      ? fullText.substring(0, text.length - 2)
+      : fullText.substring(0, text.length + 2);
 
     setText(updatedText);
 
@@ -40,89 +50,62 @@ const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex((prevIndex) => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum((prevLoopNum) => prevLoopNum + 1);
-      setIndex(1);
       setDelta(500);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
     }
   };
 
   return (
-    <section className="banner" id="home">
-      <Center>
-        <Container marginTop="-2rem">
-          <Flex justify="center" align="center" py={4}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <Image src={Rakoff_logo_white} alt="ICP" />
-                </div>
-              )}
-            </TrackVisibility>
-          </Flex>
+    <Flex className="banner" justify="center" align="center" height="90vh">
+      <Box>
+        <Flex justify="center" align="center">
           <TrackVisibility>
             {({ isVisible }) => (
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <Box
-                  as="h1"
-                  fontSize="2xl"
-                  fontWeight="bold"
-                  textAlign="center"
-                  margin="2rem"
-                  bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-                  bgClip="text"
-                >
-                  <span className="txt-rotate" dataPeriod="1000" data-rotate='["Rewards", "No-Loss", "ICP First"]'>
-                    <span className="wrap">{text}</span>
-                  </span>
-                </Box>
-                <Box
-  as="div"
-  textAlign="center"
-  marginBottom={4}
-  fontSize="2xl"
-  className="white-text"
-  color="white"
->
-  Rakeoff is a cryptocurrency staking rewards platform built on the Internet Computer Protocol blockchain
-</Box>
-
-
-                <Flex justify="center" mt={8}>
-                  <Button
-                    as="a"
-                    href="https://app.rakeoff.io/"
-                    colorScheme="red"
-                    size="lg"
-                    rightIcon={<ArrowForwardIcon color="#ffffff" />}
-                    bgGradient="linear(to-r, #FF0000, #000000)"
-                    _hover={{ bgGradient: "none", bg: "#000000" }}
-                    mr={4}
-                  >
-                    Launch dApp
-                  </Button>
-                  <Button
-                    as="a"
-                    href="#about"
-                    colorScheme="gray"
-                    size="lg"
-                    bgGradient="linear(to-r, #ffffff, #808080)"
-                    _hover={{ bgGradient: "none", bg: "#808080" }}
-                  >
-                    About Rakeoff
-                  </Button>
-                </Flex>
-              </div>
+              <Box
+                className={isVisible ? "animate__animated animate__zoomIn" : ""}
+              >
+                <Image
+                  src={Rakoff_logo_white}
+                  h={[150, null, 200]}
+                  alt="Rakeoff logo"
+                />
+              </Box>
             )}
           </TrackVisibility>
-        </Container>
-      </Center>
-    </section>
+        </Flex>
+        <Center h={"50px"}>
+          <Heading fontWeight="bold">{text}</Heading>
+        </Center>
+        <Text textAlign="center" maxW="2xl" mt={5}>
+          Rakeoff is a cryptocurrency staking rewards platform built on the
+          Internet Computer Protocol blockchain.
+        </Text>
+
+        <Flex justify="center" mt={8} gap={3}>
+          <Button
+            as="a"
+            href="https://app.rakeoff.io/"
+            target="_blank"
+            colorScheme="red"
+            rightIcon={<ArrowForwardIcon color="#ffffff" />}
+            isDisabled
+          >
+            Launching soon
+          </Button>
+          <Button
+            as="a"
+            href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
+            target="_blank"
+            colorScheme="blue"
+          >
+            About Rakeoff
+          </Button>
+        </Flex>
+      </Box>
+    </Flex>
   );
 };
 

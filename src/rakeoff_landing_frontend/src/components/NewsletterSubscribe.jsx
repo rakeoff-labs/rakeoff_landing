@@ -96,10 +96,8 @@ const NewsletterSubscribe = () => {
       py={8}
       textAlign="center"
       color="white"
-      borderRadius="md"
-      px={4}
+      borderRadius="3xl"
       width="100%"
-      maxW="1100px"
       position="relative"
     >
       <Container maxW="container.md">

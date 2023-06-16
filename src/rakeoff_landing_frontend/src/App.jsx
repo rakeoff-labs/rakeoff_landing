@@ -1,34 +1,43 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Flex, Button, Heading, VStack, Box } from "@chakra-ui/react";
-import Slider from "react-slick";
+import { Container, Box } from "@chakra-ui/react";
 import { CustomNavbar } from "./components";
 import { Banner } from "./components/";
 import { Footer } from "./components/";
 import { Services } from "./components/";
 import { Statistics } from "./components/";
-import { FAQ } from "./components/";
 import { ThreeSteps } from "./components";
+import { Social } from "./components";
+import { Story } from "./components/index";
 
 import "./App.css";
+import spacerocket from "./assets/spacerocket.png";
 
 const App = () => {
   return (
-    <Router>
-      <Flex direction="column" minHeight="100vh" bg="#121212">
-        <Flex py={4} px={8} justifyContent="space-between" alignItems="center" flexGrow={0}>
-          <CustomNavbar />
-        </Flex>
-        <Flex flexGrow={1} justifyContent="center" alignItems="center" flexDirection="column">
-          <Banner />
-          <Statistics />
-          <Services />
-          <ThreeSteps />
-          <FAQ />
-        </Flex>
+    <Box
+      w="100%"
+      bg="#191b1f"
+      style={{
+        backgroundImage: `linear-gradient(to top, rgba(25, 27, 31, 1) 0%, rgba(25, 27, 31, 0) 50%), url(${spacerocket})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        width: "100%",
+        position: "relative",
+      }}
+    >
+      <Container maxW="7xl">
+        <CustomNavbar />
+        <Banner />
+        {/* <Statistics /> */}
+        <Services />
+        <ThreeSteps />
+        <Story />
+        <Social />
         <Footer />
-      </Flex>
-    </Router>
+      </Container>
+    </Box>
   );
 };
 
