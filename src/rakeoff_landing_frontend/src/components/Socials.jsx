@@ -3,137 +3,48 @@ import {
   Box,
   Heading,
   SimpleGrid,
-  Card,
   Image,
   Text,
   Center,
-  Link,
 } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import redgit from "../assets/redgit.png";
 import redtwit from "../assets/redtwit.png";
 import redisc from "../assets/redisc.png";
 
 const Social = () => {
-  const handleCardClick = (url) => {
-    window.open(url, "_blank");
-  };
-
   return (
-    <Box py={["4", "8", "12"]}>
-       <Center mb={5}>
-    <Heading
-      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-      bgClip="text"
-      size="xl"
-    >
-      Join the Community
-    </Heading>
-  </Center>
+    <Box py={["6", "8", "12"]}>
+      <Center mb={5}>
+        <Heading
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          size="xl"
+        >
+          Join the community
+        </Heading>
+      </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 2, 3]}spacing="105px"  mx="auto">
-          <Card
-            p={8}
-            boxShadow="md"
-            bg={"#1e1f23"}
-            border={"1px solid #a5a6a7"}
-            borderRadius="3xl"
-            textAlign="center"
-            height="320px"
-            width="350px"
-            color="white"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-            onClick={() => handleCardClick("https://twitter.com/rakeoff_app")}
-            cursor="pointer"
-            mb={1}
-          >
-            <Center>
-              <Image
-                src={redtwit}
-                alt="Earn ICP Rewards"
-                fit="contain"
-                maxW="200px"
-                maxH="200px"
-                mx="auto"
-                my={-2}
-              />
-            </Center>
-            <Heading size="lg" mb={1}>
-              Twitter
-            </Heading>
-            <Text fontSize="md" mb={-2}>
-              Keep up to date with our announcements @rakeoff_app
-            </Text>
-          </Card>
-          <Card
-            p={8}
-            boxShadow="md"
-            bg={"#1e1f23"}
-            border={"1px solid #a5a6a7"}
-            borderRadius="3xl"
-            textAlign="center"
-            color="white"
-            height="320px"
-            width="350px"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-            onClick={() => handleCardClick("https://github.com/rakeoff-labs")}
-            cursor="pointer"
-            mb={1}
-          >
-            <Center>
-              <Image
-                src={redgit}
-                alt="100% No loss"
-                fit="contain"
-                maxW="200px"
-                maxH="200px"
-                mx="auto"
-                my={-2}
-              />
-            </Center>
-            <Heading size="lg" mb={1}>
-              Github
-            </Heading>
-            <Text fontSize="md" mb={-2}>
-              Looking for some code inspiration? Check out ours
-            </Text>
-          </Card>
-          <Card
-            p={8}
-            boxShadow="md"
-            bg={"#1e1f23"}
-            border={"1px solid #a5a6a7"}
-            borderRadius="3xl"
-            textAlign="center"
-            height="320px"
-            color="white"
-            width="350px"
-            transition="transform 0.3s"
-            _hover={{ transform: "translateY(-5px)" }}
-            onClick={() => handleCardClick("https://discord.gg/5jRHUYnsrM")}
-            cursor="pointer"
-            mb={1}
-          >
-            <Center>
-              <Image
-                src={redisc}
-                alt="Convert BTC at low fees"
-                fit="contain"
-                maxW="200px"
-                maxH="200px"
-                mx="auto"
-                my={-2}
-              />
-            </Center>
-            <Heading size="lg" mb={1}>
-              Discord
-            </Heading>
-            <Text fontSize="md" mb={-2}>
-              Chat to the devs, we love to hear your opinions
-            </Text>
-          </Card>
+        <SimpleGrid columns={[1, 2, 3]} spacing={8}>
+          <SocialBoxAndImage
+            heading={"Twitter"}
+            content={"Keep up to date with our announcements @rakeoff_app"}
+            image={redtwit}
+            link={"https://twitter.com/rakeoff_app"}
+          />
+          <SocialBoxAndImage
+            heading={"Github"}
+            content={"Check out our code or give us a star on Github!"}
+            image={redgit}
+            link={"https://github.com/rakeoff-labs"}
+          />
+          <SocialBoxAndImage
+            heading={"Discord"}
+            content={"Chat to the devs, we'd love to hear your opinions"}
+            image={redisc}
+            link={"https://discord.gg/5jRHUYnsrM"}
+          />
         </SimpleGrid>
       </Center>
     </Box>
@@ -141,3 +52,35 @@ const Social = () => {
 };
 
 export default Social;
+
+const SocialBoxAndImage = ({ heading, image, link, content }) => {
+  return (
+    <a href={link} target="_blank">
+      <Box
+        bg={"#1e1f23"}
+        border={"1px solid #a5a6a7"}
+        borderRadius="3xl"
+        justifyContent="start"
+        py={12}
+        px={8}
+        transition="transform 0.3s"
+        _hover={{ transform: "translateY(-5px)" }}
+        cursor="pointer"
+      >
+        <Image
+          src={image}
+          alt={heading}
+          fit="contain"
+          maxW="200px"
+          maxH="200px"
+          mx="auto"
+        />
+        <Heading size="lg" textAlign="center" mb={3}>
+          {heading}{" "}
+          <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
+        </Heading>
+        <Text textAlign="center">{content}</Text>
+      </Box>
+    </a>
+  );
+};

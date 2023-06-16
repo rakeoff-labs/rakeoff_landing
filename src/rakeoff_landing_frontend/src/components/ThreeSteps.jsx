@@ -15,13 +15,15 @@ const ThreeSteps = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
   return (
-    <Box py={["4", "8", "12"]}>
-    <Center mb={5}>
- <Heading
-   bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-   bgClip="text"
-   size="xl"
- >Three simple steps...</Heading>
+    <Box py={["6", "8", "12"]}>
+      <Center mb={5}>
+        <Heading
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          size="xl"
+        >
+          Three simple steps...
+        </Heading>
       </Center>
 
       <SimpleGrid

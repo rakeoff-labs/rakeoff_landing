@@ -19,7 +19,7 @@ import NewsletterSubscribe from "./NewsletterSubscribe";
 const Footer = () => {
   return (
     <Box>
-      <Center py={["4", "8", "12"]}>
+      <Center py={["6", "8", "12"]}>
         <NewsletterSubscribe />
       </Center>
 
@@ -46,6 +46,7 @@ const Footer = () => {
                 as={ChakraImage}
                 src={githubwhite}
                 _hover={{ opacity: 0.8 }}
+                boxSize={8}
               />
             </a>
             <a href="https://twitter.com/rakeoff_app" target="_blank">
@@ -53,10 +54,17 @@ const Footer = () => {
                 as={ChakraImage}
                 src={twitterwhite}
                 _hover={{ opacity: 0.8 }}
+                boxSize={8}
               />
             </a>
             <a href="https://discord.gg/5jRHUYnsrM" target="_blank">
-              <Icon as={ChakraImage} src={discord} _hover={{ opacity: 0.8 }} />
+              <Icon
+                as={ChakraImage}
+                src={discord}
+                h={8}
+                w={9}
+                _hover={{ opacity: 0.8 }}
+              />
             </a>
           </Stack>
         </Container>

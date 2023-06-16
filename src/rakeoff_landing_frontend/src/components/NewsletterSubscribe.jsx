@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Container,
@@ -10,10 +10,10 @@ import {
   Image,
   Flex,
   Stack,
-} from '@chakra-ui/react';
-import { Button as ChakraButton } from '@chakra-ui/react';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import rakeoff from '../assets/rakeoff.png';
+} from "@chakra-ui/react";
+import { Button as ChakraButton } from "@chakra-ui/react";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import rakeoff from "../assets/rakeoff.png";
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
@@ -26,17 +26,17 @@ const NewsletterSubscribe = () => {
       try {
         await subscribe({ EMAIL: email });
         toast({
-          title: 'Success',
-          description: 'Thank you for subscribing!',
-          status: 'success',
+          title: "Success",
+          description: "Thank you for subscribing!",
+          status: "success",
           duration: 3000,
           isClosable: true,
         });
       } catch (error) {
         toast({
-          title: 'Error',
-          description: 'An unexpected error occurred. Please try again.',
-          status: 'error',
+          title: "Error",
+          description: "An unexpected error occurred. Please try again.",
+          status: "error",
           duration: 3000,
           isClosable: true,
         });
@@ -45,20 +45,33 @@ const NewsletterSubscribe = () => {
 
     return (
       <form onSubmit={handleSubmit}>
-        <Flex direction={{ base: 'column', md: 'row' }} align={{ base: 'stretch', md: 'center' }}>
-          <Flex direction="column" flex="1" mb={4} mr={{ base: 0, md: 2 }}>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          align={{ base: "stretch", md: "center" }}
+        >
+          <Flex
+            direction="column"
+            align="center"
+            flex="1"
+            mb={4}
+            mr={{ base: 0, md: 2 }}
+          >
             <Heading as="h2" size="lg" mb={4}>
               Subscribe to our Newsletter
             </Heading>
-            <Stack direction={{ base: 'column', md: 'row' }} spacing={2}>
-              <FormControl isInvalid={status === 'error'}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              align="center"
+              spacing={2}
+            >
+              <FormControl isInvalid={status === "error"}>
                 <Input
                   type="email"
                   name="email"
                   placeholder="Enter your email"
                   borderRadius="md"
                   p={2}
-                  _focus={{ outline: 'none' }}
+                  _focus={{ outline: "none" }}
                   bg="white"
                   color="black"
                 />
@@ -70,9 +83,8 @@ const NewsletterSubscribe = () => {
                 variant="solid"
                 borderRadius="md"
                 px={8}
-                bgGradient="linear(to-r, #BDBDBD, #757575)"
                 flexShrink={0}
-                width={{ base: '100%', md: 'auto' }}
+                width={{ base: "100%", md: "auto" }}
                 mt={{ base: 2, md: 0 }}
               >
                 Subscribe
@@ -80,7 +92,14 @@ const NewsletterSubscribe = () => {
             </Stack>
           </Flex>
           <Box flex="1" mt={{ base: 0, md: 0 }}>
-            <Image src={rakeoff} alt="Rakeoff" objectFit="contain" width="100%" height="auto" maxH="300px" />
+            <Image
+              src={rakeoff}
+              alt="Rakeoff"
+              objectFit="contain"
+              width="100%"
+              height="auto"
+              maxH="300px"
+            />
           </Box>
         </Flex>
       </form>
@@ -88,7 +107,7 @@ const NewsletterSubscribe = () => {
   };
 
   const url =
-    'https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0';
+    "https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0";
 
   return (
     <Box
@@ -104,7 +123,11 @@ const NewsletterSubscribe = () => {
         <MailchimpSubscribe
           url={url}
           render={({ subscribe, status, message }) => (
-            <CustomForm subscribe={subscribe} status={status} message={message} />
+            <CustomForm
+              subscribe={subscribe}
+              status={status}
+              message={message}
+            />
           )}
         />
       </Container>

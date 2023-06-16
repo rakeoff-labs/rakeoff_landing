@@ -7,7 +7,6 @@ import {
   Text,
   Center,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import icp from "../assets/icp.png";
 import fix from "../assets/fix.png";
 import icpbit from "../assets/icpbit.png";
@@ -15,16 +14,18 @@ import icpbit from "../assets/icpbit.png";
 const Services = () => {
   return (
     <Box py={["4", "8", "12"]}>
-       <Center mb={5}>
-    <Heading
-      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-      bgClip="text"
-      size="xl"
-    >What do we offer?</Heading>
+      <Center mb={5}>
+        <Heading
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          size="xl"
+        >
+          What do we offer?
+        </Heading>
       </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 3, 3]} spacing={8}>
+        <SimpleGrid columns={[1, 1, 3]} spacing={8}>
           <BoxAndImage
             image={icp}
             heading={"Stake your ICP"}
@@ -33,7 +34,7 @@ const Services = () => {
           <BoxAndImage
             image={fix}
             heading={"Pool your rewards"}
-            content="Pool your ICP staking rewards and win the No-loss prize pool"
+            content="Pool your ICP staking rewards and win the no-loss prize pool"
           />
           <BoxAndImage
             image={icpbit}
@@ -50,7 +51,6 @@ export default Services;
 
 const BoxAndImage = ({ image, heading, content }) => {
   return (
-    <motion.div whileHover={{ scale: 1.05 }}>
       <Box
         bg={"#1e1f23"}
         border={"1px solid #a5a6a7"}
@@ -72,6 +72,5 @@ const BoxAndImage = ({ image, heading, content }) => {
         </Heading>
         <Text textAlign="center">{content}</Text>
       </Box>
-    </motion.div>
   );
 };

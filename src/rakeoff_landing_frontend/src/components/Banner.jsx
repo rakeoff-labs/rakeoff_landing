@@ -7,12 +7,14 @@ import {
   Heading,
   Center,
   Image,
+  Stack,
 } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import Rakoff_logo_white from "../assets/Rakoff_logo_white.png";
 import astronot from "../assets/astronot.webp";
+
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -59,7 +61,7 @@ const Banner = () => {
   };
   return (
     <Flex className="banner" justify="center" align="center" height="90vh">
-      <Box position="relative"> 
+      <Box position="relative">
         <Flex justify="center" align="center">
           <TrackVisibility>
             {({ isVisible }) => (
@@ -68,7 +70,7 @@ const Banner = () => {
               >
                 <Image
                   src={Rakoff_logo_white}
-                  h={[260, null, 260]}
+                  h={[170, null, 220]}
                   alt="Rakeoff logo"
                 />
               </Box>
@@ -78,52 +80,59 @@ const Banner = () => {
         <Image
           src={astronot}
           alt="Astronaut"
-          style={{
-            position: "absolute",
-            top: "-10rem",
-            right: "8rem",
-            width: "200px",
-            height: "200px",
-          }}
-          />
+          height={[100, null, 150]}
+          position="absolute"
+          top={["-5rem", null, "-8rem"]}
+          right={["2rem", null, "8rem"]}
+        />
         <Center h={"50px"}>
-        <Heading
-      bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-      bgClip="text"
-      size="2xl"
-    >{text}</Heading>
+          <Heading
+            bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+            bgClip="text"
+            size="xl"
+          >
+            {text}
+          </Heading>
         </Center>
-        <Text textAlign="center" maxW="2xl"  color="white"mt={5}>
+        <Text textAlign="center" maxW="2xl" color="white" mt={5}>
           Rakeoff is a cryptocurrency staking rewards platform built on the
           Internet Computer Protocol (ICP) blockchain.
         </Text>
 
-        <Flex justify="center" mt={8} gap={3}>
-          <Button
-            as="a"
-            href="https://app.rakeoff.io/"
-            target="_blank"
-            colorScheme="red"
-            rightIcon={<ArrowForwardIcon color="#ffffff" />}
-            isDisabled
-          >
-            Launching soon
-          </Button>
-          <Button
-            as="a"
-            href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
-            target="_blank"
-            colorScheme="blue"
-          >
-            About Rakeoff
-          </Button>
-        </Flex>
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          justify="center"
+          align="center"
+          mt={8}
+          gap={3}
+        >
+          {/* <Box>
+            <Button
+              as="a"
+              href="https://app.rakeoff.io/"
+              target="_blank"
+              colorScheme="red"
+              rightIcon={<ArrowForwardIcon color="#ffffff" />}
+              isDisabled
+            >
+              Launching soon
+            </Button>
+          </Box> */}
+          <Box>
+            <Button
+              variant="outline"
+              as="a"
+              href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
+              target="_blank"
+              rightIcon={<ExternalLinkIcon />}
+            >
+              About Rakeoff
+            </Button>
+          </Box>
+        </Stack>
       </Box>
     </Flex>
   );
 };
 
 export default Banner;
-
-
-
