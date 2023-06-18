@@ -23,6 +23,17 @@ const NewsletterSubscribe = () => {
       event.preventDefault();
       const email = event.target.email.value;
 
+      if (!email) {
+        toast({
+          title: "Error",
+          description: "Please enter your email address.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+        return;
+      }
+    
       try {
         await subscribe({ EMAIL: email });
         toast({
@@ -42,7 +53,6 @@ const NewsletterSubscribe = () => {
         });
       }
     };
-
     return (
       <form onSubmit={handleSubmit}>
         <Flex

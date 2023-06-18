@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  SimpleGrid,
-  Image,
-  Text,
-  Center,
-} from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Image, Text, Center } from "@chakra-ui/react";
 import icp from "../assets/icp.png";
 import fix from "../assets/fix.png";
 import icpbit from "../assets/icpbit.png";
@@ -51,26 +44,22 @@ export default Services;
 
 const BoxAndImage = ({ image, heading, content }) => {
   return (
-      <Box
-        bg={"#1e1f23"}
-        border={"1px solid #a5a6a7"}
-        borderRadius="3xl"
-        py={12}
-        px={8}
-        color="white"
-      >
-        <Image
-          src={image}
-          alt={heading}
-          h={200}
-          bg="white"
-          borderRadius="full"
-          p={3}
-        />
-        <Heading size="lg" textAlign="center" my={5}>
-          {heading}
-        </Heading>
-        <Text textAlign="center">{content}</Text>
-      </Box>
+    <Box
+      bg={"#1e1f23"}
+      border={"1px solid #a5a6a7"}
+      borderRadius="3xl"
+      py={12}
+      px={8}
+      color="white"
+      transition="transform 0.3s"
+      _hover={{ transform: "scale(1.05)" }}
+     
+    >
+      <Image src={image} alt={heading} h={200} bg="white" borderRadius="full" p={3} />
+      <Heading size="lg" textAlign="center" my={5}>
+        {heading}
+      </Heading>
+      <Text textAlign="center">{content}</Text>
+    </Box>
   );
 };
