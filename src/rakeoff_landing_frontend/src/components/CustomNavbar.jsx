@@ -25,6 +25,7 @@ const CustomNavbar = () => {
             bgGradient: "linear-gradient(to-r, gray.800, #1b2030)",
           }}
           boxShadow="0px 0px 10px 3px red"
+          color="white"
         >
           Launch dApp
         </Button>
