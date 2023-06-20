@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Heading, SimpleGrid, Image, Text, Center } from "@chakra-ui/react";
-import icp from "../assets/icp.png";
-import fix from "../assets/fix.png";
+import staking from "../assets/staking.png";
+import cart from "../assets/cart.png";
 import icpbit from "../assets/icpbit.png";
 
 const Services = () => {
@@ -20,13 +20,13 @@ const Services = () => {
       <Center>
         <SimpleGrid columns={[1, 1, 3]} spacing={8}>
           <BoxAndImage
-            image={icp}
+            image={staking}
             heading={"Stake your ICP"}
             content="A simplified and streamlined staking experience"
           />
           <BoxAndImage
-            image={fix}
-            heading={"Pool your rewards"}
+            image={cart}
+            heading={"Pool your Rewards"}
             content="Pool your ICP staking rewards and win the no-loss prize pool"
           />
           <BoxAndImage
@@ -55,7 +55,7 @@ const BoxAndImage = ({ image, heading, content }) => {
       _hover={{ transform: "scale(1.05)" }}
      
     >
-      <Image src={image} alt={heading} h={200} bg="white" borderRadius="full" p={3} />
+      <Image src={image} alt={heading} h={200} bg="grey" borderRadius="full" p={3} />
       <Heading size="lg" textAlign="center" my={5}>
         {heading}
       </Heading>
