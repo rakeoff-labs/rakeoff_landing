@@ -112,18 +112,21 @@ const Banner = () => {
           mt={5}
           gap={3}
         >
-          {/* <Box>
+          <Box>
             <Button
               as="a"
               href="https://app.rakeoff.io/"
               target="_blank"
-              colorScheme="red"
-              rightIcon={<ArrowForwardIcon color="#ffffff" />}
-              isDisabled
+              rightIcon={<ArrowForwardIcon />}
+              bgGradient='linear-gradient(to-r, gray.900, #1b2030)'
+              _hover={{
+                bgGradient: 'linear-gradient(to-r, gray.800, #1b2030)',
+              }}
+              boxShadow="0px 0px 10px 3px red"
             >
-              Launching soon
+              Launch dApp
             </Button>
-          </Box> */}
+          </Box>
           <Box>
             <Button
               variant="outline"

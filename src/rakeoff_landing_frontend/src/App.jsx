@@ -11,6 +11,7 @@ import { Story } from "./components/index";
 
 import "./App.css";
 import spacerocket from "./assets/spacerocket.png";
+import NavAnnouncement from "./components/NavAnnouncement";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         position: "relative",
       }}
     >
+      <NavAnnouncement />
       <Container maxW="7xl">
         <CustomNavbar />
         <Banner />
