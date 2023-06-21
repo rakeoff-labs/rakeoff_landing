@@ -43,6 +43,8 @@ const Services = () => {
 export default Services;
 
 const BoxAndImage = ({ image, heading, content }) => {
+  const isLastImage = image === icpbit;
+
   return (
     <Box
       bg={"#1e1f23"}
@@ -53,9 +55,15 @@ const BoxAndImage = ({ image, heading, content }) => {
       color="white"
       transition="transform 0.3s"
       _hover={{ transform: "scale(1.05)" }}
-     
     >
-      <Image src={image} alt={heading} h={200} bg="grey" borderRadius="full" p={3} />
+      <Image
+        src={image}
+        alt={heading}
+        h={200}
+        bg={isLastImage ? "transparent" : "grey"}
+        borderRadius={isLastImage ? undefined : "full"}
+        p={isLastImage ? undefined : 3}
+      />
       <Heading size="lg" textAlign="center" my={5}>
         {heading}
       </Heading>
