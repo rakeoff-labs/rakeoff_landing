@@ -8,6 +8,8 @@ import { Statistics } from "./components/";
 import { ThreeSteps } from "./components";
 import { Social } from "./components";
 import { Story } from "./components/index";
+import { Mission } from "./components";
+
 
 import "./App.css";
 import spacerocket from "./assets/spacerocket.png";
@@ -34,6 +36,7 @@ const App = () => {
         <Banner />
         {/* <Statistics /> */}
         <Services />
+        < Mission />
         <ThreeSteps />
         <Story />
         <Social />

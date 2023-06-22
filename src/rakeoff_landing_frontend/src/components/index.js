@@ -7,3 +7,4 @@ export { default as Statistics } from "./Statistics";
 export { default as ThreeSteps } from "./ThreeSteps";
 export { default as Story } from "./Story";
 export { default as Social } from "./Socials";
+export { default as Mission } from "./Mission";
