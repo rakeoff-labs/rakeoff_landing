@@ -73,20 +73,22 @@ const TitleAndDescription = () => {
           </Box>
         </Box>
         <Spacer />
-        <a href="https://app.rakeoff.io/" target="_blank">
-          <ChakraImage
-            src={screen}
-            alt="screenshot of app"
-            h={500}
-            mb={-5}
-            mr={12}
-            transition="transform 0.3s"
-            _hover={{
-              transform: "translateY(-10px)",
-              cursor: "pointer",
-            }}
-          />
-        </a>
+        <Box w={{ base: "100%", md: "auto" }} align="center">
+          <a href="https://app.rakeoff.io/" target="_blank">
+            <ChakraImage
+              src={screen}
+              alt="screenshot of app"
+              h={500}
+              mb={-5}
+              mr={{ base: 0, md: 12 }}
+              transition="transform 0.3s"
+              _hover={{
+                transform: "translateY(-10px)",
+                cursor: "pointer",
+              }}
+            />
+          </a>
+        </Box>
       </Stack>
     </Container>
   );
