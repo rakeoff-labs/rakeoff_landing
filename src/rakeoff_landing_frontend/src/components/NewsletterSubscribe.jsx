@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import rakeoff from "../assets/rakeoff.png";
+import RakeoffRocket from "../../assets/rakeoff_rocket.png";
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
@@ -33,7 +33,7 @@ const NewsletterSubscribe = () => {
         });
         return;
       }
-    
+
       try {
         await subscribe({ EMAIL: email });
         toast({
@@ -84,6 +84,11 @@ const NewsletterSubscribe = () => {
                   _focus={{ outline: "none" }}
                   bg="white"
                   color="black"
+                  sx={{
+                    "::placeholder": {
+                      color: "gray.500",
+                    },
+                  }}
                 />
                 <FormErrorMessage>{message}</FormErrorMessage>
               </FormControl>
@@ -103,7 +108,7 @@ const NewsletterSubscribe = () => {
           </Flex>
           <Box flex="1" mt={{ base: 0, md: 0 }}>
             <Image
-              src={rakeoff}
+              src={RakeoffRocket}
               alt="Rakeoff"
               objectFit="contain"
               width="100%"
@@ -122,12 +127,15 @@ const NewsletterSubscribe = () => {
   return (
     <Box
       bgGradient="linear(to-r, #FF0000, #000000)"
-      py={8}
+      mt={6}
       textAlign="center"
       color="white"
       borderRadius="3xl"
-      width="100%"
       position="relative"
+      px={0}
+      py={8}
+      w="100%"
+      mx={{ base: 3, md: 0 }}
     >
       <Container maxW="container.md">
         <MailchimpSubscribe

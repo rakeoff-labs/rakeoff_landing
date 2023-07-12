@@ -1,11 +1,19 @@
 import React from "react";
-import { Box, Heading, SimpleGrid, Text, Center } from "@chakra-ui/react";
-import coolsafe from "../assets/coolsafe.png";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Heading,
+  SimpleGrid,
+  Text,
+  Center,
+  Container,
+} from "@chakra-ui/react";
+import coolStakingSafe from "../../assets/cool_staking_safe.png";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
 const Social = () => {
   return (
-    <Box py={["6", "8", "12"]}>
+    <Container maxW="7xl" mt={12} p={0}>
       <Center mb={5}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
@@ -20,6 +28,7 @@ const Social = () => {
         <SimpleGrid
           columns={[1, 1, 2]}
           spacing={8}
+          mx={{ base: 3, md: 0 }}
           w="100%"
           templateAreas={[
             `"allInfo"
@@ -38,8 +47,8 @@ const Social = () => {
               target="_blank"
             >
               <Box
-                bg={"#1e1f23"}
-                border={"1px solid #a5a6a7"}
+                bg={boxBackgroundColor}
+                border={boxBorderColor}
                 borderRadius="3xl"
                 py={12}
                 px={8}
@@ -48,18 +57,18 @@ const Social = () => {
                 cursor="pointer"
                 h="100%"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${coolsafe})`,
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${coolStakingSafe})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
               >
                 <Heading size="lg" textAlign="center" color="white">
-                  Read the Rakeoff Litepaper{" "}
-                  <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
+                  Visit the Rakeoff documentation{" "}
+                  <ExternalLinkIcon color="white" mb={1} />
                 </Heading>
-                <Text textAlign="center" my={5} color="white">
-                  Read our overview of the Rakeoff dApp
+                <Text textAlign="center" my={5} color={boxFontColor}>
+                  Read our overview of the Rakeoff dApp.
                 </Text>
               </Box>
             </a>
@@ -67,7 +76,6 @@ const Social = () => {
           <Box gridArea="WhatIsStaking">
             <StoryBoxAndImage
               heading="What is ICP staking?"
-              image={coolsafe}
               link={
                 "https://rakeoff.notion.site/What-is-ICP-Staking-2f4a04d9723a47a882dbed2eaf22ec39"
               }
@@ -76,7 +84,6 @@ const Social = () => {
           <Box gridArea="HowDoIEarnRewards">
             <StoryBoxAndImage
               heading="How do I earn rewards?"
-              image={coolsafe}
               link={
                 "https://rakeoff.notion.site/How-do-I-earn-Rewards-fcc4ddf33ede49fe970b0def73770419?pvs=4"
               }
@@ -85,7 +92,6 @@ const Social = () => {
           <Box gridArea="ckbtcIntegration">
             <StoryBoxAndImage
               heading="ckBTC integration"
-              image={coolsafe}
               link={
                 "https://rakeoff.notion.site/Bitcoin-to-ICP-Conversion-c1c99cb154264804a1e5b86d12372255?pvs=4"
               }
@@ -93,7 +99,7 @@ const Social = () => {
           </Box>
         </SimpleGrid>
       </Center>
-    </Box>
+    </Container>
   );
 };
 
@@ -103,8 +109,8 @@ const StoryBoxAndImage = ({ heading, link }) => {
   return (
     <a href={link} target="_blank">
       <Box
-        bg={"#1e1f23"}
-        border={"1px solid #a5a6a7"}
+        bg={boxBackgroundColor}
+        border={boxBorderColor}
         borderRadius="3xl"
         justifyContent="start"
         py={12}
@@ -113,11 +119,10 @@ const StoryBoxAndImage = ({ heading, link }) => {
         cursor="pointer"
       >
         <Heading size="lg" textAlign="center" mb={3} color="white">
-          {heading}{" "}
-          <ArrowForwardIcon color="white" transform="rotate(-45deg)" />
+          {heading} <ExternalLinkIcon color="white" mb={1} />
         </Heading>
-        <Text textAlign="center" color="white">
-          Read here for more
+        <Text textAlign="center" color={boxFontColor}>
+          Read here for more.
         </Text>
       </Box>
     </a>

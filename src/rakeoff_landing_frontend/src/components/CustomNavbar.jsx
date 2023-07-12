@@ -1,17 +1,18 @@
 import React from "react";
-import logowhite from "../assets/logowhite.png";
+import logowhite from "../../assets/logo_name_white.png";
 import {
-  Box,
+  Container,
   Spacer,
   Flex,
   Image as ChakraImage,
   Button,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { boxBackgroundColor } from "./Color";
 
 const CustomNavbar = () => {
   return (
-    <Box>
+    <Container maxW="7xl">
       <Flex h={20} alignItems={"center"}>
         <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
         <Spacer />
@@ -20,9 +21,9 @@ const CustomNavbar = () => {
           as="a"
           href="https://app.rakeoff.io/"
           target="_blank"
-          bgGradient="linear-gradient(to-r, gray.900, #1b2030)"
+          bg={boxBackgroundColor}
           _hover={{
-            bgGradient: "linear-gradient(to-r, gray.800, #1b2030)",
+            boxShadow: "0px 0px 10px 6px red",
           }}
           boxShadow="0px 0px 10px 3px red"
           color="white"
@@ -30,7 +31,7 @@ const CustomNavbar = () => {
           Launch dApp
         </Button>
       </Flex>
-    </Box>
+    </Container>
   );
 };
 

@@ -3,23 +3,22 @@ import {
   Box,
   Container,
   Stack,
-  Text,
   useColorModeValue,
   Image as ChakraImage,
   Center,
   Flex,
 } from "@chakra-ui/react";
-import logowhite from "../assets/logowhite.png";
-import githubwhite from "../assets/githubwhite.png";
-import twitterwhite from "../assets/twitterwhite.png";
-import discord from "../assets/discord.png";
+import logowhite from "../../assets/logo_name_white.png";
+import githubwhite from "../../assets/github_white.png";
+import twitterwhite from "../../assets/twitter_white.png";
+import discordwhite from "../../assets/discord_white.png";
 import { Icon } from "@chakra-ui/react";
 import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
   return (
-    <Box>
-      <Center py={["6", "8", "12"]}>
+    <Container maxW="7xl" mt={12} p={0}>
+      <Center mb={5}>
         <NewsletterSubscribe />
       </Center>
 
@@ -30,7 +29,7 @@ const Footer = () => {
       >
         <Container
           as={Stack}
-          maxW={"6xl"}
+          maxW={"7xl"}
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
@@ -41,35 +40,37 @@ const Footer = () => {
             <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
           </Flex>
           <Stack direction="row" spacing={6} justify="center" mt={4}>
-            <a href="https://github.com/rakeoff-labs" target="_blank">
-              <Icon
-                as={ChakraImage}
-                src={githubwhite}
-                _hover={{ opacity: 0.8 }}
-                boxSize={8}
-              />
-            </a>
             <a href="https://twitter.com/rakeoff_app" target="_blank">
               <Icon
                 as={ChakraImage}
                 src={twitterwhite}
                 _hover={{ opacity: 0.8 }}
-                boxSize={8}
+                w={"100%"}
+                h={6}
               />
             </a>
             <a href="https://discord.gg/5jRHUYnsrM" target="_blank">
               <Icon
                 as={ChakraImage}
-                src={discord}
-                h={8}
-                w={9}
+                src={discordwhite}
+                w={"100%"}
+                h={6}
                 _hover={{ opacity: 0.8 }}
+              />
+            </a>
+            <a href="https://github.com/rakeoff-labs" target="_blank">
+              <Icon
+                as={ChakraImage}
+                src={githubwhite}
+                _hover={{ opacity: 0.8 }}
+                w={"100%"}
+                h={6}
               />
             </a>
           </Stack>
         </Container>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
