@@ -127,7 +127,6 @@ const NewsletterSubscribe = () => {
   return (
     <Box
       bgGradient="linear(to-r, #FF0000, #000000)"
-      mt={6}
       textAlign="center"
       color="white"
       borderRadius="3xl"
@@ -135,7 +134,7 @@ const NewsletterSubscribe = () => {
       px={0}
       py={8}
       w="100%"
-      mx={{ base: 3, md: 0 }}
+      mx={{ base: 3, md: 3, lg: 0 }}
     >
       <Container maxW="container.md">
         <MailchimpSubscribe

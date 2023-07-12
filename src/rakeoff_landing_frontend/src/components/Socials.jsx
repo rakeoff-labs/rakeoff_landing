@@ -28,7 +28,11 @@ const Social = () => {
       </Center>
 
       <Center>
-        <SimpleGrid columns={[1, 2, 3]} spacing={8} mx={{ base: 3, md: 0 }}>
+        <SimpleGrid
+          columns={[1, 2, 3]}
+          spacing={8}
+          mx={{ base: 3, md: 3, lg: 0 }}
+        >
           <SocialBoxAndImage
             heading={"Twitter"}
             content={"Keep up to date with us on Twitter @rakeoff_app."}
@@ -73,14 +77,13 @@ const SocialBoxAndImage = ({ heading, image, link, content }) => {
           src={image}
           alt={heading}
           fit="contain"
-          maxW="200px"
-          maxH="200px"
+          h={{ base: 150, md: 150, lg: 200 }}
           mx="auto"
         />
         <Heading size="lg" textAlign="center" color="white" mb={3}>
           {heading} <ExternalLinkIcon color="white" mb={1} />
         </Heading>
-        <Text textAlign="center" color={boxFontColor}>
+        <Text textAlign="center" noOfLines={2} color={boxFontColor}>
           {content}
         </Text>
       </Box>

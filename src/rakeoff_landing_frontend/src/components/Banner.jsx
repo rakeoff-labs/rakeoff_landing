@@ -59,9 +59,9 @@ const TitleAndDescription = () => {
           <Flex align="center" gap={3}>
             <Flex align="center">
               <Heading color={RakeoffRed}>RAKE</Heading>
-              <Heading>OFF</Heading>
+              <Heading color="white">OFF</Heading>
             </Flex>
-            <Heading>dApp</Heading>
+            <Heading color="white">dApp</Heading>
           </Flex>
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
             <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
@@ -100,7 +100,7 @@ const SocialButtonList = () => {
           alt="twitter link"
           src={twitterwhite}
           _hover={{ opacity: 0.8 }}
-          w={"100%"}
+          w={6}
           h={6}
         />
       </a>
@@ -110,7 +110,7 @@ const SocialButtonList = () => {
           alt={"discord link"}
           src={discordwhite}
           _hover={{ opacity: 0.8 }}
-          w={"100%"}
+          w={8}
           h={6}
         />
       </a>
@@ -120,7 +120,7 @@ const SocialButtonList = () => {
           alt="github link"
           src={githubwhite}
           _hover={{ opacity: 0.8 }}
-          w={"100%"}
+          w={6}
           h={6}
         />
       </a>
@@ -132,7 +132,7 @@ const SocialProof = () => {
   return (
     <Center>
       <Box
-        mx={{ base: 3, md: 0 }}
+        mx={{ base: 3, md: 3, lg: 0 }}
         zIndex={1}
         w="7xl"
         bg={boxBackgroundColor}

@@ -26,7 +26,11 @@ const Services = () => {
         </Heading>
       </Center>
 
-      <SimpleGrid columns={[1, 1, 3]} spacing={8} mx={{ base: 3, md: 0 }}>
+      <SimpleGrid
+        columns={[1, 1, 3]}
+        spacing={8}
+        mx={{ base: 3, md: 3, lg: 0 }}
+      >
         <BoxAndImage
           image={staking}
           heading={"Stake your ICP"}
@@ -65,15 +69,15 @@ const BoxAndImage = ({ image, heading, content }) => {
       <Image
         src={image}
         alt={heading}
-        h={200}
+        h={{ base: 150, md: 150, lg: 200 }}
         bg={isLastImage ? "transparent" : "white"}
         borderRadius={isLastImage ? undefined : "full"}
         p={isLastImage ? undefined : 3}
       />
-      <Heading size="lg" textAlign="center" my={5} color="white">
+      <Heading size={"lg"} noOfLines={1} textAlign="center" my={5} color="white">
         {heading}
       </Heading>
-      <Text textAlign="center" maxW="xs" color={boxFontColor}>
+      <Text textAlign="center" maxW="xs" noOfLines={3} color={boxFontColor}>
         {content}
       </Text>
     </Box>

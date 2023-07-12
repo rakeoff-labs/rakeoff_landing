@@ -1,13 +1,15 @@
 import React from "react";
 import {
-  SimpleGrid,
+  Stack,
   Box,
   Image,
   Heading,
   useBreakpointValue,
   Center,
   Container,
+  Text,
 } from "@chakra-ui/react";
+import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import identityIcon from "../../assets/identity_icon.png";
 import stakingSafe from "../../assets/staking_safe.png";
 import rewardsIcon from "../../assets/rewards_icon.png";
@@ -28,75 +30,54 @@ const ThreeSteps = () => {
         </Heading>
       </Center>
 
-      <SimpleGrid
-        columns={[1, 2, 3]}
-        spacing={[10, null, 60]}
+      <Stack
+        direction={{ base: "column", md: "row" }}
         bg={boxBackgroundColor}
         border={boxBorderColor}
         borderRadius="3xl"
         py={12}
         px={8}
-        mx={{ base: 3, md: 0 }}
+        gap={10}
+        mx={{ base: 3, md: 3, lg: 0 }}
+        justify="space-around"
+        align="center"
       >
-        <Box position="relative">
-          <Image
-            src={identityIcon}
-            alt="connect identity"
-            objectFit="contain"
-            height="200px"
-            width="100%"
-          />
-          {!isMobile && (
-            <Box
-              position="absolute"
-              left="calc(100% + 10px)"
-              top="50%"
-              transform="translateY(-50%)"
-              borderTop="4px solid white"
-              width="85%"
-            />
-          )}
-          <Box textAlign="center" mt={4} color={boxFontColor}>
-            Create / connect your Internet Identity.
-          </Box>
-        </Box>
-        <Box position="relative">
-          <Image
-            src={stakingSafe}
-            alt="Stake your ICP"
-            objectFit="contain"
-            height="200px"
-            width="100%"
-          />
-          {!isMobile && (
-            <Box
-              position="absolute"
-              left="calc(100% + 10px)"
-              top="50%"
-              transform="translateY(-50%)"
-              borderTop="4px solid white"
-              width="85%"
-            />
-          )}
-          <Box textAlign="center" mt={4} color={boxFontColor}>
-            Stake your ICP and wait for rewards.
-          </Box>
-        </Box>
-        <Box position="relative">
-          <Image
-            src={rewardsIcon}
-            alt="Earn Rewards"
-            objectFit="contain"
-            height="200px"
-            width="100%"
-          />
-          <Box textAlign="center" mt={4} color={boxFontColor}>
-            Choose from the disbursement options.
-          </Box>
-        </Box>
-      </SimpleGrid>
+        <StepBox
+          image={identityIcon}
+          text={"Create / connect your Internet Identity."}
+        />
+        {isMobile ? (
+          <ArrowDownIcon boxSize={10} color="white" />
+        ) : (
+          <ArrowForwardIcon boxSize={10} color="white" />
+        )}
+        <StepBox
+          image={stakingSafe}
+          text={"Stake your ICP and wait for rewards."}
+        />
+        {isMobile ? (
+          <ArrowDownIcon boxSize={10} color="white" />
+        ) : (
+          <ArrowForwardIcon boxSize={10} color="white" />
+        )}
+        <StepBox
+          image={rewardsIcon}
+          text={"Choose from the disbursement options."}
+        />
+      </Stack>
     </Container>
   );
 };
 
 export default ThreeSteps;
+
+const StepBox = ({ image, text }) => {
+  return (
+    <Box position="relative" align="center">
+      <Image src={image} alt={text} h={{ base: 150, md: 150, lg: 200 }} />
+      <Text textAlign="center" mt={4} noOfLines={2} color={boxFontColor}>
+        {text}
+      </Text>
+    </Box>
+  );
+};

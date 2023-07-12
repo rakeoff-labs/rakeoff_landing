@@ -45,7 +45,7 @@ const Footer = () => {
                 as={ChakraImage}
                 src={twitterwhite}
                 _hover={{ opacity: 0.8 }}
-                w={"100%"}
+                w={6}
                 h={6}
               />
             </a>
@@ -53,7 +53,7 @@ const Footer = () => {
               <Icon
                 as={ChakraImage}
                 src={discordwhite}
-                w={"100%"}
+                w={8}
                 h={6}
                 _hover={{ opacity: 0.8 }}
               />
@@ -63,7 +63,7 @@ const Footer = () => {
                 as={ChakraImage}
                 src={githubwhite}
                 _hover={{ opacity: 0.8 }}
-                w={"100%"}
+                w={6}
                 h={6}
               />
             </a>
