@@ -12,6 +12,8 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import redgit from "../../assets/red_github_icon.png";
 import redtwit from "../../assets/red_twitter_icon.png";
 import redisc from "../../assets/red_discord_icon.png";
+import redyou from "../../assets/red_youtube_icon.png";
+
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
 const Social = () => {
@@ -29,7 +31,7 @@ const Social = () => {
 
       <Center>
         <SimpleGrid
-          columns={[1, 2, 3]}
+          columns={[1, 2, 4]}
           spacing={8}
           mx={{ base: 3, md: 3, lg: 0 }}
         >
@@ -40,16 +42,22 @@ const Social = () => {
             link={"https://twitter.com/rakeoff_app"}
           />
           <SocialBoxAndImage
-            heading={"Github"}
-            content={"Check out our code or give us a star on Github."}
-            image={redgit}
-            link={"https://github.com/rakeoff-labs"}
-          />
-          <SocialBoxAndImage
             heading={"Discord"}
             content={"Chat to the devs, we'd love to hear your opinions."}
             image={redisc}
             link={"https://discord.gg/5jRHUYnsrM"}
+          />
+          <SocialBoxAndImage
+            heading={"YouTube"}
+            content={"Check out our latest videos and tutorials on YouTube."}
+            image={redyou}
+            link={"https://www.youtube.com/@Rakeoff"}
+          />
+          <SocialBoxAndImage
+            heading={"GitHub"}
+            content={"Check out our code or give us a star on Github."}
+            image={redgit}
+            link={"https://github.com/rakeoff-labs"}
           />
         </SimpleGrid>
       </Center>
@@ -67,8 +75,7 @@ const SocialBoxAndImage = ({ heading, image, link, content }) => {
         border={boxBorderColor}
         borderRadius="3xl"
         justifyContent="start"
-        py={12}
-        px={8}
+        p={8}
         transition="transform 0.3s"
         _hover={{ transform: "translateY(-5px)" }}
         cursor="pointer"

@@ -16,6 +16,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
+import youtubewhite from "../../assets/youtube_white.png";
 import screen from "../../assets/Rakeoff_Screen.png";
 import winningBadge from "../../assets/winning_badge.png";
 import icpBadge from "../../assets/icp_logo.png";
@@ -112,6 +113,16 @@ const SocialButtonList = () => {
           _hover={{ opacity: 0.8 }}
           w={8}
           h={6}
+        />
+      </a>
+      <a href="https://www.youtube.com/@Rakeoff" target="_blank">
+        <Icon
+          as={ChakraImage}
+          alt="youtube link"
+          src={youtubewhite}
+          _hover={{ opacity: 0.8 }}
+          h={6}
+          w={8}
         />
       </a>
       <a href="https://github.com/rakeoff-labs" target="_blank">
