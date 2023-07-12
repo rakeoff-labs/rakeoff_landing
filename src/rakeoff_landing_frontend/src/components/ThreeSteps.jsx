@@ -19,7 +19,7 @@ const ThreeSteps = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
   return (
-    <Container maxW="7xl" mt={12} p={0}>
+    <Container maxW="7xl" mt={{base: 12, md: "5rem"}} p={0}>
       <Center mb={5}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"

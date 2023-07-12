@@ -15,7 +15,7 @@ import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
 const Services = () => {
   return (
-    <Container mt={12} maxW="7xl" p={0}>
+    <Container mt={{base: 12, md: "5rem"}} maxW="7xl" p={0}>
       <Center mb={5}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"

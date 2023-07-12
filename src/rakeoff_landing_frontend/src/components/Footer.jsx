@@ -18,7 +18,7 @@ import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
   return (
-    <Container maxW="7xl" mt={12} p={0}>
+    <Container maxW="7xl" mt={{base: 12, md: "5rem"}} p={0}>
       <Center mb={5}>
         <NewsletterSubscribe />
       </Center>
