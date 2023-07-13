@@ -27,6 +27,7 @@ const Footer = () => {
         borderTopWidth={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.700")}
+        mt={{base: 12, md: "5rem"}}
       >
         <Container
           as={Stack}
