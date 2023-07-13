@@ -19,34 +19,32 @@ const BoxAndImage = ({ image, heading, content }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
   return (
-    <motion.div style={{ scale }}>
-      <motion.div style={{ scaleY: scrollYProgress }}>
-        <Box
-          bg={boxBackgroundColor}
-          border={boxBorderColor}
-          borderRadius="3xl"
-          py={12}
-          px={8}
-          color="white"
-          align="center"
-        >
-          <Image
-            src={image}
-            alt={heading}
-            h={{ base: 150, md: 150, lg: 200 }}
-            bg={image === ckbtcLogo ? "transparent" : "white"}
-            borderRadius={image === ckbtcLogo ? undefined : "full"}
-            p={image === ckbtcLogo ? undefined : 3}
-          />
-          <Heading size={"lg"} noOfLines={1} textAlign="center" my={5} color="white">
-            {heading}
-          </Heading>
-          <Text textAlign="center" maxW="xs" noOfLines={3} color={boxFontColor}>
-            {content}
-          </Text>
-        </Box>
-      </motion.div>
-    </motion.div>
+    <Box
+      as={motion.div}
+      bg={boxBackgroundColor}
+      border={boxBorderColor}
+      borderRadius="3xl"
+      py={12}
+      px={8}
+      color="white"
+      align="center"
+      style={{ scale }}
+    >
+      <Image
+        src={image}
+        alt={heading}
+        h={{ base: 150, md: 150, lg: 200 }}
+        bg={image === ckbtcLogo ? "transparent" : "white"}
+        borderRadius={image === ckbtcLogo ? undefined : "full"}
+        p={image === ckbtcLogo ? undefined : 3}
+      />
+      <Heading size={"lg"} noOfLines={1} textAlign="center" my={5} color="white">
+        {heading}
+      </Heading>
+      <Text textAlign="center" maxW="xs" noOfLines={3} color={boxFontColor}>
+        {content}
+      </Text>
+    </Box>
   );
 };
 
