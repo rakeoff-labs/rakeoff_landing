@@ -38,8 +38,9 @@ const Footer = () => {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Flex>
+          <Flex align="center">
             <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
+            <Box ml={2} color="white">Contact us: crew@rakeoff.io</Box>
           </Flex>
           <Stack direction="row" spacing={6} justify="center" mt={4}>
             <a href="https://twitter.com/rakeoff_app" target="_blank">
