@@ -13,12 +13,13 @@ import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
 import youtubewhite from "../../assets/youtube_white.png";
+import icpbadge from "../../assets/icpbadge.svg";
 import { Icon } from "@chakra-ui/react";
 import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
   return (
-    <Container maxW="7xl" mt={{base: 12, md: "5rem"}} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={5}>
         <NewsletterSubscribe />
       </Center>
@@ -27,7 +28,7 @@ const Footer = () => {
         borderTopWidth={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.700")}
-        mt={{base: 12, md: "5rem"}}
+        mt={{ base: 12, md: "5rem" }}
       >
         <Container
           as={Stack}
@@ -40,9 +41,29 @@ const Footer = () => {
         >
           <Flex align="center">
             <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
-            <Box ml={2} color="white">Contact us: crew@rakeoff.io</Box>
+            <Box ml={2} color="white" fontSize="md">
+              crew@rakeoff.io
+            </Box>
           </Flex>
-          <Stack direction="row" spacing={6} justify="center" mt={4}>
+          <Stack
+            direction="row"
+            spacing={6}
+            justify="center"
+            align="center"
+            mt={4}
+          >
+{/* <Box w="32px" h="32px" ml={-2} mt={1}>
+  <a href="https://internetcomputer.org/" target="_blank">
+    <Icon
+      as={ChakraImage}
+      alt="icpbadge"
+      src={icpbadge}
+      w={16}
+      h={16}
+    />
+  </a>
+</Box> */}
+
             <a href="https://twitter.com/rakeoff_app" target="_blank">
               <Icon
                 as={ChakraImage}
