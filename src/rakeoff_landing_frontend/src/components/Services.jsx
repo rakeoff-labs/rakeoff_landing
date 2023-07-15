@@ -1,5 +1,4 @@
 import React from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   Box,
   Heading,
@@ -15,12 +14,8 @@ import ckbtcLogo from "../../assets/ckbtc_logo.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
 const BoxAndImage = ({ image, heading, content }) => {
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
-
   return (
     <Box
-      as={motion.div}
       bg={boxBackgroundColor}
       border={boxBorderColor}
       borderRadius="3xl"
@@ -28,7 +23,6 @@ const BoxAndImage = ({ image, heading, content }) => {
       px={8}
       color="white"
       align="center"
-      style={{ scale }}
     >
       <Image
         src={image}
