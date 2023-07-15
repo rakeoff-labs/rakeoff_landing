@@ -1,4 +1,6 @@
 import React from "react";
+
+import { motion } from "framer-motion";
 import {
   Box,
   Heading,
@@ -13,32 +15,67 @@ import prizeCart from "../../assets/prize_pool_cart.png";
 import ckbtcLogo from "../../assets/ckbtc_logo.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
+const cardVariants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 0,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+
 const BoxAndImage = ({ image, heading, content }) => {
   return (
-    <Box
-      bg={boxBackgroundColor}
-      border={boxBorderColor}
-      borderRadius="3xl"
-      py={12}
-      px={8}
-      color="white"
-      align="center"
+    <motion.div
+      className="card-container"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
     >
-      <Image
-        src={image}
-        alt={heading}
-        h={{ base: 150, md: 150, lg: 200 }}
-        bg={image === ckbtcLogo ? "transparent" : "white"}
-        borderRadius={image === ckbtcLogo ? undefined : "full"}
-        p={image === ckbtcLogo ? undefined : 3}
-      />
-      <Heading size={"lg"} noOfLines={1} textAlign="center" my={5} color="white">
-        {heading}
-      </Heading>
-      <Text textAlign="center" maxW="xs" noOfLines={3} color={boxFontColor}>
-        {content}
-      </Text>
-    </Box>
+      <motion.div variants={cardVariants}>
+        <Box
+          bg={boxBackgroundColor}
+          border={boxBorderColor}
+          borderRadius="3xl"
+          py={12}
+          px={8}
+          color="white"
+          align="center"
+        >
+          <Image
+            src={image}
+            alt={heading}
+            h={{ base: 150, md: 150, lg: 200 }}
+            bg={image === ckbtcLogo ? "transparent" : "white"}
+            borderRadius={image === ckbtcLogo ? undefined : "full"}
+            p={image === ckbtcLogo ? undefined : 3}
+          />
+          <Heading
+            size={"lg"}
+            noOfLines={1}
+            textAlign="center"
+            my={5}
+            color="white"
+          >
+            {heading}
+          </Heading>
+          <Text
+            textAlign="center"
+            maxW="xs"
+            noOfLines={3}
+            color={boxFontColor}
+          >
+            {content}
+          </Text>
+        </Box>
+      </motion.div>
+    </motion.div>
   );
 };
 
