@@ -13,6 +13,8 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
+
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
@@ -75,24 +77,35 @@ const TitleAndDescription = () => {
         <Spacer />
         <Box w={{ base: "100%", md: "auto" }} align="center">
           <a href="https://app.rakeoff.io/" target="_blank">
-            <ChakraImage
-              src={screen}
-              alt="screenshot of app"
-              h={500}
-              mb={-5}
-              mr={{ base: 0, md: 12 }}
-              transition="transform 0.3s"
-              _hover={{
-                transform: "translateY(-10px)",
-                cursor: "pointer",
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ rotate: 0, scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 75
               }}
-            />
+            >
+              <ChakraImage
+                src={screen}
+                alt="screenshot of app"
+                h={500}
+                mb={-5}
+                mr={{ base: 0, md: 12 }}
+                transition="transform 0.3s"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  cursor: "pointer",
+                }}
+              />
+            </motion.div>
           </a>
         </Box>
       </Stack>
     </Container>
   );
 };
+
 
 const SocialButtonList = () => {
   return (
