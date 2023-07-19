@@ -14,9 +14,14 @@ import {
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import RakeoffRocket from "../../assets/rakeoff_rocket.png";
+import { motion } from "framer-motion";
+
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
+
+  const MotionImage = motion(Image);
+
 
   const CustomForm = ({ subscribe, status, message }) => {
     const handleSubmit = async (event) => {
@@ -107,16 +112,20 @@ const NewsletterSubscribe = () => {
             </Stack>
           </Flex>
           <Box flex="1" mt={{ base: 0, md: 0 }}>
-            <Image
-              src={RakeoffRocket}
-              alt="Rakeoff"
-              objectFit="contain"
-              width="100%"
-              height="auto"
-              maxH="300px"
-            />
+          <MotionImage
+                    src={RakeoffRocket}
+                    alt="Rakeoff"
+                    objectFit="contain"
+                    width="100%"
+                    height="auto"
+                    maxH="300px"
+                    whileHover={{ scale: 1.2, rotate: 90 }}
+                    whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
+                  />
+
           </Box>
         </Flex>
+         
       </form>
     );
   };

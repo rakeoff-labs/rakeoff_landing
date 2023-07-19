@@ -9,6 +9,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 import redgit from "../../assets/red_github_icon.png";
 import redtwit from "../../assets/red_twitter_icon.png";
 import redisc from "../../assets/red_discord_icon.png";
@@ -66,34 +67,62 @@ const Social = () => {
 };
 
 export default Social;
+const cardVariants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 0,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 const SocialBoxAndImage = ({ heading, image, link, content }) => {
   return (
-    <a href={link} target="_blank">
-      <Box
-        bg={boxBackgroundColor}
-        border={boxBorderColor}
-        borderRadius="3xl"
-        justifyContent="start"
-        p={8}
-        transition="transform 0.3s"
-        _hover={{ transform: "translateY(-5px)" }}
-        cursor="pointer"
-      >
-        <Image
-          src={image}
-          alt={heading}
-          fit="contain"
-          h={{ base: 150, md: 150, lg: 200 }}
-          mx="auto"
-        />
-        <Heading size="lg" textAlign="center" color="white" mb={3}>
-          {heading} <ExternalLinkIcon color="white" mb={1} />
-        </Heading>
-        <Text textAlign="center" noOfLines={2} color={boxFontColor}>
-          {content}
-        </Text>
-      </Box>
-    </a>
+    <motion.div
+      className="card-container"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <motion.div variants={cardVariants}>
+        <motion.a
+          href={link}
+          target="_blank"
+          whileHover={{ transform: "translateY(-5px)" }}
+          cursor="pointer"
+        >
+          <Box
+            bg={boxBackgroundColor}
+            border={boxBorderColor}
+            borderRadius="3xl"
+            justifyContent="start"
+            p={8}
+            transition="transform 0.3s"
+            _hover={{ transform: "translateY(-5px)" }}
+            cursor="pointer"
+          >
+            <Image
+              src={image}
+              alt={heading}
+              fit="contain"
+              h={{ base: 150, md: 150, lg: 200 }}
+              mx="auto"
+            />
+            <Heading size="lg" textAlign="center" color="white" mb={3}>
+              {heading} <ExternalLinkIcon color="white" mb={1} />
+            </Heading>
+            <Text textAlign="center" noOfLines={2} color={boxFontColor}>
+              {content}
+            </Text>
+          </Box>
+        </motion.a>
+      </motion.div>
+    </motion.div>
   );
 };
