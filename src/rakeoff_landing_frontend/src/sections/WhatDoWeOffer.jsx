@@ -11,7 +11,7 @@ import {
 import staking from "../../assets/staking_safe.png";
 import prizeCart from "../../assets/prize_pool_cart.png";
 import ckbtcLogo from "../../assets/ckbtc_logo.png";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const BoxAndImage = ({ image, heading, content }) => {
   return (
@@ -48,7 +48,7 @@ const BoxAndImage = ({ image, heading, content }) => {
   );
 };
 
-const Services = () => {
+const WhatDoWeOffer = () => {
   return (
     <Container mt={{ base: 12, md: "5rem" }} maxW="7xl" p={0}>
       <Center mb={5}>
@@ -86,4 +86,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default WhatDoWeOffer;

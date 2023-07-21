@@ -8,9 +8,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { boxBackgroundColor } from "./Color";
+import { boxBackgroundColor } from "../colors";
 
-const CustomNavbar = () => {
+const Navbar = () => {
   return (
     <Container maxW="7xl">
       <Flex h={20} alignItems={"center"}>
@@ -35,4 +35,4 @@ const CustomNavbar = () => {
   );
 };
 
-export default CustomNavbar;
+export default Navbar;

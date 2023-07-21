@@ -13,7 +13,7 @@ import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import identityIcon from "../../assets/identity_icon.png";
 import stakingSafe from "../../assets/staking_safe.png";
 import rewardsIcon from "../../assets/rewards_icon.png";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const ThreeSteps = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });

@@ -13,7 +13,7 @@ import redgit from "../../assets/red_github_icon.png";
 import redtwit from "../../assets/red_twitter_icon.png";
 import redisc from "../../assets/red_discord_icon.png";
 import redyou from "../../assets/red_youtube_icon.png";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Social = () => {
   return (

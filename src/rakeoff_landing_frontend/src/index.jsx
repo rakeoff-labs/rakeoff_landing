@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { mainBackgroundColor } from "./components/Color";
+import { mainBackgroundColor } from "./colors";
 
 const container = document.getElementById("app");
 const root = createRoot(container);

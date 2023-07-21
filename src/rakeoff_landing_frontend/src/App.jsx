@@ -1,20 +1,22 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import { Banner } from "./components/";
-import { Footer } from "./components/";
-import { Services } from "./components/";
-import { ThreeSteps } from "./components";
-import { Social } from "./components";
-import { Story } from "./components/index";
+import {
+  Banner,
+  WhatDoWeOffer,
+  ThreeSteps,
+  MoreOnRakeoff,
+  JoinTheCommunity,
+  Footer,
+} from "./sections";
 
 const App = () => {
   return (
     <Box>
       <Banner />
-      <Services />
+      <WhatDoWeOffer />
       <ThreeSteps />
-      <Story />
-      <Social />
+      <MoreOnRakeoff />
+      <JoinTheCommunity />
       <Footer />
     </Box>
   );

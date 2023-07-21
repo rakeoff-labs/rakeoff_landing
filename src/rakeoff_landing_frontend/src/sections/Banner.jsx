@@ -27,8 +27,8 @@ import {
   boxBackgroundColor,
   boxBorderColor,
   boxFontColor,
-} from "./Color";
-import CustomNavbar from "./CustomNavbar";
+} from "../colors";
+import Navbar from "./Navbar";
 
 const Banner = () => {
   return (
@@ -39,7 +39,7 @@ const Banner = () => {
         bgGradient={`linear(to-br, ${boxBackgroundColor}, purple.500, ${RakeoffRed})`}
         bgSize="150% 150%"
       >
-        <CustomNavbar />
+        <Navbar />
         <TitleAndDescription />
       </Box>
       <SocialProof />
@@ -48,27 +48,6 @@ const Banner = () => {
 };
 
 export default Banner;
-
-// animations:
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
-
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
-    },
-  },
-};
 
 const TitleAndDescription = () => {
   return (
@@ -163,6 +142,26 @@ const SocialButtonList = () => {
   );
 };
 
+const itemAnimation = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const containerAnimation = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 const SocialProof = () => {
   return (
     <Center>
@@ -177,7 +176,11 @@ const SocialProof = () => {
         mt={-10}
         p={5}
       >
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={containerAnimation}
+          initial="hidden"
+          animate="visible"
+        >
           <Stack
             w={"100%"}
             h={"100%"}
@@ -186,29 +189,23 @@ const SocialProof = () => {
             align="center"
             gap={5}
           >
-            <motion.div variants={item}>
-              <SocialProofBox
-                link={
-                  "https://medium.com/encode-club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
-                }
-                image={winningBadge}
-                about={"Winner of the Dfinity x Encode hackathon"}
-              />
-            </motion.div>
-            <motion.div variants={item}>
-              <SocialProofBox
-                link={"https://dfinity.org/grants/"}
-                image={icpBadge}
-                about={"Backed by the Dfinity grants program"}
-              />
-            </motion.div>
-            <motion.div variants={item}>
-              <SocialProofBox
-                link={"https://internetcomputer.org/capabilities"}
-                image={motokoBadge}
-                about={"Powered by secure smart contracts"}
-              />
-            </motion.div>
+            <SocialProofBox
+              link={
+                "https://medium.com/encode-club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
+              }
+              image={winningBadge}
+              about={"Winner of the Dfinity x Encode hackathon"}
+            />
+            <SocialProofBox
+              link={"https://dfinity.org/grants/"}
+              image={icpBadge}
+              about={"Backed by the Dfinity grants program"}
+            />
+            <SocialProofBox
+              link={"https://internetcomputer.org/capabilities"}
+              image={motokoBadge}
+              about={"Powered by secure smart contracts"}
+            />
           </Stack>
         </motion.div>
       </Box>
@@ -220,33 +217,35 @@ const SocialProofBox = ({ image, about, link }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <a href={link} target="_blank">
-      <Flex
-        align="center"
-        maxW="300px"
-        gap={5}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        _hover={{
-          cursor: "pointer",
-        }}
-      >
-        <ChakraImage
-          src={image}
-          alt={about}
-          h={{ base: "80px", md: "100px" }}
-          w={{ base: "80px", md: "100px" }}
-          boxShadow={
-            isHovered ? "0px 0px 10px 6px red" : "0px 0px 10px 3px red"
-          }
-          bg={"white"}
-          borderRadius="full"
-          p={1}
-        />
-        <Text color={isHovered ? "white" : boxFontColor}>
-          {about}
-          <ExternalLinkIcon ml={1} mb={1} />
-        </Text>
-      </Flex>
+      <motion.div variants={itemAnimation}>
+        <Flex
+          align="center"
+          maxW="300px"
+          gap={5}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          _hover={{
+            cursor: "pointer",
+          }}
+        >
+          <ChakraImage
+            src={image}
+            alt={about}
+            h={{ base: "80px", md: "100px" }}
+            w={{ base: "80px", md: "100px" }}
+            boxShadow={
+              isHovered ? "0px 0px 10px 6px red" : "0px 0px 10px 3px red"
+            }
+            bg={"white"}
+            borderRadius="full"
+            p={1}
+          />
+          <Text color={isHovered ? "white" : boxFontColor}>
+            {about}
+            <ExternalLinkIcon ml={1} mb={1} />
+          </Text>
+        </Flex>
+      </motion.div>
     </a>
   );
 };

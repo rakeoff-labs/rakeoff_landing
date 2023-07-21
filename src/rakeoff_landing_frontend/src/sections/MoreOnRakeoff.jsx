@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import coolStakingSafe from "../../assets/cool_staking_safe.png";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
-const Social = () => {
+const MoreOnRakeoff = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={5}>
@@ -68,7 +68,7 @@ const Social = () => {
                   <ExternalLinkIcon color="white" mb={1} />
                 </Heading>
                 <Text textAlign="center" my={5} color={boxFontColor}>
-                  Read our overview of the Rakeoff dApp.
+                  Guides, tutorials, smart contract documentation and more.
                 </Text>
               </Box>
             </a>
@@ -103,7 +103,7 @@ const Social = () => {
   );
 };
 
-export default Social;
+export default MoreOnRakeoff;
 
 const StoryBoxAndImage = ({ heading, link }) => {
   return (
