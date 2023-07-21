@@ -13,7 +13,6 @@ import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
 import youtubewhite from "../../assets/youtube_white.png";
-import icpbadge from "../../assets/icpbadge.svg";
 import { Icon } from "@chakra-ui/react";
 import NewsletterSubscribe from "./NewsletterSubscribe";
 
@@ -52,18 +51,6 @@ const Footer = () => {
             align="center"
             mt={4}
           >
-{/* <Box w="32px" h="32px" ml={-2} mt={1}>
-  <a href="https://internetcomputer.org/" target="_blank">
-    <Icon
-      as={ChakraImage}
-      alt="icpbadge"
-      src={icpbadge}
-      w={16}
-      h={16}
-    />
-  </a>
-</Box> */}
-
             <a href="https://twitter.com/rakeoff_app" target="_blank">
               <Icon
                 as={ChakraImage}

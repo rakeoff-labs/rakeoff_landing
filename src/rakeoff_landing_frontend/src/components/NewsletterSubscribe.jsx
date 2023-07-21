@@ -14,14 +14,9 @@ import {
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import RakeoffRocket from "../../assets/rakeoff_rocket.png";
-import { motion } from "framer-motion";
-
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
-
-  const MotionImage = motion(Image);
-
 
   const CustomForm = ({ subscribe, status, message }) => {
     const handleSubmit = async (event) => {
@@ -112,20 +107,16 @@ const NewsletterSubscribe = () => {
             </Stack>
           </Flex>
           <Box flex="1" mt={{ base: 0, md: 0 }}>
-          <MotionImage
-                    src={RakeoffRocket}
-                    alt="Rakeoff"
-                    objectFit="contain"
-                    width="100%"
-                    height="auto"
-                    maxH="300px"
-                    whileHover={{ scale: 1.2, rotate: 90 }}
-                    whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
-                  />
-
+            <Image
+              src={RakeoffRocket}
+              alt="Rakeoff"
+              objectFit="contain"
+              width="100%"
+              height="auto"
+              maxH="300px"
+            />
           </Box>
         </Flex>
-         
       </form>
     );
   };
@@ -134,30 +125,30 @@ const NewsletterSubscribe = () => {
     "https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0";
 
   return (
-    <Box
-      bgGradient="linear(to-r, #FF0000, #000000)"
-      textAlign="center"
-      color="white"
-      borderRadius="3xl"
-      position="relative"
-      px={0}
-      py={8}
-      w="100%"
-      mx={{ base: 3, md: 3, lg: 0 }}
-    >
-      <Container maxW="container.md">
-        <MailchimpSubscribe
-          url={url}
-          render={({ subscribe, status, message }) => (
-            <CustomForm
-              subscribe={subscribe}
-              status={status}
-              message={message}
-            />
-          )}
-        />
-      </Container>
-    </Box>
+      <Box
+        bgGradient="linear(to-r, #FF0000, #000000)"
+        textAlign="center"
+        color="white"
+        borderRadius="3xl"
+        position="relative"
+        px={0}
+        py={8}
+        w="100%"
+        mx={{ base: 3, md: 3, lg: 0 }}
+      >
+        <Container maxW="container.md">
+          <MailchimpSubscribe
+            url={url}
+            render={({ subscribe, status, message }) => (
+              <CustomForm
+                subscribe={subscribe}
+                status={status}
+                message={message}
+              />
+            )}
+          />
+        </Container>
+      </Box>
   );
 };
 

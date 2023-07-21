@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
-
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
@@ -50,6 +49,27 @@ const Banner = () => {
 
 export default Banner;
 
+// animations:
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const TitleAndDescription = () => {
   return (
     <Container maxW="7xl" h={"500px"}>
@@ -77,35 +97,24 @@ const TitleAndDescription = () => {
         <Spacer />
         <Box w={{ base: "100%", md: "auto" }} align="center">
           <a href="https://app.rakeoff.io/" target="_blank">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 75
+            <ChakraImage
+              src={screen}
+              alt="screenshot of app"
+              h={500}
+              mb={-5}
+              mr={{ base: 0, md: 12 }}
+              transition="transform 0.3s"
+              _hover={{
+                transform: "translateY(-10px)",
+                cursor: "pointer",
               }}
-            >
-              <ChakraImage
-                src={screen}
-                alt="screenshot of app"
-                h={500}
-                mb={-5}
-                mr={{ base: 0, md: 12 }}
-                transition="transform 0.3s"
-                _hover={{
-                  transform: "translateY(-10px)",
-                  cursor: "pointer",
-                }}
-              />
-            </motion.div>
+            />
           </a>
         </Box>
       </Stack>
     </Container>
   );
 };
-
 
 const SocialButtonList = () => {
   return (
@@ -155,26 +164,6 @@ const SocialButtonList = () => {
 };
 
 const SocialProof = () => {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
     <Center>
       <Box
@@ -188,12 +177,7 @@ const SocialProof = () => {
         mt={-10}
         p={5}
       >
-        <motion.div
-          className="container"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
+        <motion.div variants={container} initial="hidden" animate="visible">
           <Stack
             w={"100%"}
             h={"100%"}
@@ -250,6 +234,7 @@ const SocialProofBox = ({ image, about, link }) => {
           src={image}
           alt={about}
           h={{ base: "80px", md: "100px" }}
+          w={{ base: "80px", md: "100px" }}
           boxShadow={
             isHovered ? "0px 0px 10px 6px red" : "0px 0px 10px 3px red"
           }

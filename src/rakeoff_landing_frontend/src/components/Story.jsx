@@ -10,27 +10,6 @@ import {
 import coolStakingSafe from "../../assets/cool_staking_safe.png";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-
-const Section = ({ children }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section ref={ref}>
-      <span
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  );
-};
 
 const Social = () => {
   return (
@@ -63,68 +42,60 @@ const Social = () => {
           ]}
         >
           <Box gridArea="allInfo">
-            {/* <Section> */}
-              <a
-                href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
-                target="_blank"
+            <a
+              href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
+              target="_blank"
+            >
+              <Box
+                bg={boxBackgroundColor}
+                border={boxBorderColor}
+                borderRadius="3xl"
+                py={12}
+                px={8}
+                transition="transform 0.3s"
+                _hover={{ transform: "translateY(-5px)" }}
+                cursor="pointer"
+                h="100%"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${coolStakingSafe})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
               >
-                <Box
-                  bg={boxBackgroundColor}
-                  border={boxBorderColor}
-                  borderRadius="3xl"
-                  py={12}
-                  px={8}
-                  transition="transform 0.3s"
-                  _hover={{ transform: "translateY(-5px)" }}
-                  cursor="pointer"
-                  h="100%"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${coolStakingSafe})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <Heading size="lg" textAlign="center" color="white">
-                    Visit the Rakeoff documentation{" "}
-                    <ExternalLinkIcon color="white" mb={1} />
-                  </Heading>
-                  <Text textAlign="center" my={5} color={boxFontColor}>
-                    Read our overview of the Rakeoff dApp.
-                  </Text>
-                </Box>
-              </a>
-            {/* </Section> */}
+                <Heading size="lg" textAlign="center" color="white">
+                  Visit the Rakeoff documentation{" "}
+                  <ExternalLinkIcon color="white" mb={1} />
+                </Heading>
+                <Text textAlign="center" my={5} color={boxFontColor}>
+                  Read our overview of the Rakeoff dApp.
+                </Text>
+              </Box>
+            </a>
           </Box>
           <Box gridArea="WhatIsStaking">
-            <Section>
-              <StoryBoxAndImage
-                heading="What is ICP staking?"
-                link={
-                  "https://rakeoff.notion.site/What-is-ICP-Staking-2f4a04d9723a47a882dbed2eaf22ec39"
-                }
-              />
-            </Section>
+            <StoryBoxAndImage
+              heading="What is ICP staking?"
+              link={
+                "https://rakeoff.notion.site/What-is-ICP-Staking-2f4a04d9723a47a882dbed2eaf22ec39"
+              }
+            />
           </Box>
           <Box gridArea="HowDoIEarnRewards">
-            <Section>
-              <StoryBoxAndImage
-                heading="How do I earn rewards?"
-                link={
-                  "https://rakeoff.notion.site/How-do-I-earn-Rewards-fcc4ddf33ede49fe970b0def73770419?pvs=4"
-                }
-              />
-            </Section>
+            <StoryBoxAndImage
+              heading="How do I earn rewards?"
+              link={
+                "https://rakeoff.notion.site/How-do-I-earn-Rewards-fcc4ddf33ede49fe970b0def73770419?pvs=4"
+              }
+            />
           </Box>
           <Box gridArea="ckbtcIntegration">
-            <Section>
-              <StoryBoxAndImage
-                heading="ckBTC integration"
-                link={
-                  "https://rakeoff.notion.site/Bitcoin-to-ICP-Conversion-c1c99cb154264804a1e5b86d12372255?pvs=4"
-                }
-              />
-            </Section>
+            <StoryBoxAndImage
+              heading="ckBTC integration"
+              link={
+                "https://rakeoff.notion.site/Bitcoin-to-ICP-Conversion-c1c99cb154264804a1e5b86d12372255?pvs=4"
+              }
+            />
           </Box>
         </SimpleGrid>
       </Center>

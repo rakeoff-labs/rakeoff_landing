@@ -47,27 +47,27 @@ export default function Mission() {
             fontWeight={400}
             fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
           >
-   <Text
-  as={"span"}
-  position={"relative"}
-  _after={{
-    content: "''",
-  
-   
-    
-    left: 0,
-    bgGradient: "linear(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
-    zIndex: -1,
-  }}
-  sx={{
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundImage: 'linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)',
-  }}
->
-  Our Mission
-</Text>
+            <Text
+              as={"span"}
+              position={"relative"}
+              _after={{
+                content: "''",
+
+                left: 0,
+                bgGradient:
+                  "linear(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
+                zIndex: -1,
+              }}
+              sx={{
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundImage:
+                  "linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
+              }}
+            >
+              Our Mission
+            </Text>
 
             <br />
             <Text as={"span"} color={"red.400"}>
@@ -75,10 +75,13 @@ export default function Mission() {
             </Text>
           </Heading>
           <Text color={"gray.500"}>
-          You have the opportunity to increase your earnings, while still retaining your initial stake. 
-          Your rewards are pooled together with those of other participants, offering a chance to win a sizable payout of 256 ICP, instead of the standard 1 ICP monthly reward. 
-          The only stake is your reward – your original stake is always safe. 
-          We provide this innovative system to give you the potential for higher returns, and a more exciting way to engage with the ICP network.
+            You have the opportunity to increase your earnings, while still
+            retaining your initial stake. Your rewards are pooled together with
+            those of other participants, offering a chance to win a sizable
+            payout of 256 ICP, instead of the standard 1 ICP monthly reward. The
+            only stake is your reward – your original stake is always safe. We
+            provide this innovative system to give you the potential for higher
+            returns, and a more exciting way to engage with the ICP network.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}

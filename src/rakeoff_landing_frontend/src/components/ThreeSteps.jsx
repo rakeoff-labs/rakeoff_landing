@@ -16,10 +16,10 @@ import rewardsIcon from "../../assets/rewards_icon.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./Color";
 
 const ThreeSteps = () => {
-  const isMobile = useBreakpointValue({ base: true, lg: false });
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
-    <Container maxW="7xl" mt={{base: 12, md: "5rem"}} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={5}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
@@ -29,7 +29,6 @@ const ThreeSteps = () => {
           Three simple steps...
         </Heading>
       </Center>
-
       <Stack
         direction={{ base: "column", md: "row" }}
         bg={boxBackgroundColor}
