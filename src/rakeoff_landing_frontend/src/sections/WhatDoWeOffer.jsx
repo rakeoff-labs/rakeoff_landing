@@ -9,7 +9,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 import staking from "../../assets/staking_safe.png";
-import prizeCart from "../../assets/prize_pool_cart.png";
+import prizePoolLogo from "../../assets/prize_pool_logo.png";
 import ckbtcLogo from "../../assets/ckbtc_logo.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
@@ -24,14 +24,7 @@ const BoxAndImage = ({ image, heading, content }) => {
       color="white"
       align="center"
     >
-      <Image
-        src={image}
-        alt={heading}
-        h={{ base: 150, md: 150, lg: 200 }}
-        bg={image === ckbtcLogo ? "transparent" : "white"}
-        borderRadius={image === ckbtcLogo ? undefined : "full"}
-        p={image === ckbtcLogo ? undefined : 3}
-      />
+      <Image src={image} alt={heading} h={{ base: 150, md: 150, lg: 200 }} />
       <Heading
         size={"lg"}
         noOfLines={1}
@@ -72,9 +65,9 @@ const WhatDoWeOffer = () => {
           content="A simplified and streamlined way to stake your ICP tokens and earn ICP staking rewards."
         />
         <BoxAndImage
-          image={prizeCart}
+          image={prizePoolLogo}
           heading={"Pool your rewards"}
-          content="The option to disburse your ICP staking rewards as pool tickets for a chance to win the no-loss prize pool."
+          content="The option to disburse your ICP staking rewards into the no-loss prize pool for a chance to win big."
         />
         <BoxAndImage
           image={ckbtcLogo}
