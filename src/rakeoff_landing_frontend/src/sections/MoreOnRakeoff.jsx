@@ -42,10 +42,7 @@ const MoreOnRakeoff = () => {
           ]}
         >
           <Box gridArea="allInfo">
-            <a
-              href="https://rakeoff.notion.site/Revolutionising-ICP-Crypto-Staking-029a131e8a2b4b8eb1dbba6ad857980d?pvs=4"
-              target="_blank"
-            >
+            <a href="https://docs.rakeoff.io/" target="_blank">
               <Box
                 bg={boxBackgroundColor}
                 border={boxBorderColor}
@@ -68,32 +65,41 @@ const MoreOnRakeoff = () => {
                   <ExternalLinkIcon color="white" mb={1} />
                 </Heading>
                 <Text textAlign="center" my={5} color={boxFontColor}>
-                  Guides, tutorials, smart contract documentation and more.
+                  Guides, video tutorials, smart contract documentation and more.
                 </Text>
               </Box>
             </a>
           </Box>
           <Box gridArea="WhatIsStaking">
             <StoryBoxAndImage
-              heading="What is ICP staking?"
+              heading="Staking on Rakeoff"
               link={
-                "https://rakeoff.notion.site/What-is-ICP-Staking-2f4a04d9723a47a882dbed2eaf22ec39"
+                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/staking-on-rakeoff"
+              }
+              info={
+                "Staking ICP in the Rakeoff dApp."
               }
             />
           </Box>
           <Box gridArea="HowDoIEarnRewards">
             <StoryBoxAndImage
-              heading="How do I earn rewards?"
+              heading="The no-loss prize pool"
               link={
-                "https://rakeoff.notion.site/How-do-I-earn-Rewards-fcc4ddf33ede49fe970b0def73770419?pvs=4"
+                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/the-no-loss-prize-pool"
+              }
+              info={
+                "How to use the Rakeoff no-loss prize pool."
               }
             />
           </Box>
           <Box gridArea="ckbtcIntegration">
             <StoryBoxAndImage
-              heading="ckBTC integration"
+              heading="Earning ckBTC"
               link={
-                "https://rakeoff.notion.site/Bitcoin-to-ICP-Conversion-c1c99cb154264804a1e5b86d12372255?pvs=4"
+                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/earning-ckbtc"
+              }
+              info={
+                "How to earn ckBTC in the Rakeoff dApp."
               }
             />
           </Box>
@@ -105,7 +111,7 @@ const MoreOnRakeoff = () => {
 
 export default MoreOnRakeoff;
 
-const StoryBoxAndImage = ({ heading, link }) => {
+const StoryBoxAndImage = ({ heading, link, info }) => {
   return (
     <a href={link} target="_blank">
       <Box
@@ -117,12 +123,13 @@ const StoryBoxAndImage = ({ heading, link }) => {
         transition="transform 0.3s"
         _hover={{ transform: "translateY(-5px)" }}
         cursor="pointer"
+        align="center"
       >
         <Heading size="lg" textAlign="center" mb={3} color="white">
           {heading} <ExternalLinkIcon color="white" mb={1} />
         </Heading>
-        <Text textAlign="center" color={boxFontColor}>
-          Read here for more.
+        <Text textAlign="center" maxW={"sm"} color={boxFontColor}>
+          {info}
         </Text>
       </Box>
     </a>

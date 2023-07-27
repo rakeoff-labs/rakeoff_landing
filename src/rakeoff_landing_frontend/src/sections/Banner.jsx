@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
-import youtubewhite from "../../assets/youtube_white.png";
+import mediumwhite from "../../assets/medium_white.png";
 import screen from "../../assets/Rakeoff_Screen.png";
 import winningBadge from "../../assets/winning_badge.png";
 import icpBadge from "../../assets/icp_logo.png";
@@ -118,11 +118,11 @@ const SocialButtonList = () => {
           h={6}
         />
       </a>
-      <a href="https://www.youtube.com/@Rakeoff" target="_blank">
+      <a href="https://medium.com/@crew_7288" target="_blank">
         <Icon
           as={ChakraImage}
-          alt="youtube link"
-          src={youtubewhite}
+          alt="medium link"
+          src={mediumwhite}
           _hover={{ opacity: 0.8 }}
           h={6}
           w={8}

@@ -12,7 +12,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import redgit from "../../assets/red_github_icon.png";
 import redtwit from "../../assets/red_twitter_icon.png";
 import redisc from "../../assets/red_discord_icon.png";
-import redyou from "../../assets/red_youtube_icon.png";
+import redmed from "../../assets/red_medium_icon.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Social = () => {
@@ -47,10 +47,10 @@ const Social = () => {
             link={"https://discord.gg/5jRHUYnsrM"}
           />
           <SocialBoxAndImage
-            heading={"YouTube"}
-            content={"Check out our latest videos and tutorials on YouTube."}
-            image={redyou}
-            link={"https://www.youtube.com/@Rakeoff"}
+            heading={"Medium"}
+            content={"Browse and enjoy our curated blog content on Medium."}
+            image={redmed}
+            link={"https://medium.com/@crew_7288"}
           />
           <SocialBoxAndImage
             heading={"GitHub"}
