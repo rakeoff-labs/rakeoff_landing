@@ -16,4 +16,6 @@ src/declarations/
 # frontend code
 node_modules/
 dist/
+# configs
 .env
+canister_ids.json
