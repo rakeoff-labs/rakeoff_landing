@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import {
   Banner,
+  Statistics,
   WhatDoWeOffer,
   ThreeSteps,
   MoreOnRakeoff,
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <Box>
       <Banner />
+      <Statistics />
       <WhatDoWeOffer />
       <ThreeSteps />
       <MoreOnRakeoff />

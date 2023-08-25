@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+require("dotenv").config({ path: "./.env" });
 
 function initCanisterEnv() {
   let localCanisters, prodCanisters;
@@ -46,8 +47,6 @@ module.exports = {
   target: "web",
   mode: isDevelopment ? "development" : "production",
   entry: {
-    // The frontend.entrypoint points to the HTML file for this build, so we need
-    // to replace the extension to `.js`.
     index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".jsx"),
   },
   devtool: isDevelopment ? "source-map" : false,
@@ -74,20 +73,8 @@ module.exports = {
       { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
       { test: /\.(gif|svg|jpg|png|ico|jpeg)$/, loader: "file-loader" },
-      { test: /\.webp$/, loader: "file-loader" }, // Added rule for .webp files
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react'],
-          },
-        },
-      },
     ],
   },
-  
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),
@@ -106,9 +93,12 @@ module.exports = {
         {
           from: `src/${frontendDirectory}/src/.ic-assets.json*`,
           to: ".ic-assets.json5",
-          noErrorOnMissing: true
+          noErrorOnMissing: true,
         },
       ],
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
     }),
   ],
   // proxy /api to port 4943 during development.
