@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Box>
       <Banner />
-      <Statistics />
+      {/* <Statistics /> */}
       <WhatDoWeOffer />
       <ThreeSteps />
       <MoreOnRakeoff />

@@ -29,6 +29,7 @@ import {
   boxFontColor,
 } from "../colors";
 import Navbar from "./Navbar";
+import Statistics from "./Statistics";
 
 const Banner = () => {
   return (
@@ -42,7 +43,8 @@ const Banner = () => {
         <Navbar />
         <TitleAndDescription />
       </Box>
-      <SocialProof />
+      <Statistics />
+      {/* <SocialProof /> */}
     </Box>
   );
 };
