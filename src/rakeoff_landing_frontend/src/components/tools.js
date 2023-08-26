@@ -23,7 +23,7 @@ export const getApyEstimate = async (nnsClient) => {
 
     // Get the total reward pool
     const timeStats = await nnsClient.service.get_latest_reward_event();
-    const totalRewardPool = timeStats.latest_round_available_e8s_equivalent;
+    const totalRewardPool = timeStats.total_available_e8s_equivalent;
     
     // Calculate the rewards estimate for a day
     const dailyNeuronReward =
