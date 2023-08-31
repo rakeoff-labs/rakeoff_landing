@@ -48,7 +48,6 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.6.1",
-    "@dfinity/nns": "0.16.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "dotenv": "^16.0.3",

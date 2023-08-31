@@ -8,7 +8,7 @@ import {
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { startNNSClient, startStatisticsClient } from "../components/Client";
+import { startStatisticsClient } from "../components/Client";
 import { e8sToIcp, getApyEstimate, icpToDollars } from "../components/tools";
 import { motion } from "framer-motion";
 import {
@@ -46,13 +46,10 @@ const Statistics = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   const fetchStats = async () => {
-    const [statisticsClient, nnsClient] = await Promise.all([
-      startStatisticsClient(),
-      startNNSClient(),
-    ]);
+    const statisticsClient = await startStatisticsClient();
 
     const [apy, stats] = await Promise.all([
-      getApyEstimate(nnsClient),
+      getApyEstimate(),
       statisticsClient.get_rakeoff_stats(),
     ]);
 

@@ -3,29 +3,30 @@ export function e8sToIcp(x) {
   return x / Math.pow(10, 8);
 }
 
-export const getApyEstimate = async (nnsClient) => {
+export const getApyEstimate = async () => {
   const votingPower = 200000000; // indicates that it's the max delay (2x stake amount)
   const stakeAmount = 100000000;
 
   try {
-    // Retrieve network metrics
-    const response = await fetch(
-      "https://ic-api.internetcomputer.org/api/v3/metrics/governance-voting-power-total"
-    ).then((x) => x.json());
-
-    const totalNetworkVotingPower = e8sToIcp(
-      Number(response.governance_voting_power_total[0][1])
-    );
+    // Retrieve network metrics and total reward pool
+    const [response1, response2] = await Promise.all([
+      await fetch(
+        "https://ic-api.internetcomputer.org/api/v3/metrics/governance-voting-power-total"
+      ).then((x) => x.json()),
+      await fetch(
+        "https://ic-api.internetcomputer.org/api/v3/metrics/latest-reward-event-total-available"
+      ).then((x) => x.json()),
+    ]);
 
     // Calculate the voting power percentage
+    const totalNetworkVotingPower = e8sToIcp(
+      Number(response1.governance_voting_power_total[0][1])
+    );
     const myPercent =
       (e8sToIcp(Number(votingPower)) / totalNetworkVotingPower) * 100;
 
-    // Get the total reward pool
-    const timeStats = await nnsClient.service.get_latest_reward_event();
-    const totalRewardPool = timeStats.total_available_e8s_equivalent;
-    
     // Calculate the rewards estimate for a day
+    const totalRewardPool = response2.latest_reward_event_total_available[0][1];
     const dailyNeuronReward =
       (e8sToIcp(Number(totalRewardPool)) * myPercent) / 100;
 
