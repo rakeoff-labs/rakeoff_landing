@@ -8,6 +8,7 @@ import {
   MoreOnRakeoff,
   JoinTheCommunity,
   Footer,
+  WhyStakeWithUs,
 } from "./sections";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Banner />
       {/* <Statistics /> */}
       <WhatDoWeOffer />
+      <WhyStakeWithUs />
       <ThreeSteps />
       <MoreOnRakeoff />
       <JoinTheCommunity />
