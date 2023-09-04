@@ -5,42 +5,42 @@ import {
   Container,
   Flex,
   Heading,
-  Icon,
+  Image,
   Stack,
   Text,
   useColorModeValue,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import { PhoneIcon } from "@chakra-ui/icons";
+import { boxBorderColor, boxBackgroundColor } from "../colors";
+import safe from "../../assets/safe.svg";
+import roman_numeral from "../../assets/roman_numeral.svg";
+import prize_pool from "../../assets/prize_pool.svg";
+import ckBtc from "../../assets/ckBtc.svg";
+import APY from "../../assets/APY.svg";
 
-const Card = ({ heading, description, icon }) => {
+const Card = ({ heading, description, image }) => {
   return (
     <Box
-      maxW={{ base: "full", md: "275px" }}
-      w={"full"}
+      w="100%"
       borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      p={5}
+      borderRadius="3xl"
+      border={boxBorderColor}
+      p={2}
+      bg={boxBackgroundColor}
     >
-      <Stack align={"start"} spacing={2}>
-        <Flex
-          w={16}
-          h={16}
-          align={"center"}
-          justify={"center"}
-          color={"white"}
-          rounded={"full"}
-          bg={useColorModeValue("gray.100", "gray.700")}
-        >
-          {icon}
+      <Stack align={"start"} spacing={4}>
+        <Flex align={"center"} justify={"center"}>
+          <Image src={image} alt={heading} w={"160px"} h={"150px"} />
         </Flex>
-        <Box mt={2}>
-          <Heading size="md">{heading}</Heading>
-          <Text mt={1} fontSize={"sm"}>
+        <Box mt={4}>
+          <Heading size="md" p={2}>
+            {heading}
+          </Heading>
+          <Text mt={1} p={2} fontSize={"sm"}>
             {description}
           </Text>
         </Box>
-        <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+        <Button variant={"link"} colorScheme={"blue"} p={2} size={"sm"}>
           Learn more
         </Button>
       </Stack>
@@ -50,55 +50,55 @@ const Card = ({ heading, description, icon }) => {
 
 export default function WhyStakeWithUs() {
   return (
-    <Box p={4}>
-      <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-        <Heading fontSize={{ base: "2xl", sm: "4xl" }} fontWeight={"bold"}>
-          Short heading
+    <Box p={8}>
+      <Stack textAlign={"center"}>
+        <Heading
+          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+          bgClip="text"
+          size="xl"
+        >
+          Why stake with us?
         </Heading>
-        <Text color={"gray.600"} fontSize={{ base: "sm", sm: "lg" }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          obcaecati ut cupiditate pariatur, dignissimos, placeat amet officiis.
-        </Text>
       </Stack>
 
-      <Container maxW={"5xl"} mt={12}>
-        <Flex flexWrap="wrap" gridGap={6} justify="center">
+      <Container maxW={"7xl"} p={0} mt={4}>
+        <SimpleGrid columns={[1, 1, 3]} spacing={4}>
           <Card
-            heading={"Heading"}
-            icon={<Icon as={PhoneIcon} w={10} h={10} />}
+            heading={"Simplified staking experience"}
+            image={safe}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
           />
           <Card
-            heading={"Heading"}
-            icon={<Icon as={PhoneIcon} w={10} h={10} />}
+            heading={"No-loss prize pool"}
+            image={prize_pool}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
           />
           <Card
-            heading={"Heading"}
-            icon={<Icon as={PhoneIcon} w={10} h={10} />}
+            heading={"Earn ckBTC"}
+            image={ckBtc}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
           />
           <Card
-            heading={"Heading"}
-            icon={<Icon as={PhoneIcon} w={10} h={10} />}
+            heading={"Real-time market prices"}
+            image={APY}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
           />
           <Card
-            heading={"Heading"}
-            icon={<Icon as={PhoneIcon} w={10} h={10} />}
+            heading={"Staked ICP achievement bonuses"}
+            image={roman_numeral}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
           />
-        </Flex>
+        </SimpleGrid>
       </Container>
     </Box>
   );

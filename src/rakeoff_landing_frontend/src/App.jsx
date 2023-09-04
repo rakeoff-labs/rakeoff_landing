@@ -16,7 +16,7 @@ const App = () => {
     <Box>
       <Banner />
       {/* <Statistics /> */}
-      <WhatDoWeOffer />
+      {/* <WhatDoWeOffer /> */}
       <WhyStakeWithUs />
       <ThreeSteps />
       <MoreOnRakeoff />
