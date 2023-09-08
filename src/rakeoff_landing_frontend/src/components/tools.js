@@ -53,6 +53,8 @@ export const icpToDollars = async (e8sIcp) => {
     let formatCurrency = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
+      minimumFractionDigits: 0, // No decimals
+      maximumFractionDigits: 0, // No decimals
     });
 
     return formatCurrency.format(price * e8sToIcp(e8sIcp));
