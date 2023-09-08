@@ -53,7 +53,7 @@ const Statistics = () => {
       statisticsClient.get_rakeoff_stats(),
     ]);
 
-    setDollarPrizes(await icpToDollars(stats.total_icp_rewards));
+    setDollarPrizes(await icpToDollars(Number(stats.total_icp_rewarded)));
     setApyEstimate(Math.ceil(apy * 10) / 10);
     setStakerStats(stats);
     setLoaded(true);
