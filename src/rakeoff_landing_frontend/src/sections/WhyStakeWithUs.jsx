@@ -14,7 +14,7 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { boxBorderColor, boxBackgroundColor } from "../colors";
+import { boxBorderColor, boxBackgroundColor, boxFontColor } from "../colors";
 import simplified from "../../assets/simplified.svg";
 import chart_up from "../../assets/chart_up.svg";
 import trophy from "../../assets/trophy.svg";
@@ -61,10 +61,10 @@ const Card = ({ heading, description, image, setFlex }) => {
       </Flex>
       <Stack align={"start"} spacing={6}>
         <Box>
-          <Heading size="md" mt={-3} ml={-1} p={3}>
+          <Heading size="lg" mt={-3} ml={-1} p={3}>
             {heading}
           </Heading>
-          <Text mt={1} p={2} m={-2} ml={-0.5} fontSize={"sm"}>
+          <Text mt={1} p={2} m={-2} color={boxFontColor} ml={-0.5}>
             {description}
           </Text>
         </Box>
@@ -75,7 +75,7 @@ const Card = ({ heading, description, image, setFlex }) => {
 
 export default function WhyStakeWithUs() {
   return (
-    <Container maxW={"7xl"} p={0} mt={{ base: 12, md: "5rem" }}>
+    <Container maxW={"7xl"} p={0} mt={{ base: 6, md: 8 }}>
       <Stack mb={5} textAlign={"center"}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"

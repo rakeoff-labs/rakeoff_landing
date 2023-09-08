@@ -10,6 +10,7 @@ import {
   Footer,
   WhyStakeWithUs,
 } from "./sections";
+import SocialProof from "./sections/SocialProof";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Banner />
       {/* <Statistics /> */}
       {/* <WhatDoWeOffer /> */}
+      <SocialProof />
       <WhyStakeWithUs />
       <ThreeSteps />
       <MoreOnRakeoff />

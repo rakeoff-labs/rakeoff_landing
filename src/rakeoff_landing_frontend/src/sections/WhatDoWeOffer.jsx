@@ -26,6 +26,7 @@ const BoxAndImage = ({ image, heading, content }) => {
     >
       <Image src={image} alt={heading} h={{ base: 150, md: 150, lg: 200 }} />
       <Heading
+        mb={-4}
         size={"lg"}
         noOfLines={1}
         textAlign="center"
