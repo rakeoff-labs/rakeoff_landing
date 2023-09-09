@@ -58,9 +58,7 @@ const DesktopDisplay = () => {
       <SimpleGrid align="end" columns={5} w="50%">
         <SocialProofBox
           image={icp}
-          link={
-            "https://medium.com/encode-club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
-          }
+          link={"https://internetcomputer.org/ecosystem"}
         />
 
         <SocialProofBox
@@ -74,10 +72,7 @@ const DesktopDisplay = () => {
           image={motok}
           link={"https://internetcomputer.org/docs/current/motoko/main/motoko"}
         />
-        <SocialProofBox
-          image={dfi}
-          link={"https://internetcomputer.org/docs/current/motoko/main/motoko"}
-        />
+        <SocialProofBox image={dfi} link={"https://dfinity.org/grants"} />
         <Podcast />
       </SimpleGrid>
     </Container>
