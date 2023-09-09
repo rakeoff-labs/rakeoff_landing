@@ -28,12 +28,10 @@ const SocialProof = () => {
 const MobileDisplay = () => {
   return (
     <Container maxW="7xl" mt={{ base: 6, md: 3 }} p={2}>
-      <SimpleGrid columns={2} w="100%">
+      <SimpleGrid columns={2} align="end" w="100%">
         <SocialProofBox
           image={icp}
-          link={
-            "https://medium.com/encode-club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
-          }
+          link={"https://internetcomputer.org/ecosystem"}
         />
 
         <SocialProofBox
@@ -47,10 +45,7 @@ const MobileDisplay = () => {
           image={motok}
           link={"https://internetcomputer.org/docs/current/motoko/main/motoko"}
         />
-        <SocialProofBox
-          image={dfi}
-          link={"https://internetcomputer.org/docs/current/motoko/main/motoko"}
-        />
+        <SocialProofBox image={dfi} link={"https://dfinity.org/grants"} />
         <Podcast />
       </SimpleGrid>
     </Container>
@@ -60,7 +55,7 @@ const MobileDisplay = () => {
 const DesktopDisplay = () => {
   return (
     <Container maxW="7xl" mt={{ base: 6, md: 1 }} p={0}>
-      <SimpleGrid columns={5} w="50%">
+      <SimpleGrid align="end" columns={5} w="50%">
         <SocialProofBox
           image={icp}
           link={
