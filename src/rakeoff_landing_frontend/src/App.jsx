@@ -2,27 +2,25 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import {
   Banner,
-  Statistics,
-  WhatDoWeOffer,
   ThreeSteps,
   MoreOnRakeoff,
   JoinTheCommunity,
   Footer,
   WhyStakeWithUs,
+  DropDown,
+  SocialProof,
 } from "./sections";
-import SocialProof from "./sections/SocialProof";
 
 const App = () => {
   return (
     <Box>
       <Banner />
-      {/* <Statistics /> */}
-      {/* <WhatDoWeOffer /> */}
-      <SocialProof />
-      <WhyStakeWithUs />
+      {/* <WhyStakeWithUs /> */}
+      <DropDown />
       <ThreeSteps />
       <MoreOnRakeoff />
       <JoinTheCommunity />
+      <SocialProof />
       <Footer />
     </Box>
   );

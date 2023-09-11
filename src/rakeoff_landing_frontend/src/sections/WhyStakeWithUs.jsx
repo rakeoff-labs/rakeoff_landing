@@ -1,18 +1,13 @@
 import React from "react";
 import {
   Box,
-  Button,
   Container,
   Flex,
   Heading,
   Image,
   Stack,
   Text,
-  useColorModeValue,
   SimpleGrid,
-  Center,
-  Wrap,
-  WrapItem,
 } from "@chakra-ui/react";
 import { boxBorderColor, boxBackgroundColor, boxFontColor } from "../colors";
 import simplified from "../../assets/simplified.svg";
@@ -22,7 +17,7 @@ import globe from "../../assets/globe.svg";
 import pie_chart from "../../assets/pie_chart.svg";
 import coil from "../../assets/coil.svg";
 
-const Card = ({ heading, description, image, setFlex }) => {
+const Card = ({ heading, image, setFlex }) => {
   return (
     <Box
       // maxW={{ base: "full", md: "275px" }}
@@ -42,8 +37,9 @@ const Card = ({ heading, description, image, setFlex }) => {
         rounded={"full"}
         color={"white"}
         bgGradient="linear(to-t, #6528c8, #a25fc2)"
-        w={"90px"}
-        h={"90px"}
+        // w={"90px"}
+        // h={"90px"}
+        h={{ base: 50, md: 150, lg: 200 }}
         mb={4}
         p={2}
         justify="center"
@@ -64,9 +60,9 @@ const Card = ({ heading, description, image, setFlex }) => {
           <Heading size="lg" mt={-3} ml={-1} p={3}>
             {heading}
           </Heading>
-          <Text mt={1} p={2} m={-2} color={boxFontColor} ml={-0.5}>
+          {/* <Text mt={1} p={2} m={-2} color={boxFontColor} ml={-0.5}>
             {description}
-          </Text>
+          </Text> */}
         </Box>
       </Stack>
     </Box>
@@ -94,44 +90,44 @@ export default function WhyStakeWithUs() {
         <Card
           heading={"Simplified staking experience"}
           image={simplified}
-          description={
-            "A simplified and streamlined way to stake your ICP tokens and earn ICP staking rewards."
-          }
+          // description={
+          //   // "A simplified and streamlined way to stake your ICP tokens and earn ICP staking rewards."
+          // }
         />
         <Card
           heading={"No-loss prize pool"}
           image={trophy}
-          description={
-            "The option to disburse your ICP staking rewards into the no-loss prize pool for a chance to win big."
-          }
+          // description={
+          //   "The option to disburse your ICP staking rewards into the no-loss prize pool for a chance to win big."
+          // }
         />
         <Card
           heading={"Earn ck Crypto"}
           image={globe}
-          description={
-            "The option to disburse your ICP staking rewards directly as ckBTC via our in-built smart contract swap."
-          }
+          // description={
+          //   "The option to disburse your ICP staking rewards directly as ckBTC via our in-built smart contract swap."
+          // }
         />
         <Card
           heading={"Asset monitoring"}
           image={pie_chart}
-          description={
-            "Your dashboard for tracking asset performance, market prices, and estimating your APY, all in one place."
-          }
+          // description={
+          //   "Your dashboard for tracking asset performance, market prices, and estimating your APY, all in one place."
+          // }
         />
         <Card
           heading={"Staked ICP achievement bonuses"}
           image={chart_up}
-          description={
-            "Unlock extra ICP bonuses by achieving staking milestones with Rakeoff."
-          }
+          // description={
+          //   "Unlock extra ICP bonuses by achieving staking milestones with Rakeoff."
+          // }
         />
         <Card
           heading={"Secured transactions"}
           image={coil}
-          description={
-            "Transactions are safeguarded by the Motoko smart contracts, ensuring your assets are secure at all times."
-          }
+          // description={
+          //   "Transactions are safeguarded by the Motoko smart contracts, ensuring your assets are secure at all times."
+          // }
         />
       </SimpleGrid>
     </Container>
