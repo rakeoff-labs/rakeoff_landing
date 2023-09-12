@@ -7,6 +7,5 @@ export { default as ThreeSteps } from "./ThreeSteps";
 export { default as MoreOnRakeoff } from "./MoreOnRakeoff";
 export { default as JoinTheCommunity } from "./JoinTheCommunity";
 export { default as Statistics } from "./Statistics";
-export { default as WhyStakeWithUs } from "./WhyStakeWithUs";
 export { default as SocialProof } from "./SocialProof";
-export { default as DropDown } from "./Dropdown";
+export { default as RakeoffStakingFeatures } from "./RakeoffStakingFeatures";

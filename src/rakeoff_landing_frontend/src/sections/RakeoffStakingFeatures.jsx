@@ -23,7 +23,7 @@ import { boxBackgroundColor, boxFontColor } from "../colors";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export default function DropDown() {
+export default function RakeoffStakingFeatures() {
   return (
     <Container maxW="7xl" mt={{ base: 6, md: "5rem" }} p={0}>
       <SimpleGrid columns={[1, 1, 2]} mx={{ base: 3, md: 3, lg: 0 }}>

@@ -6,8 +6,7 @@ import {
   MoreOnRakeoff,
   JoinTheCommunity,
   Footer,
-  WhyStakeWithUs,
-  DropDown,
+  RakeoffStakingFeatures,
   SocialProof,
 } from "./sections";
 
@@ -15,8 +14,7 @@ const App = () => {
   return (
     <Box>
       <Banner />
-      {/* <WhyStakeWithUs /> */}
-      <DropDown />
+      <RakeoffStakingFeatures />
       <ThreeSteps />
       <MoreOnRakeoff />
       <JoinTheCommunity />
