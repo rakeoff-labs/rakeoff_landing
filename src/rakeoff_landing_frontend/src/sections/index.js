@@ -9,3 +9,4 @@ export { default as JoinTheCommunity } from "./JoinTheCommunity";
 export { default as Statistics } from "./Statistics";
 export { default as SocialProof } from "./SocialProof";
 export { default as RakeoffStakingFeatures } from "./RakeoffStakingFeatures";
+export { default as PromoVideo } from "./PromoVideo";
