@@ -6,10 +6,6 @@ import {
   Box,
   Heading,
   Text,
-  Image,
-  Icon,
-  IconButton,
-  createIcon,
   useColorModeValue,
   AspectRatio,
 } from "@chakra-ui/react";
