@@ -14,6 +14,7 @@ import {
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import RakeoffRocket from "../../assets/rakeoff_rocket.png";
+import { RakeoffRed, boxBackgroundColor } from "../colors";
 
 const NewsletterSubscribe = () => {
   const toast = useToast();
@@ -66,7 +67,7 @@ const NewsletterSubscribe = () => {
             mb={4}
             mr={{ base: 0, md: 2 }}
           >
-            <Heading as="h2" size="lg" mb={4}>
+            <Heading size="lg" mb={4}>
               Subscribe to our Newsletter
             </Heading>
             <Stack
@@ -125,30 +126,31 @@ const NewsletterSubscribe = () => {
     "https://rakeoff.us21.list-manage.com/subscribe/post?u=0e1cb905f7a5cc73402e1489b&amp;id=b7a0216cc9&amp;f_id=00be35e7f0";
 
   return (
-      <Box
-        bgGradient="linear(to-r, #FF0000, #000000)"
-        textAlign="center"
-        color="white"
-        borderRadius="3xl"
-        position="relative"
-        px={0}
-        py={8}
-        w="100%"
-        mx={{ base: 3, md: 3, lg: 0 }}
-      >
-        <Container maxW="container.md">
-          <MailchimpSubscribe
-            url={url}
-            render={({ subscribe, status, message }) => (
-              <CustomForm
-                subscribe={subscribe}
-                status={status}
-                message={message}
-              />
-            )}
-          />
-        </Container>
-      </Box>
+    <Box
+      bgGradient={`linear(to-br, ${boxBackgroundColor}, purple.500, ${RakeoffRed})`}
+      bgSize="150% 150%"
+      textAlign="center"
+      color="white"
+      borderRadius="3xl"
+      position="relative"
+      px={0}
+      py={8}
+      w="100%"
+      mx={{ base: 3, md: 3, lg: 0 }}
+    >
+      <Container maxW="container.md">
+        <MailchimpSubscribe
+          url={url}
+          render={({ subscribe, status, message }) => (
+            <CustomForm
+              subscribe={subscribe}
+              status={status}
+              message={message}
+            />
+          )}
+        />
+      </Container>
+    </Box>
   );
 };
 

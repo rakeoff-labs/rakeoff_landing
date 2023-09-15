@@ -8,19 +8,17 @@ import {
   Footer,
   RakeoffStakingFeatures,
   SocialProof,
-  PromoVideo,
 } from "./sections";
 
 const App = () => {
   return (
     <Box>
       <Banner />
-      <PromoVideo />
       <RakeoffStakingFeatures />
       <ThreeSteps />
       <MoreOnRakeoff />
+      {/* <SocialProof /> */}
       <JoinTheCommunity />
-      <SocialProof />
       <Footer />
     </Box>
   );

@@ -27,7 +27,7 @@ const MoreOnRakeoff = () => {
       <Center>
         <SimpleGrid
           columns={[1, 1, 2]}
-          spacing={8}
+          spacing={{ base: 3, md: 8 }}
           mx={{ base: 3, md: 3, lg: 0 }}
           w="100%"
           templateAreas={[
@@ -65,7 +65,8 @@ const MoreOnRakeoff = () => {
                   <ExternalLinkIcon color="white" mb={1} />
                 </Heading>
                 <Text textAlign="center" my={5} color={boxFontColor}>
-                  Guides, video tutorials, smart contract documentation and more.
+                  Guides, video tutorials, smart contract documentation and
+                  more.
                 </Text>
               </Box>
             </a>
@@ -76,9 +77,7 @@ const MoreOnRakeoff = () => {
               link={
                 "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/staking-on-rakeoff"
               }
-              info={
-                "Staking ICP in the Rakeoff dApp."
-              }
+              info={"Staking ICP in the Rakeoff dApp."}
             />
           </Box>
           <Box gridArea="HowDoIEarnRewards">
@@ -87,9 +86,7 @@ const MoreOnRakeoff = () => {
               link={
                 "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/the-no-loss-prize-pool"
               }
-              info={
-                "How to use the Rakeoff no-loss prize pool."
-              }
+              info={"How to use the Rakeoff no-loss prize pool."}
             />
           </Box>
           <Box gridArea="ckbtcIntegration">
@@ -98,9 +95,7 @@ const MoreOnRakeoff = () => {
               link={
                 "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/earning-ckbtc"
               }
-              info={
-                "How to earn ckBTC in the Rakeoff dApp."
-              }
+              info={"How to earn ckBTC in the Rakeoff dApp."}
             />
           </Box>
         </SimpleGrid>

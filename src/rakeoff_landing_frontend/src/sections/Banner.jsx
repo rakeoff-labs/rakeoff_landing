@@ -11,17 +11,12 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
-
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
 import mediumwhite from "../../assets/medium_white.png";
 import screen from "../../assets/Rakeoff_Screen.png";
-
-import {
-  RakeoffRed,
-  boxBackgroundColor,
-} from "../colors";
+import { RakeoffRed, boxBackgroundColor } from "../colors";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
 
@@ -129,4 +124,3 @@ const SocialButtonList = () => {
     </HStack>
   );
 };
-

@@ -1,98 +1,87 @@
 import React from "react";
 import {
-  Box,
   Heading,
   SimpleGrid,
   Image,
   Text,
-  Center,
   Container,
+  Flex,
+  Center,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import redgit from "../../assets/red_github_icon.png";
-import redtwit from "../../assets/red_twitter_icon.png";
-import redisc from "../../assets/red_discord_icon.png";
-import redmed from "../../assets/red_medium_icon.png";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import { boxFontColor } from "../colors";
+import githubwhite from "../../assets/github_white.png";
+import twitterwhite from "../../assets/twitter_white.png";
+import discordwhite from "../../assets/discord_white.png";
+import mediumwhite from "../../assets/medium_white.png";
 
-const Social = () => {
+const JoinTheCommunity = () => {
   return (
-    <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>
+    <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0} centerContent>
       <Center mb={5}>
         <Heading
           bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
           bgClip="text"
           size="xl"
         >
-          Join the community
+          Join our community
         </Heading>
       </Center>
-
-      <Center>
-        <SimpleGrid
-          columns={[1, 2, 4]}
-          spacing={8}
-          mx={{ base: 3, md: 3, lg: 0 }}
-        >
-          <SocialBoxAndImage
-            heading={"Twitter"}
-            content={"Keep up to date with us on Twitter @rakeoff_app."}
-            image={redtwit}
-            link={"https://twitter.com/rakeoff_app"}
-          />
-          <SocialBoxAndImage
-            heading={"Discord"}
-            content={"Chat to the devs, we'd love to hear your opinions."}
-            image={redisc}
-            link={"https://discord.gg/5jRHUYnsrM"}
-          />
-          <SocialBoxAndImage
-            heading={"Medium"}
-            content={"Browse and enjoy our curated blog content on Medium."}
-            image={redmed}
-            link={"https://medium.com/@crew_7288"}
-          />
-          <SocialBoxAndImage
-            heading={"GitHub"}
-            content={"Check out our code or give us a star on Github."}
-            image={redgit}
-            link={"https://github.com/rakeoff-labs"}
-          />
-        </SimpleGrid>
-      </Center>
+      <SimpleGrid columns={[2, null, 4]} gap={8} w={["80%", null, "60%"]} align="center">
+        <SocialLink
+          imageSrc={twitterwhite}
+          title={"X (Twitter)"}
+          description={"Keep up to date on X."}
+          link={"https://twitter.com/rakeoff_app"}
+        />
+        <SocialLink
+          imageSrc={discordwhite}
+          title={"Discord"}
+          description={"Chat to the devs."}
+          link={"https://discord.gg/5jRHUYnsrM"}
+        />
+        <SocialLink
+          imageSrc={mediumwhite}
+          title={"Medium"}
+          description={"Browse our blog content."}
+          link={"https://medium.com/@crew_7288"}
+        />
+        <SocialLink
+          imageSrc={githubwhite}
+          title={"GitHub"}
+          description={"Check out our code."}
+          link={"https://github.com/rakeoff-labs"}
+        />
+      </SimpleGrid>
     </Container>
   );
 };
 
-export default Social;
+export default JoinTheCommunity;
 
-const SocialBoxAndImage = ({ heading, image, link, content }) => {
+const SocialLink = ({ imageSrc, title, link }) => {
   return (
-    <a href={link} target="_blank">
-      <Box
-        bg={boxBackgroundColor}
-        border={boxBorderColor}
-        borderRadius="3xl"
-        justifyContent="start"
-        p={8}
-        transition="transform 0.3s"
-        _hover={{ transform: "translateY(-5px)" }}
-        cursor="pointer"
-      >
-        <Image
-          src={image}
-          alt={heading}
-          fit="contain"
-          h={{ base: 150, md: 150, lg: 200 }}
-          mx="auto"
-        />
-        <Heading size="lg" textAlign="center" color="white" mb={3}>
-          {heading} <ExternalLinkIcon color="white" mb={1} />
-        </Heading>
-        <Text textAlign="center" noOfLines={2} color={boxFontColor}>
-          {content}
+    <Flex align="center" justify="center">
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <Flex
+          p={5}
+          bgGradient="linear(to-br, #6528c8, #a25fc2)"
+          borderRadius="lg"
+          h={"80px"}
+          w={"85px"}
+          align="center"
+          justify="center"
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
+        >
+          <Image src={imageSrc} alt={title} h={"40px"} w={"100%"} />
+        </Flex>
+        <Text textAlign="center" noOfLines={1} color={boxFontColor} mt={3}>
+          {title} <ExternalLinkIcon mb={1} />
         </Text>
-      </Box>
-    </a>
+      </a>
+    </Flex>
   );
 };

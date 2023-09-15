@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
+  AccordionIcon,
   Flex,
   Image,
   Text,
@@ -11,141 +12,118 @@ import {
   Container,
   SimpleGrid,
   Button,
-  Box,
+  VStack,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import simplified from "../../assets/simplified.svg";
 import chart_up from "../../assets/chart_up.svg";
 import trophy from "../../assets/trophy.svg";
 import globe from "../../assets/globe.svg";
+import {
+  boxBackgroundColor,
+  boxBorderColor,
+  boxFontColor,
+  mainBackgroundColor,
+} from "../colors";
 
-import { boxBackgroundColor, boxFontColor } from "../colors";
-
-import { ChevronDownIcon } from "@chakra-ui/icons";
-
-export default function RakeoffStakingFeatures() {
+const RakeoffStakingFeatures = () => {
   return (
     <Container maxW="7xl" mt={{ base: 6, md: "5rem" }} p={0}>
-      <SimpleGrid columns={[1, 1, 2]} mx={{ base: 3, md: 3, lg: 0 }}>
-        <Box position="relative" align="start">
-          <Heading
-            bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-            bgClip="text"
-            size={{ base: "xl", md: "xg", lg: "3xl" }}
-            mb={5}
-            p={1}
-          >
-            Rakeoff staking
-            <br /> features
-          </Heading>
+      <SimpleGrid
+        columns={[1, 1, 2]}
+        mx={{ base: 3, md: 3, lg: 0 }}
+        bg={`linear-gradient(to top, ${boxBackgroundColor} 30%, ${mainBackgroundColor} 100%)`}
+        borderBottom={boxBorderColor}
+        borderRadius="3xl"
+        py={12}
+        px={8}
+      >
+        <Flex position="relative" align="start">
+          <VStack align="start" mb={8} gap={0}>
+            <Heading
+              bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
+              bgClip="text"
+              size={"xl"}
+              mb={6}
+              maxW="sm"
+            >
+              The benefits of Staking on Rakeoff
+            </Heading>
 
-          <Button
-            rightIcon={<ArrowForwardIcon />}
-            as="a"
-            href="https://docs.rakeoff.io/rakeoff/tutorials-and-guides"
-            target="_blank"
-            bg={boxBackgroundColor}
-            _hover={{
-              boxShadow: "0px 0px 10px 6px red",
-            }}
-            boxShadow="0px 0px 10px 3px red"
-            color="white"
-            justify="center"
-            p={4}
-            mb={6}
-          >
-            Learn more about our features
-          </Button>
-        </Box>
-        <Accordion allowMultiple width="100%" rounded="lg">
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              justifyContent="space-between"
-              p={4}
+            <Button
+              rightIcon={<ArrowForwardIcon />}
+              as="a"
+              href="https://app.rakeoff.io/"
+              target="_blank"
+              bg={boxBackgroundColor}
+              _hover={{
+                boxShadow: "0px 0px 10px 6px red",
+              }}
+              boxShadow="0px 0px 10px 3px red"
+              color="white"
             >
-              <AccordianProps
-                image={simplified}
-                heading={"Simplified staking"}
-              />
-
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color={boxFontColor}>
-                A simplified and streamlined way to stake your ICP tokens and
-                earn ICP staking rewards.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              justifyContent="space-between"
-              p={4}
-            >
-              <AccordianProps image={trophy} heading={"No-loss prize pool"} />
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color={boxFontColor}>
-                The option to disburse your ICP staking rewards into the no-loss
-                prize pool for a chance to win big.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              justifyContent="space-between"
-              p={4}
-            >
-              <AccordianProps image={globe} heading={"ckBTC integration"} />
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color={boxFontColor}>
-                The option to disburse your ICP staking rewards directly as
-                ckBTC via our in-built smart contract swap.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              justifyContent="space-between"
-              p={4}
-            >
-              <AccordianProps image={chart_up} heading={"Staked ICP bonuses"} />
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color={boxFontColor}>
-                Unlock extra ICP bonuses by achieving staking milestones with
-                Rakeoff.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
+              Launch dApp
+            </Button>
+          </VStack>
+        </Flex>
+        <Accordion defaultIndex={[0]} allowMultiple width="100%" rounded="lg">
+          <StakingFeature
+            image={simplified}
+            heading={"Simplified staking"}
+            description={"todo"}
+            isTop
+          />
+          <StakingFeature
+            image={trophy}
+            heading={"No-loss prize pool"}
+            description={"todo"}
+          />
+          <StakingFeature
+            image={globe}
+            heading={"ckBTC integration"}
+            description={"todo"}
+          />
+          <StakingFeature
+            image={chart_up}
+            heading={"Staked ICP bonuses"}
+            description={"todo"}
+            isBottom
+          />
         </Accordion>
       </SimpleGrid>
     </Container>
   );
-}
+};
+export default RakeoffStakingFeatures;
 
-const AccordianProps = ({ image, heading }) => {
+const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
   return (
-    <>
-      <Flex
-        rounded={"md"}
-        color={"white"}
-        bgGradient="linear(to-t, #6528c8, #a25fc2)"
-        justify="center"
-        align="center"
-      >
-        <Image src={image} h={{ base: 110, md: 150, lg: 120 }} m={-5} mt={-5} />
-      </Flex>
-
-      <Heading size={{ base: "lg", md: "lg", lg: "lg" }}>{heading}</Heading>
-    </>
+    <AccordionItem
+      borderTop={isTop ? "none" : "auto"}
+      borderBottom={isBottom ? "none" : "auto"}
+    >
+      <AccordionButton display="flex" justifyContent="space-between" p={4}>
+        <Flex
+          p={3}
+          bgGradient="linear(to-br, #6528c8, #a25fc2)"
+          borderRadius="lg"
+          h={"80px"}
+          w={"85px"}
+          align="center"
+          justify="center"
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
+        >
+          <Image src={image} alt={heading} h={"100%"} w={"100%"} />
+        </Flex>
+        <Heading size={{ base: "lg", md: "lg", lg: "lg" }}>{heading}</Heading>
+        <AccordionIcon />
+      </AccordionButton>
+      <AccordionPanel pb={4}>
+        <Text color={boxFontColor}>{description}</Text>
+      </AccordionPanel>
+    </AccordionItem>
   );
 };
