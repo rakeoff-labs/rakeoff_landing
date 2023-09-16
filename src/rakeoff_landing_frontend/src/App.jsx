@@ -15,9 +15,9 @@ const App = () => {
     <Box>
       <Banner />
       <RakeoffStakingFeatures />
+      <SocialProof />
       <ThreeSteps />
       <MoreOnRakeoff />
-      {/* <SocialProof /> */}
       <JoinTheCommunity />
       <Footer />
     </Box>

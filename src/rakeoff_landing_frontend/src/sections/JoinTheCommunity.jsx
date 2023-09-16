@@ -19,7 +19,7 @@ const JoinTheCommunity = () => {
   return (
     <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0} centerContent>
       <Center mb={8}>
-        <Heading size={{ base: "2xl", md: "3xl" }}>Join our community</Heading>
+        <Heading size={{ base: "2xl", md: "3xl" }}>Join our Community</Heading>
       </Center>
       <SimpleGrid columns={[2, null, 4]} gap={8} align="center">
         <SocialLink
@@ -68,11 +68,11 @@ const SocialLink = ({ imageSrc, title, link }) => {
           bgGradient="linear(to-br, #6528c8, #a25fc2)"
           borderRadius="lg"
           h={"80px"}
-          w={"85px"}
+          w={"95px"}
           align="center"
           justify="center"
         >
-          <Image src={imageSrc} alt={title} h={"40px"} w={"100%"} />
+          <Image src={imageSrc} alt={title} h={"100%"} w={"100%"} />
         </Flex>
         <Text textAlign="center" noOfLines={1} color={boxFontColor} mt={3}>
           {title} <ExternalLinkIcon mb={1} />

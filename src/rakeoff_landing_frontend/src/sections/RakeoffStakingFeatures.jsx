@@ -61,7 +61,7 @@ const RakeoffStakingFeatures = () => {
             </Button>
           </VStack>
         </Flex>
-        <Accordion defaultIndex={[0]} allowMultiple width="100%" rounded="lg">
+        <Accordion allowMultiple width="100%" rounded="lg">
           <StakingFeature
             image={simplified}
             heading={"Simplified staking"}
@@ -126,7 +126,7 @@ const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
         <Heading size={"lg"}>{heading}</Heading>
         <AccordionIcon />
       </AccordionButton>
-      <AccordionPanel pb={4}>
+      <AccordionPanel pb={6} pt={0} px={0}>
         <Text color={boxFontColor}>{description}</Text>
       </AccordionPanel>
     </AccordionItem>

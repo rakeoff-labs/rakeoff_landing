@@ -22,7 +22,7 @@ const ThreeSteps = () => {
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>
         <Heading size={{ base: "2xl", md: "3xl" }}>
-          Three simple steps
+          Three Simple Steps
         </Heading>
       </Center>
       <Stack
