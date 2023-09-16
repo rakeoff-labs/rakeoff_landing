@@ -18,16 +18,10 @@ import mediumwhite from "../../assets/medium_white.png";
 const JoinTheCommunity = () => {
   return (
     <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0} centerContent>
-      <Center mb={5}>
-        <Heading
-          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-          bgClip="text"
-          size="xl"
-        >
-          Join our community
-        </Heading>
+      <Center mb={8}>
+        <Heading size={{ base: "2xl", md: "3xl" }}>Join our community</Heading>
       </Center>
-      <SimpleGrid columns={[2, null, 4]} gap={8} w={["80%", null, "60%"]} align="center">
+      <SimpleGrid columns={[2, null, 4]} gap={8} align="center">
         <SocialLink
           imageSrc={twitterwhite}
           title={"X (Twitter)"}
@@ -61,7 +55,13 @@ export default JoinTheCommunity;
 
 const SocialLink = ({ imageSrc, title, link }) => {
   return (
-    <Flex align="center" justify="center">
+    <Flex
+      align="center"
+      justify="center"
+      transition="transform 0.3s"
+      _hover={{ transform: "translateY(-5px)" }}
+      cursor="pointer"
+    >
       <a href={link} target="_blank" rel="noopener noreferrer">
         <Flex
           p={5}
@@ -71,10 +71,6 @@ const SocialLink = ({ imageSrc, title, link }) => {
           w={"85px"}
           align="center"
           justify="center"
-          transition="all 0.3s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-          }}
         >
           <Image src={imageSrc} alt={title} h={"40px"} w={"100%"} />
         </Flex>
