@@ -38,16 +38,10 @@ const RakeoffStakingFeatures = () => {
         py={12}
         px={8}
       >
-        <Flex position="relative" align="start">
-          <VStack align="start" mb={8} gap={0}>
-            <Heading
-              bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-              bgClip="text"
-              size={"xl"}
-              mb={6}
-              maxW="sm"
-            >
-              The benefits of Staking on Rakeoff
+        <Flex justify="center" align="start">
+          <VStack align="start" mb={8} gap={8}>
+            <Heading size={{ base: "2xl", md: "3xl" }} maxW="md">
+              Unlock Rewards with Rakeoff
             </Heading>
 
             <Button
@@ -61,6 +55,7 @@ const RakeoffStakingFeatures = () => {
               }}
               boxShadow="0px 0px 10px 3px red"
               color="white"
+              size="lg"
             >
               Launch dApp
             </Button>
@@ -70,23 +65,31 @@ const RakeoffStakingFeatures = () => {
           <StakingFeature
             image={simplified}
             heading={"Simplified staking"}
-            description={"todo"}
+            description={
+              "Maximize your ICP governance rewards with our user-friendly staking interface. It's so simple, you can start earning with just a few clicks—no hassle, no confusion."
+            }
             isTop
           />
           <StakingFeature
             image={trophy}
             heading={"No-loss prize pool"}
-            description={"todo"}
+            description={
+              "Turn your staking rewards into winning opportunities with our unique no-loss prize pool. Enjoy the thrill of potentially winning big, all while your original stake remains untouched."
+            }
           />
           <StakingFeature
             image={globe}
             heading={"ckBTC integration"}
-            description={"todo"}
+            description={
+              "Diversify your crypto portfolio effortlessly. Convert your ICP staking rewards to ckBTC right within the app, thanks to our integrated smart contract-based swapping feature."
+            }
           />
           <StakingFeature
             image={chart_up}
             heading={"Staked ICP bonuses"}
-            description={"todo"}
+            description={
+              "Unlock exclusive badges and supercharge your earnings. Stake ICP on Rakeoff and climb the achievement tiers to automatically earn bonus ICP—added directly to your stake."
+            }
             isBottom
           />
         </Accordion>
@@ -102,7 +105,13 @@ const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
       borderTop={isTop ? "none" : "auto"}
       borderBottom={isBottom ? "none" : "auto"}
     >
-      <AccordionButton display="flex" justifyContent="space-between" p={4}>
+      <AccordionButton
+        display="flex"
+        justifyContent="space-between"
+        mx={0}
+        px={0}
+        py={6}
+      >
         <Flex
           p={3}
           bgGradient="linear(to-br, #6528c8, #a25fc2)"
@@ -111,14 +120,10 @@ const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
           w={"85px"}
           align="center"
           justify="center"
-          transition="all 0.3s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-          }}
         >
           <Image src={image} alt={heading} h={"100%"} w={"100%"} />
         </Flex>
-        <Heading size={{ base: "lg", md: "lg", lg: "lg" }}>{heading}</Heading>
+        <Heading size={"lg"}>{heading}</Heading>
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={4}>
