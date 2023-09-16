@@ -2,22 +2,22 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import {
   Banner,
-  Statistics,
-  WhatDoWeOffer,
   ThreeSteps,
   MoreOnRakeoff,
   JoinTheCommunity,
   Footer,
+  RakeoffStakingFeatures,
+  SocialProof,
 } from "./sections";
 
 const App = () => {
   return (
     <Box>
       <Banner />
-      {/* <Statistics /> */}
-      <WhatDoWeOffer />
+      <RakeoffStakingFeatures />
       <ThreeSteps />
       <MoreOnRakeoff />
+      {/* <SocialProof /> */}
       <JoinTheCommunity />
       <Footer />
     </Box>
