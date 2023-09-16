@@ -10,9 +10,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
-import identityIcon from "../../assets/identity_icon.png";
-import stakingSafe from "../../assets/staking_safe.png";
-import rewardsIcon from "../../assets/rewards_icon.png";
+import person from "../../assets/person.svg";
+import bank from "../../assets/bank.svg";
+import trophy from "../../assets/trophy.svg";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const ThreeSteps = () => {
@@ -21,12 +21,8 @@ const ThreeSteps = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={5}>
-        <Heading
-          bgGradient="linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%)"
-          bgClip="text"
-          size="xl"
-        >
-          Three simple steps...
+        <Heading size={{ base: "2xl", md: "3xl" }}>
+          Three simple steps
         </Heading>
       </Center>
       <Stack
@@ -42,8 +38,8 @@ const ThreeSteps = () => {
         align="center"
       >
         <StepBox
-          image={identityIcon}
-          text={"Create / connect your Internet Identity."}
+          image={person}
+          text={"1. Create / connect your Internet Identity."}
         />
         {isMobile ? (
           <ArrowDownIcon boxSize={10} color="white" />
@@ -51,18 +47,15 @@ const ThreeSteps = () => {
           <ArrowForwardIcon boxSize={10} color="white" />
         )}
         <StepBox
-          image={stakingSafe}
-          text={"Stake your ICP and wait for rewards."}
+          image={bank}
+          text={"2. Stake your ICP and wait for rewards."}
         />
         {isMobile ? (
           <ArrowDownIcon boxSize={10} color="white" />
         ) : (
           <ArrowForwardIcon boxSize={10} color="white" />
         )}
-        <StepBox
-          image={rewardsIcon}
-          text={"Choose from the disbursement options."}
-        />
+        <StepBox image={trophy} text={"3. Choose a disbursement option."} />
       </Stack>
     </Container>
   );

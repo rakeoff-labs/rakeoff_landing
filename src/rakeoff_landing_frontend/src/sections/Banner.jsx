@@ -50,10 +50,10 @@ const TitleAndDescription = () => {
         <Box mb={{ base: 0, md: 12 }} mt={{ base: 12, md: 0 }}>
           <Flex align="center" gap={3}>
             <Flex align="center">
-              <Heading color={RakeoffRed}>RAKE</Heading>
-              <Heading color="white">OFF</Heading>
+              <Heading color={RakeoffRed} size={{ base: "2xl", md: "3xl" }}>RAKE</Heading>
+              <Heading color="white" size={{ base: "2xl", md: "3xl" }}>OFF</Heading>
             </Flex>
-            <Heading color="white">dApp</Heading>
+            <Heading color="white" size={{ base: "2xl", md: "3xl" }}>dApp</Heading>
           </Flex>
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
             <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
