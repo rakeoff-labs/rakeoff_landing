@@ -77,7 +77,7 @@ const SocialProofBox = ({ image, link, description }) => {
       <a href={link} target="_blank" rel="noopener noreferrer">
         <VStack gap={3} style={imageStyles}>
           <Flex align="center">
-            <Image src={image} h={"50px"} w={"100%"} mx="auto" />
+            <Image src={image} h={"50px"} w={"100px"} mx="auto" />
           </Flex>
           <Text textAlign="center" fontSize={"sm"} color={boxFontColor}>
             {description} <ExternalLinkIcon color={boxFontColor} mb={1} />
