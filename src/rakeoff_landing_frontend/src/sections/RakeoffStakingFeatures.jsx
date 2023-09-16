@@ -126,7 +126,7 @@ const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
         <Heading size={"lg"} color="white">
           {heading}
         </Heading>
-        <AccordionIcon />
+        <AccordionIcon color="white" />
       </AccordionButton>
       <AccordionPanel pb={6} pt={0} px={0}>
         <Text color={boxFontColor}>{description}</Text>
