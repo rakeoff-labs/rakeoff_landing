@@ -15,7 +15,9 @@ const MoreOnRakeoff = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>
-        <Heading size={{ base: "2xl", md: "3xl" }}>More on Rakeoff</Heading>
+        <Heading size={{ base: "2xl", md: "3xl" }} color="white">
+          More on Rakeoff
+        </Heading>
       </Center>
 
       <Center>

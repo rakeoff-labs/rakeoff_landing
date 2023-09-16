@@ -40,7 +40,7 @@ const RakeoffStakingFeatures = () => {
       >
         <Flex justify="center" align="start">
           <VStack align="start" mb={8} gap={8}>
-            <Heading size={{ base: "2xl", md: "3xl" }} maxW="md">
+            <Heading color="white" size={{ base: "2xl", md: "3xl" }} maxW="md">
               Unlock Rewards with Rakeoff
             </Heading>
 
@@ -123,7 +123,9 @@ const StakingFeature = ({ image, heading, description, isTop, isBottom }) => {
         >
           <Image src={image} alt={heading} h={"100%"} w={"100%"} />
         </Flex>
-        <Heading size={"lg"}>{heading}</Heading>
+        <Heading size={"lg"} color="white">
+          {heading}
+        </Heading>
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={6} pt={0} px={0}>

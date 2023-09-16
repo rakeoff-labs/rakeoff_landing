@@ -19,7 +19,9 @@ const JoinTheCommunity = () => {
   return (
     <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0} centerContent>
       <Center mb={8}>
-        <Heading size={{ base: "2xl", md: "3xl" }}>Join our Community</Heading>
+        <Heading size={{ base: "2xl", md: "3xl" }} color="white">
+          Join our Community
+        </Heading>
       </Center>
       <SimpleGrid columns={[2, null, 4]} gap={8} align="center">
         <SocialLink
