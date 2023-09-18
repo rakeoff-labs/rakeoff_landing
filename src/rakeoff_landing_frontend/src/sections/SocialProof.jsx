@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Flex,
   VStack,
+  Box,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import icpBadge from "../../assets/internet_computer_badge.png";
@@ -76,9 +77,9 @@ const SocialProofBox = ({ image, link, description }) => {
     >
       <a href={link} target="_blank" rel="noopener noreferrer">
         <VStack gap={3} style={imageStyles}>
-          <Flex align="center">
-            <Image src={image} h={"60px"} w={"100px"} mx="auto" />
-          </Flex>
+          <Box align="center">
+            <Image src={image} h={"80px"} mx="auto" />
+          </Box>
           <Text textAlign="center" fontSize={"sm"} color={boxFontColor}>
             {description} <ExternalLinkIcon color={boxFontColor} mb={1} />
           </Text>

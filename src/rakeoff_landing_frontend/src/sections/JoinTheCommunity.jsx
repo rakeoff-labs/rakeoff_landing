@@ -70,7 +70,7 @@ const SocialLink = ({ imageSrc, title, link }) => {
           bgGradient="linear(to-br, #6528c8, #a25fc2)"
           borderRadius="lg"
           h={"80px"}
-          w={"95px"}
+          w={"85px"}
           align="center"
           justify="center"
         >
