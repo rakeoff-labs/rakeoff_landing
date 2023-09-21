@@ -8,6 +8,7 @@ import {
   Footer,
   RakeoffStakingFeatures,
   SocialProof,
+  PromoVideo,
 } from "./sections";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Banner />
       <RakeoffStakingFeatures />
       <SocialProof />
+      <PromoVideo />
       <ThreeSteps />
       <MoreOnRakeoff />
       <JoinTheCommunity />

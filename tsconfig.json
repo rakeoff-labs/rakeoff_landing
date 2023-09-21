@@ -1,10 +1,9 @@
 {
-    "compilerOptions": {
+  "compilerOptions": {
       "target": "es2018",
       "lib": ["ES2018", "DOM"],
-      "allowJs": true,         
-      "jsx": "react",           
-      
-    },
-    "include": ["src/**/*"],
+      "allowJs": true,
+      "jsx": "react"
+  },
+  "include": ["src/**/*"]
 }
