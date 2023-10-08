@@ -33,18 +33,19 @@ const SocialProof = () => {
           link={"https://internetcomputer.org/ecosystem?tag=DeFi"}
           description={"Officially recognized in the ICP Ecosystem"}
         />
+
         <SocialProofBox
           image={encodeBadge}
-          link={
-            "https://medium.com/encode-club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
-          }
+          link={"your_link_here"}
           description={"Encode x Dfinity Hackathon Winner"}
         />
+
         <SocialProofBox
           image={dfinityBadge}
           link={"https://dfinity.org/grants"}
           description={"Backed by the Dfinity Grants program"}
         />
+
         <SocialProofBox
           image={motokoBadge}
           link={"https://internetcomputer.org/docs/current/motoko/main/motoko"}
@@ -78,7 +79,14 @@ const SocialProofBox = ({ image, link, description }) => {
       <a href={link} target="_blank" rel="noopener noreferrer">
         <VStack gap={3} style={imageStyles}>
           <Box align="center">
-            <Image src={image} h={"80px"} mx="auto" />
+            <Image
+              src={image}
+              alt="SocialProofLogo"
+              w="auto"
+              h={"80px"}
+              objectFit="contain"
+              mx="auto"
+            />
           </Box>
           <Text textAlign="center" fontSize={"sm"} color={boxFontColor}>
             {description} <ExternalLinkIcon color={boxFontColor} mb={1} />

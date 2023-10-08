@@ -115,6 +115,7 @@ const NewsletterSubscribe = () => {
               width="100%"
               height="auto"
               maxH="300px"
+              w="auto"
             />
           </Box>
         </Flex>

@@ -66,7 +66,12 @@ export default ThreeSteps;
 const StepBox = ({ image, text }) => {
   return (
     <Box position="relative" align="center">
-      <Image src={image} alt={text} h={{ base: 150, md: 150, lg: 200 }} />
+      <Image
+        src={image}
+        alt={text}
+        w="auto"
+        h={{ base: 150, md: 150, lg: 200 }}
+      />
       <Text textAlign="center" mt={4} noOfLines={2} color={boxFontColor}>
         {text}
       </Text>

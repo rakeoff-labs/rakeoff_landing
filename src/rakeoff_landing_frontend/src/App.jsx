@@ -4,7 +4,6 @@ import {
   Banner,
   ThreeSteps,
   MoreOnRakeoff,
-  JoinTheCommunity,
   Footer,
   RakeoffStakingFeatures,
   SocialProof,
@@ -20,7 +19,7 @@ const App = () => {
       <PromoVideo />
       <ThreeSteps />
       <MoreOnRakeoff />
-      <JoinTheCommunity />
+
       <Footer />
     </Box>
   );

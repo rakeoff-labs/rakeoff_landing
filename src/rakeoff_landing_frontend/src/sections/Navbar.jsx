@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <Container maxW="7xl">
       <Flex h={20} alignItems={"center"}>
-        <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
+        <ChakraImage alt="rakeoff logo" w="auto" h={45} src={logowhite} />
         <Spacer />
         {isDesktop ? (
           <>
@@ -102,6 +102,7 @@ const MobileMenu = () => {
     <>
       <IconButton
         icon={<HamburgerIcon />}
+        aria-label="Open menu"
         onClick={onOpen}
         bg={boxBackgroundColor}
         _hover={{

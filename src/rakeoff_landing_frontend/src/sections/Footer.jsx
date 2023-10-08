@@ -7,6 +7,7 @@ import {
   Image as ChakraImage,
   Center,
   Flex,
+  Heading,
 } from "@chakra-ui/react";
 import logowhite from "../../assets/logo_name_white.png";
 import githubwhite from "../../assets/github_white.png";
@@ -18,7 +19,13 @@ import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
   return (
-    <Container maxW="7xl" mt={8} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+      <Center mb={8}>
+        <Heading size={{ base: "2xl", md: "3xl" }} color="white">
+          Join our Community
+        </Heading>
+      </Center>
+
       <Center mb={5}>
         <NewsletterSubscribe />
       </Center>
@@ -39,7 +46,13 @@ const Footer = () => {
           align={{ base: "center", md: "center" }}
         >
           <Flex align="center">
-            <ChakraImage alt="rakeoff logo" h={45} src={logowhite} />
+            <ChakraImage
+              alt="rakeoff logo"
+              w="auto"
+              h={45}
+              objectFit="contain"
+              src={logowhite}
+            />
             <Box ml={2} color="white" fontSize="md">
               crew@rakeoff.io
             </Box>
@@ -55,6 +68,7 @@ const Footer = () => {
               <Icon
                 as={ChakraImage}
                 alt="twitter link"
+                objectFit="contain"
                 src={twitterwhite}
                 _hover={{ opacity: 0.8 }}
                 w={6}
@@ -65,26 +79,34 @@ const Footer = () => {
               <Icon
                 as={ChakraImage}
                 alt="discord link"
+                objectFit="contain"
                 src={discordwhite}
                 w={8}
                 h={6}
                 _hover={{ opacity: 0.8 }}
               />
             </a>
-            <a href="https://medium.com/@crew_7288" target="_blank">
+            <a
+              href="https://medium.com/@crew_7288"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Icon
                 as={ChakraImage}
                 alt="medium link"
+                objectFit="contain"
                 src={mediumwhite}
                 _hover={{ opacity: 0.8 }}
                 h={6}
                 w={8}
               />
             </a>
+
             <a href="https://github.com/rakeoff-labs" target="_blank">
               <Icon
                 as={ChakraImage}
                 alt="github link"
+                objectFit="contain"
                 src={githubwhite}
                 _hover={{ opacity: 0.8 }}
                 w={6}

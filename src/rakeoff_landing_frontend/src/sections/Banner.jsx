@@ -50,10 +50,16 @@ const TitleAndDescription = () => {
         <Box mb={{ base: 0, md: 12 }} mt={{ base: 12, md: 0 }}>
           <Flex align="center" gap={3}>
             <Flex align="center">
-              <Heading color={RakeoffRed} size={{ base: "2xl", md: "3xl" }}>RAKE</Heading>
-              <Heading color="white" size={{ base: "2xl", md: "3xl" }}>OFF</Heading>
+              <Heading color={RakeoffRed} size={{ base: "2xl", md: "3xl" }}>
+                RAKE
+              </Heading>
+              <Heading color="white" size={{ base: "2xl", md: "3xl" }}>
+                OFF
+              </Heading>
             </Flex>
-            <Heading color="white" size={{ base: "2xl", md: "3xl" }}>dApp</Heading>
+            <Heading color="white" size={{ base: "2xl", md: "3xl" }}>
+              dApp
+            </Heading>
           </Flex>
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
             <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
@@ -69,6 +75,8 @@ const TitleAndDescription = () => {
             src={screen}
             alt="screenshot of app"
             h={500}
+            w={390}
+            objectFit="contain"
             mb={-5}
             mr={{ base: 0, md: 12 }}
           />
@@ -88,7 +96,8 @@ const SocialButtonList = () => {
           src={twitterwhite}
           _hover={{ opacity: 0.8 }}
           w={6}
-          h={6}
+          h="auto"
+          objectFit="contain"
         />
       </a>
       <a href="https://discord.gg/5jRHUYnsrM" target="_blank">
@@ -99,6 +108,7 @@ const SocialButtonList = () => {
           _hover={{ opacity: 0.8 }}
           w={8}
           h={6}
+          objectFit="contain"
         />
       </a>
       <a href="https://medium.com/@crew_7288" target="_blank">
@@ -109,6 +119,7 @@ const SocialButtonList = () => {
           _hover={{ opacity: 0.8 }}
           h={6}
           w={8}
+          objectFit="contain"
         />
       </a>
       <a href="https://github.com/rakeoff-labs" target="_blank">
@@ -119,6 +130,7 @@ const SocialButtonList = () => {
           _hover={{ opacity: 0.8 }}
           w={6}
           h={6}
+          objectFit="contain"
         />
       </a>
     </HStack>
