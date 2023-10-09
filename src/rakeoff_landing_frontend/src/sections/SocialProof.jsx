@@ -36,7 +36,9 @@ const SocialProof = () => {
 
         <SocialProofBox
           image={encodeBadge}
-          link={"your_link_here"}
+          link={
+            "https://www.blog.encode.club/internet-computer-buidl-bitcoin-hackathon-powered-by-encode-summary-and-winners-3ecb2daf6921"
+          }
           description={"Encode x Dfinity Hackathon Winner"}
         />
 
