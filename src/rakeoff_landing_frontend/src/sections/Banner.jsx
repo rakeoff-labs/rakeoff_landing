@@ -111,7 +111,7 @@ const SocialButtonList = () => {
           objectFit="contain"
         />
       </a>
-      <a href="https://medium.com/@crew_7288" target="_blank">
+      <a href="https://rakeoff.medium.com/" target="_blank">
         <Icon
           as={ChakraImage}
           alt="medium link"

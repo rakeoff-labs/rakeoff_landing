@@ -51,7 +51,7 @@ const Navbar = () => {
               <Text
                 fontSize="lg"
                 as="a"
-                href="https://medium.com/@crew_7288"
+                href="https://rakeoff.medium.com/"
                 target="_blank"
                 color={boxFontColor}
                 _hover={{ color: "white", cursor: "pointer" }}
@@ -132,7 +132,7 @@ const MobileMenu = () => {
               <Text
                 fontSize={28}
                 as="a"
-                href="https://medium.com/@crew_7288"
+                href="https://rakeoff.medium.com/"
                 target="_blank"
                 color={boxFontColor}
                 fontWeight={500}

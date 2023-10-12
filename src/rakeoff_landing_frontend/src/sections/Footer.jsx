@@ -87,7 +87,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://medium.com/@crew_7288"
+              href="https://rakeoff.medium.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
