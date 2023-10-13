@@ -9,7 +9,7 @@ import {
   Flex,
   Heading,
 } from "@chakra-ui/react";
-import logowhite from "../../assets/logo_name_white.png";
+import logowhitepurple from "../../assets/rakeoff_logo_name_white_purple.svg";
 import githubwhite from "../../assets/github_white.png";
 import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
@@ -49,9 +49,9 @@ const Footer = () => {
             <ChakraImage
               alt="rakeoff logo"
               w="auto"
-              h={45}
+              h={35}
               objectFit="contain"
-              src={logowhite}
+              src={logowhitepurple}
             />
             <Box ml={2} color="white" fontSize="md">
               crew@rakeoff.io

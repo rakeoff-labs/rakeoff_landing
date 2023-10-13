@@ -18,7 +18,7 @@ const PromoVideo = () => {
       >
         <iframe
           style={{ borderRadius: "15px" }}
-          src="https://www.youtube.com/embed/p2qNQdarSYQ?si=xwuCMt11xHhPhxGf"
+          src="https://www.youtube.com/embed/wac7H03rx_E?si=UzpuSdDcOzGK2CfK"
           title="Rakeoff Promo Video"
         ></iframe>
       </AspectRatio>

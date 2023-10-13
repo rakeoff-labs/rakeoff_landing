@@ -16,7 +16,7 @@ import twitterwhite from "../../assets/twitter_white.png";
 import discordwhite from "../../assets/discord_white.png";
 import mediumwhite from "../../assets/medium_white.png";
 import screen from "../../assets/Rakeoff_Screen.png";
-import { RakeoffRed, boxBackgroundColor } from "../colors";
+import { RakeoffGrey, RakeoffRed, boxBackgroundColor } from "../colors";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
 
@@ -50,10 +50,10 @@ const TitleAndDescription = () => {
         <Box mb={{ base: 0, md: 12 }} mt={{ base: 12, md: 0 }}>
           <Flex align="center" gap={3}>
             <Flex align="center">
-              <Heading color={RakeoffRed} size={{ base: "2xl", md: "3xl" }}>
+              <Heading color={"white"} size={{ base: "2xl", md: "3xl" }}>
                 RAKE
               </Heading>
-              <Heading color="white" size={{ base: "2xl", md: "3xl" }}>
+              <Heading color={RakeoffGrey} size={{ base: "2xl", md: "3xl" }}>
                 OFF
               </Heading>
             </Flex>

@@ -1,5 +1,5 @@
 import React from "react";
-import logowhite from "../../assets/logo_name_white.png";
+import logowhite from "../../assets/rakeoff_logo_white.svg";
 import {
   Container,
   Spacer,
@@ -25,14 +25,14 @@ import {
   ExternalLinkIcon,
   HamburgerIcon,
 } from "@chakra-ui/icons";
-import { boxBackgroundColor, boxFontColor } from "../colors";
+import { RakeoffPurpleHue, boxBackgroundColor, boxFontColor } from "../colors";
 
 const Navbar = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
   return (
     <Container maxW="7xl">
       <Flex h={20} alignItems={"center"}>
-        <ChakraImage alt="rakeoff logo" w="auto" h={45} src={logowhite} />
+        <ChakraImage alt="rakeoff logo" w="auto" h={35} src={logowhite} />
         <Spacer />
         {isDesktop ? (
           <>
@@ -78,9 +78,9 @@ const Navbar = () => {
               target="_blank"
               bg={boxBackgroundColor}
               _hover={{
-                boxShadow: "0px 0px 10px 6px red",
+                boxShadow: `0px 0px 10px 6px ${RakeoffPurpleHue}`,
               }}
-              boxShadow="0px 0px 10px 3px red"
+              boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
               color="white"
             >
               Launch dApp
@@ -106,9 +106,9 @@ const MobileMenu = () => {
         onClick={onOpen}
         bg={boxBackgroundColor}
         _hover={{
-          boxShadow: "0px 0px 10px 6px red",
+          boxShadow: `0px 0px 10px 6px ${RakeoffPurpleHue}`,
         }}
-        boxShadow="0px 0px 10px 3px red"
+        boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
         color="white"
       />
       <Drawer onClose={onClose} isOpen={isOpen}>
@@ -159,9 +159,9 @@ const MobileMenu = () => {
                 size="lg"
                 bg={boxBackgroundColor}
                 _hover={{
-                  boxShadow: "0px 0px 10px 6px red",
+                  boxShadow: `0px 0px 10px 6px ${RakeoffPurpleHue}`,
                 }}
-                boxShadow="0px 0px 10px 3px red"
+                boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
                 color="white"
                 w="100%"
               >

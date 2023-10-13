@@ -20,6 +20,7 @@ import chart_up from "../../assets/chart_up.svg";
 import trophy from "../../assets/trophy.svg";
 import globe from "../../assets/globe.svg";
 import {
+  RakeoffPurpleHue,
   boxBackgroundColor,
   boxBorderColor,
   boxFontColor,
@@ -51,9 +52,9 @@ const RakeoffStakingFeatures = () => {
               target="_blank"
               bg={boxBackgroundColor}
               _hover={{
-                boxShadow: "0px 0px 10px 6px red",
+                boxShadow: `0px 0px 10px 6px ${RakeoffPurpleHue}`,
               }}
-              boxShadow="0px 0px 10px 3px red"
+              boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
               color="white"
               size="lg"
             >
