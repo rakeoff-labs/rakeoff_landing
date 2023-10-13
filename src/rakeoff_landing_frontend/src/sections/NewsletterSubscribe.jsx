@@ -107,7 +107,7 @@ const NewsletterSubscribe = () => {
               </ChakraButton>
             </Stack>
           </Flex>
-          <Box flex="1" mt={{ base: 0, md: 0 }}>
+          {/* <Box flex="1" mt={{ base: 0, md: 0 }}>
             <Image
               src={RakeoffRocket}
               alt="Rakeoff"
@@ -117,7 +117,7 @@ const NewsletterSubscribe = () => {
               maxH="300px"
               w="auto"
             />
-          </Box>
+          </Box> */}
         </Flex>
       </form>
     );
