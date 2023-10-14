@@ -27,7 +27,7 @@ const SocialProof = () => {
         <SocialProofBox
           image={icpBadge}
           link={"https://internetcomputer.org/ecosystem?tag=DeFi"}
-          description={"Officially Recognized in the ICP Ecosystem"}
+          description={"Recognized in the ICP Showcase"}
         />
 
         <SocialProofBox
