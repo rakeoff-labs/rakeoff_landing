@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import RakeoffRocket from "../../assets/rakeoff_rocket.png";
+import emailImage from "../../assets/email_image.png";
 import { RakeoffRed, boxBackgroundColor } from "../colors";
 
 const NewsletterSubscribe = () => {
@@ -107,17 +107,17 @@ const NewsletterSubscribe = () => {
               </ChakraButton>
             </Stack>
           </Flex>
-          {/* <Box flex="1" mt={{ base: 0, md: 0 }}>
+          <Box flex="1" mt={{ base: 0, md: 0 }}>
             <Image
-              src={RakeoffRocket}
-              alt="Rakeoff"
+              src={emailImage}
+              alt="email image"
               objectFit="contain"
               width="100%"
               height="auto"
               maxH="300px"
               w="auto"
             />
-          </Box> */}
+          </Box>
         </Flex>
       </form>
     );

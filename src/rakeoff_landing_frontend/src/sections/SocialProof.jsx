@@ -16,10 +16,6 @@ import motokoBadge from "../../assets/motoko_badge.png";
 import podcastBadge from "../../assets/podcast_badge.png";
 import { boxBorderColor, boxFontColor } from "../colors";
 
-const imageStyles = {
-  filter: "brightness(50%) grayscale(100%) ",
-};
-
 const SocialProof = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
@@ -31,7 +27,7 @@ const SocialProof = () => {
         <SocialProofBox
           image={icpBadge}
           link={"https://internetcomputer.org/ecosystem?tag=DeFi"}
-          description={"Officially recognized in the ICP Ecosystem"}
+          description={"Officially Recognized in the ICP Ecosystem"}
         />
 
         <SocialProofBox
@@ -45,7 +41,7 @@ const SocialProof = () => {
         <SocialProofBox
           image={dfinityBadge}
           link={"https://dfinity.org/grants"}
-          description={"Backed by the Dfinity Grants program"}
+          description={"Backed by the Dfinity Grants Program"}
         />
 
         <SocialProofBox
@@ -79,7 +75,7 @@ const SocialProofBox = ({ image, link, description }) => {
       cursor="pointer"
     >
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <VStack gap={3} style={imageStyles}>
+        <VStack gap={3}>
           <Box align="center">
             <Image
               src={image}

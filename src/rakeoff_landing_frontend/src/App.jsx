@@ -19,7 +19,6 @@ const App = () => {
       <PromoVideo />
       <ThreeSteps />
       <MoreOnRakeoff />
-
       <Footer />
     </Box>
   );
