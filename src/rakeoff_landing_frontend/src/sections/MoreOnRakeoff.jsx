@@ -87,11 +87,11 @@ const MoreOnRakeoff = () => {
           </Box>
           <Box gridArea="ckbtcIntegration">
             <StoryBoxAndImage
-              heading="Earning ckBTC"
+              heading="ckBTC Integration"
               link={
-                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/earning-ckbtc"
+                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/ckbtc-integration"
               }
-              info={"How to earn ckBTC in the Rakeoff dApp."}
+              info={"All about our ckBTC integration."}
             />
           </Box>
         </SimpleGrid>

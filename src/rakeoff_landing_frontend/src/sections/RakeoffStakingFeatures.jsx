@@ -82,7 +82,7 @@ const RakeoffStakingFeatures = () => {
             image={globe}
             heading={"ckBTC integration"}
             description={
-              "Diversify your crypto portfolio effortlessly. Convert your ICP staking rewards to ckBTC right within the app, thanks to our integrated smart contract-based swapping feature."
+              "Diversify your crypto portfolio effortlessly. Featuring real-time dollar value calculations for your convenience."
             }
           />
           <StakingFeature

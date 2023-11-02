@@ -63,8 +63,7 @@ const TitleAndDescription = () => {
           </Flex>
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
             <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
-              The best way to stake ICP, pool your staking rewards and earn
-              ckBTC
+              The best way to stake ICP and pool your staking rewards
             </Text>
             <SocialButtonList />
           </Box>
