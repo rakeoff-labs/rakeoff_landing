@@ -3,6 +3,14 @@ export function e8sToIcp(x) {
   return x / Math.pow(10, 8);
 }
 
+export const getRakeoffStats = async () => {
+  const response = await fetch(
+    "https://jgvzt-eiaaa-aaaak-ae5kq-cai.raw.icp0.io/v1/rakeoff-stats"
+  ).then((x) => x.json());
+
+  return response.icp_stats
+};
+
 export const getApyEstimate = async () => {
   const votingPower = 200000000; // indicates that it's the max delay (2x stake amount)
   const stakeAmount = 100000000;

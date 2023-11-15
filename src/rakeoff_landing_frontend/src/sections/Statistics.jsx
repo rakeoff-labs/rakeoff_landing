@@ -8,8 +8,12 @@ import {
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { startStatisticsClient } from "../components/Client";
-import { e8sToIcp, getApyEstimate, icpToDollars } from "../components/tools";
+import {
+  e8sToIcp,
+  getApyEstimate,
+  getRakeoffStats,
+  icpToDollars,
+} from "../components/tools";
 import { motion } from "framer-motion";
 import {
   boxBackgroundColor,
@@ -46,14 +50,12 @@ const Statistics = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   const fetchStats = async () => {
-    const statisticsClient = await startStatisticsClient();
-
     const [apy, stats] = await Promise.all([
       getApyEstimate(),
-      statisticsClient.get_rakeoff_stats(),
+      getRakeoffStats(),
     ]);
 
-    setDollarPrizes(await icpToDollars(Number(stats.total_icp_rewarded)));
+    setDollarPrizes(await icpToDollars(Number(stats.total_rewarded)));
     setApyEstimate(Math.ceil(apy * 10) / 10);
     setStakerStats(stats);
     setLoaded(true);
@@ -100,7 +102,7 @@ const Statistics = () => {
             <StatBox
               title={
                 loaded
-                  ? Number(stakerStats.total_icp_stakers).toLocaleString()
+                  ? Number(stakerStats.total_stakers).toLocaleString()
                   : 0
               }
               description={"Total stakers"}
@@ -109,7 +111,7 @@ const Statistics = () => {
               title={
                 loaded
                   ? Math.round(
-                      e8sToIcp(Number(stakerStats.total_icp_staked))
+                      e8sToIcp(Number(stakerStats.total_staked))
                     ).toLocaleString()
                   : 0
               }
