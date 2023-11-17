@@ -47,7 +47,7 @@ const Statistics = () => {
   const [apyEstimate, setApyEstimate] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const isDesktop = useBreakpointValue({ base: false, md: true });
 
   const fetchStats = async () => {
     const [apy, stats] = await Promise.all([
@@ -101,9 +101,9 @@ const Statistics = () => {
             />
             <StatBox
               title={
-                loaded
+                loaded && stakerStats.total_stakers !== undefined
                   ? Number(stakerStats.total_stakers).toLocaleString()
-                  : 0
+                  : "0"
               }
               description={"Total stakers"}
             />

@@ -61,12 +61,10 @@ export const getApyEstimate = async () => {
 };
 
 export const icpToDollars = async (e8sIcp) => {
-  const CoinApi =
-    "https://api.coingecko.com/api/v3/simple/price?ids=internet-computer&vs_currencies=usd";
+  const CoinApi = "https://api.coinbase.com/v2/prices/ICP-USD/buy";
 
   try {
-    let resp = await fetch(CoinApi).then((x) => x.json());
-    let price = resp["internet-computer"].usd;
+    let { data : { amount }} = await fetch(CoinApi).then((x) => x.json());
 
     let formatCurrency = new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -75,7 +73,7 @@ export const icpToDollars = async (e8sIcp) => {
       maximumFractionDigits: 0, // No decimals
     });
 
-    return formatCurrency.format(price * e8sToIcp(e8sIcp));
+    return formatCurrency.format(amount * e8sToIcp(e8sIcp));
   } catch (e) {
     return "$0.00";
   }
