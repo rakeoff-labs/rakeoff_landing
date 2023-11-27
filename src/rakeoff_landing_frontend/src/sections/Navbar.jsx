@@ -40,6 +40,17 @@ const Navbar = () => {
               <Text
                 fontSize="lg"
                 as="a"
+                href="https://analytics.rakeoff.io/"
+                target="_blank"
+                color={boxFontColor}
+                _hover={{ color: "white", cursor: "pointer" }}
+                fontWeight={500}
+              >
+                Analytics <ExternalLinkIcon mb={1} />
+              </Text>
+              <Text
+                fontSize="lg"
+                as="a"
                 href="https://docs.rakeoff.io/"
                 target="_blank"
                 color={boxFontColor}
@@ -118,6 +129,17 @@ const MobileMenu = () => {
           <DrawerHeader></DrawerHeader>
           <DrawerBody>
             <VStack onClick={onClose} gap={8} align="start">
+              <Text
+                fontSize={28}
+                as="a"
+                href="https://analytics.rakeoff.io/"
+                target="_blank"
+                color={boxFontColor}
+                fontWeight={500}
+              >
+                Analytics <ExternalLinkIcon mb={1} />
+              </Text>
+              <Divider />
               <Text
                 fontSize={28}
                 as="a"
