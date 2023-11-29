@@ -16,6 +16,8 @@ src/declarations/
 # frontend code
 node_modules/
 dist/
+package-lock.json
+
 # configs
 .env
 canister_ids.json
