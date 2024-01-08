@@ -32,19 +32,28 @@ export const getApyEstimate = async () => {
         "https://ic-api.internetcomputer.org/api/v3/metrics/governance-voting-power-total"
       ).then((x) => x.json()),
       await fetch(
-        "https://ic-api.internetcomputer.org/api/v3/metrics/latest-reward-event-total-available"
+        "https://ic-api.internetcomputer.org/api/v3/daily-stats"
       ).then((x) => x.json()),
     ]);
 
+    const {
+      governance_voting_power_total: [governance_voting_power_total],
+    } = response1;
+
+    const {
+      daily_stats: [{ governance_latest_reward_round_total_available_e8s }],
+    } = response2;
+
     // Calculate the voting power percentage
     const totalNetworkVotingPower = e8sToIcp(
-      Number(response1.governance_voting_power_total[0][1])
+      Number(governance_voting_power_total[1])
     );
+
     const myPercent =
       (e8sToIcp(Number(votingPower)) / totalNetworkVotingPower) * 100;
 
     // Calculate the rewards estimate for a day
-    const totalRewardPool = response2.latest_reward_event_total_available[0][1];
+    const totalRewardPool = governance_latest_reward_round_total_available_e8s;
     const dailyNeuronReward =
       (e8sToIcp(Number(totalRewardPool)) * myPercent) / 100;
 
@@ -64,7 +73,9 @@ export const icpToDollars = async (e8sIcp) => {
   const CoinApi = "https://api.coinbase.com/v2/prices/ICP-USD/buy";
 
   try {
-    let { data : { amount }} = await fetch(CoinApi).then((x) => x.json());
+    let {
+      data: { amount },
+    } = await fetch(CoinApi).then((x) => x.json());
 
     let formatCurrency = new Intl.NumberFormat("en-US", {
       style: "currency",
