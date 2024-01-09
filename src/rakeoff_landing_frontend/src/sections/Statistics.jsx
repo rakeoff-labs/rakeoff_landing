@@ -139,7 +139,7 @@ const StatBox = ({ title, description, first }) => {
       w={"100%"}
     >
       <motion.div variants={itemAnimation}>
-        <Heading color="white" size={{ base: "lg", md: "2xl" }}>
+        <Heading color="white" size={{ base: "lg", md: "xl", lg: "2xl" }}>
           {title}
         </Heading>
         <Text mt={3} color={boxFontColor}>

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import {
   Banner,
@@ -12,6 +13,18 @@ import {
 
 const App = () => {
   return (
+    <Router>
+      <Routes>
+        <Route path="*" element={<AppLayout />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+const AppLayout = () => {
+  return (
     <Box>
       <Banner />
       <RakeoffStakingFeatures />
@@ -23,5 +36,3 @@ const App = () => {
     </Box>
   );
 };
-
-export default App;

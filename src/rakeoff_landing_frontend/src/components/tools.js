@@ -37,7 +37,7 @@ export const getApyEstimate = async () => {
     ]);
 
     const {
-      governance_voting_power_total: [governance_voting_power_total],
+      governance_voting_power_total: [[, governance_voting_power_total]],
     } = response1;
 
     const {
@@ -46,16 +46,17 @@ export const getApyEstimate = async () => {
 
     // Calculate the voting power percentage
     const totalNetworkVotingPower = e8sToIcp(
-      Number(governance_voting_power_total[1])
+      Number(governance_voting_power_total)
     );
 
     const myPercent =
       (e8sToIcp(Number(votingPower)) / totalNetworkVotingPower) * 100;
 
     // Calculate the rewards estimate for a day
-    const totalRewardPool = governance_latest_reward_round_total_available_e8s;
     const dailyNeuronReward =
-      (e8sToIcp(Number(totalRewardPool)) * myPercent) / 100;
+      (e8sToIcp(Number(governance_latest_reward_round_total_available_e8s)) *
+        myPercent) /
+      100;
 
     // Calculate the APY estimate
     const totalAnnualRewards = dailyNeuronReward * 365;

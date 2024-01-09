@@ -41,7 +41,11 @@ const RakeoffStakingFeatures = () => {
       >
         <Flex justify="center" align="start">
           <VStack align="start" mb={8} gap={8}>
-            <Heading color="white" size={{ base: "2xl", md: "3xl" }} maxW="md">
+            <Heading
+              color="white"
+              size={{ base: "2xl", md: "2xl", lg: "3xl" }}
+              maxW="md"
+            >
               Unlock Rewards with Rakeoff
             </Heading>
 
