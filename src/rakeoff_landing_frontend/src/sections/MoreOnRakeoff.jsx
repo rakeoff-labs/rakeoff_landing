@@ -30,11 +30,11 @@ const MoreOnRakeoff = () => {
             `"allInfo"
             "WhatIsStaking"
             "HowDoIEarnRewards"
-            "ckbtcIntegration"`,
+            "smartcontracts"`,
             null,
             `"allInfo WhatIsStaking"
             "allInfo HowDoIEarnRewards"
-            "allInfo ckbtcIntegration"`,
+            "allInfo smartcontracts"`,
           ]}
         >
           <Box gridArea="allInfo">
@@ -78,20 +78,18 @@ const MoreOnRakeoff = () => {
           </Box>
           <Box gridArea="HowDoIEarnRewards">
             <StoryBoxAndImage
-              heading="The no-loss prize pool"
+              heading="No-loss prize pool"
               link={
                 "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/the-no-loss-prize-pool"
               }
               info={"How to use the Rakeoff no-loss prize pool."}
             />
           </Box>
-          <Box gridArea="ckbtcIntegration">
+          <Box gridArea="smartcontracts">
             <StoryBoxAndImage
-              heading="ckBTC Integration"
-              link={
-                "https://docs.rakeoff.io/rakeoff/tutorials-and-guides/ckbtc-integration"
-              }
-              info={"All about our ckBTC integration."}
+              heading="Smart contracts"
+              link={"https://docs.rakeoff.io/rakeoff/for-developers"}
+              info={"All about the tech powering Rakeoff."}
             />
           </Box>
         </SimpleGrid>

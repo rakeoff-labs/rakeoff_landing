@@ -84,9 +84,9 @@ const RakeoffStakingFeatures = () => {
           />
           <StakingFeature
             image={globe}
-            heading={"ckBTC integration"}
+            heading={"Analysis & insights"}
             description={
-              "Diversify your crypto portfolio effortlessly. Featuring real-time dollar value calculations for your convenience."
+              "Optimize your staking strategy with clear visualizations and key insights. View your portfolio's performance in USD, forecast monthly rewards, and accurately estimate APY."
             }
           />
           <StakingFeature
