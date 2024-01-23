@@ -7,14 +7,13 @@ import {
   Heading,
   Image as ChakraImage,
   HStack,
-  Icon,
   Spacer,
   Stack,
 } from "@chakra-ui/react";
-import githubwhite from "../../assets/github_white.png";
-import twitterwhite from "../../assets/twitter_white.png";
-import discordwhite from "../../assets/discord_white.png";
-import mediumwhite from "../../assets/medium_white.png";
+import githubLogo from "../../assets/github_logo.svg";
+import xLogo from "../../assets/x_logo.svg";
+import discordLogo from "../../assets/discord_logo.svg";
+import mediumLogo from "../../assets/medium_logo.svg";
 import screen from "../../assets/Rakeoff_Screen.png";
 import { RakeoffGrey, RakeoffRed, boxBackgroundColor } from "../colors";
 import Navbar from "./Navbar";
@@ -88,50 +87,50 @@ const TitleAndDescription = () => {
 const SocialButtonList = () => {
   return (
     <HStack mt={3} gap={3}>
-      <a href="https://twitter.com/rakeoff_app" target="_blank">
-        <Icon
-          as={ChakraImage}
-          alt="twitter link"
-          src={twitterwhite}
-          _hover={{ opacity: 0.8 }}
-          w={6}
-          h="auto"
-          objectFit="contain"
-        />
-      </a>
-      <a href="https://discord.gg/5jRHUYnsrM" target="_blank">
-        <Icon
-          as={ChakraImage}
-          alt={"discord link"}
-          src={discordwhite}
-          _hover={{ opacity: 0.8 }}
-          w={8}
-          h={6}
-          objectFit="contain"
-        />
-      </a>
-      <a href="https://rakeoff.medium.com/" target="_blank">
-        <Icon
-          as={ChakraImage}
-          alt="medium link"
-          src={mediumwhite}
-          _hover={{ opacity: 0.8 }}
-          h={6}
-          w={8}
-          objectFit="contain"
-        />
-      </a>
-      <a href="https://github.com/rakeoff-labs" target="_blank">
-        <Icon
-          as={ChakraImage}
-          alt="github link"
-          src={githubwhite}
-          _hover={{ opacity: 0.8 }}
-          w={6}
-          h={6}
-          objectFit="contain"
-        />
-      </a>
+      <SocialIconLink
+        image={xLogo}
+        alt={"twitter link"}
+        link={"https://twitter.com/rakeoff_app"}
+        xLogo
+      />
+      <SocialIconLink
+        image={discordLogo}
+        alt={"discord link"}
+        link={"https://discord.gg/5jRHUYnsrM"}
+      />
+      <SocialIconLink
+        image={mediumLogo}
+        alt={"medium link"}
+        link={"https://rakeoff.medium.com/"}
+      />
+      <SocialIconLink
+        image={githubLogo}
+        alt={"github link"}
+        link={"https://github.com/rakeoff-labs"}
+      />
     </HStack>
+  );
+};
+
+const SocialIconLink = ({ image, alt, link, xLogo }) => {
+  return (
+    <a href={link} target="_blank">
+      <Box
+        borderRadius="md"
+        borderLeft={"solid #fff 2px"}
+        borderBottom={"solid #fff 2px"}
+        py={0.5}
+        px={1}
+        _hover={{ opacity: "0.8", cursor: "pointer" }}
+      >
+        <ChakraImage
+          alt={alt}
+          src={image}
+          _hover={{ opacity: 0.8 }}
+          h="25px"
+          p={xLogo ? "3px" : 0}
+        />
+      </Box>
+    </a>
   );
 };

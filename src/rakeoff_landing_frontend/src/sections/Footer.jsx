@@ -2,19 +2,19 @@ import React from "react";
 import {
   Box,
   Container,
-  Stack,
+  HStack,
   useColorModeValue,
   Image as ChakraImage,
   Center,
   Flex,
+  Stack,
   Heading,
 } from "@chakra-ui/react";
 import logowhitepurple from "../../assets/rakeoff_logo_name_white_purple.svg";
-import githubwhite from "../../assets/github_white.png";
-import twitterwhite from "../../assets/twitter_white.png";
-import discordwhite from "../../assets/discord_white.png";
-import mediumwhite from "../../assets/medium_white.png";
-import { Icon } from "@chakra-ui/react";
+import githubLogo from "../../assets/github_logo.svg";
+import xLogo from "../../assets/x_logo.svg";
+import discordLogo from "../../assets/discord_logo.svg";
+import mediumLogo from "../../assets/medium_logo.svg";
 import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
@@ -57,63 +57,29 @@ const Footer = () => {
               crew@rakeoff.io
             </Box>
           </Flex>
-          <Stack
-            direction="row"
-            spacing={6}
-            justify="center"
-            align="center"
-            mt={4}
-          >
-            <a href="https://twitter.com/rakeoff_app" target="_blank">
-              <Icon
-                as={ChakraImage}
-                alt="twitter link"
-                objectFit="contain"
-                src={twitterwhite}
-                _hover={{ opacity: 0.8 }}
-                w={6}
-                h={6}
-              />
-            </a>
-            <a href="https://discord.gg/5jRHUYnsrM" target="_blank">
-              <Icon
-                as={ChakraImage}
-                alt="discord link"
-                objectFit="contain"
-                src={discordwhite}
-                w={8}
-                h={6}
-                _hover={{ opacity: 0.8 }}
-              />
-            </a>
-            <a
-              href="https://rakeoff.medium.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                as={ChakraImage}
-                alt="medium link"
-                objectFit="contain"
-                src={mediumwhite}
-                _hover={{ opacity: 0.8 }}
-                h={6}
-                w={8}
-              />
-            </a>
-
-            <a href="https://github.com/rakeoff-labs" target="_blank">
-              <Icon
-                as={ChakraImage}
-                alt="github link"
-                objectFit="contain"
-                src={githubwhite}
-                _hover={{ opacity: 0.8 }}
-                w={6}
-                h={6}
-              />
-            </a>
-          </Stack>
+          <HStack mt={3} gap={3}>
+            <SocialIconLink
+              image={xLogo}
+              alt={"twitter link"}
+              link={"https://twitter.com/rakeoff_app"}
+              xLogo
+            />
+            <SocialIconLink
+              image={discordLogo}
+              alt={"discord link"}
+              link={"https://discord.gg/5jRHUYnsrM"}
+            />
+            <SocialIconLink
+              image={mediumLogo}
+              alt={"medium link"}
+              link={"https://rakeoff.medium.com/"}
+            />
+            <SocialIconLink
+              image={githubLogo}
+              alt={"github link"}
+              link={"https://github.com/rakeoff-labs"}
+            />
+          </HStack>
         </Container>
       </Box>
     </Container>
@@ -121,3 +87,26 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const SocialIconLink = ({ image, alt, link, xLogo }) => {
+  return (
+    <a href={link} target="_blank">
+      <Box
+        borderRadius="md"
+        borderLeft={"solid #fff 2px"}
+        borderBottom={"solid #fff 2px"}
+        py={0.5}
+        px={1}
+        _hover={{ opacity: "0.8", cursor: "pointer" }}
+      >
+        <ChakraImage
+          alt={alt}
+          src={image}
+          _hover={{ opacity: 0.8 }}
+          h="25px"
+          p={xLogo ? "3px" : 0}
+        />
+      </Box>
+    </a>
+  );
+};
