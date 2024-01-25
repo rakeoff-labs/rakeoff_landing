@@ -8,7 +8,10 @@ import {
   Footer,
   RakeoffStakingFeatures,
   SocialProof,
-  PromoVideo,
+  Stepone,
+  StepTwo,
+  StepThree,
+  StepFour,
 } from "./sections";
 
 const App = () => {
@@ -29,8 +32,12 @@ const AppLayout = () => {
       <Banner />
       <RakeoffStakingFeatures />
       <SocialProof />
-      <PromoVideo />
-      <ThreeSteps />
+
+      <Stepone />
+      <StepTwo />
+      <StepThree />
+      <StepFour />
+      {/* <ThreeSteps /> */}
       <MoreOnRakeoff />
       <Footer />
     </Box>

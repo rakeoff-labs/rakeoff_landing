@@ -72,10 +72,10 @@ const TitleAndDescription = () => {
           <ChakraImage
             src={screen}
             alt="screenshot of app"
-            h={500}
-            w={390}
+            h={{ base: 670, md: 640 }}
+            w={500}
             objectFit="contain"
-            mb={-5}
+            mb={{ base: 0, md: -40 }}
             mr={{ base: 0, md: 12 }}
           />
         </Box>
