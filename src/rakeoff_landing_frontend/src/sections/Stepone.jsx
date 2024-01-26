@@ -14,10 +14,11 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import gif from "../../assets/area.gif";
+import { scroll } from "framer-motion/dom";
+
 import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
-import screen from "../../assets/identity.png";
 export const MotionBox = motion(Box);
 const Stepone = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });

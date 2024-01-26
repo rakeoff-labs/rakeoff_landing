@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Flex,
@@ -10,28 +10,50 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
+import "./style.css";
 import githubLogo from "../../assets/github_logo.svg";
 import xLogo from "../../assets/x_logo.svg";
 import discordLogo from "../../assets/discord_logo.svg";
 import mediumLogo from "../../assets/medium_logo.svg";
 import screen from "../../assets/Rakeoff_Screen.png";
-import { RakeoffGrey, RakeoffRed, boxBackgroundColor } from "../colors";
+import { RakeoffGrey, boxBackgroundColor } from "../colors";
+import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
 
 const Banner = () => {
   return (
     <Box>
-      <Box
-        h={{ base: "90vh", md: "600px" }}
-        overflow="hidden"
-        bgGradient={`linear(to-br, ${boxBackgroundColor}, purple.500, ${RakeoffRed})`}
-        bgSize="150% 150%"
+      <motion.div
+        style={{
+          // width: "100vw",
+          // height: "65vh",
+
+          backgroundColor: `rgba(183, 136, 233, 0.61)`,
+        }}
+        animate={{
+          backgroundColor: [
+            "purple.400",
+            "rgba(180, 126, 236, 0.61)",
+            "rgba(153, 55, 255, 0.61)",
+          ],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
       >
-        <Navbar />
-        <TitleAndDescription />
-      </Box>
-      <Statistics />
+        <Box
+          h={{ base: "90vh", md: "600px" }}
+          overflow="hidden"
+          // bgSize="150% 150%"
+        >
+          <Navbar />
+          <TitleAndDescription />
+        </Box>
+        <Statistics />
+      </motion.div>
     </Box>
   );
 };
@@ -39,6 +61,9 @@ const Banner = () => {
 export default Banner;
 
 const TitleAndDescription = () => {
+  const text = "The best way to stake ICP and pool your staking rewards".split(
+    " "
+  );
   return (
     <Container maxW="7xl" h={"500px"}>
       <Stack
@@ -61,9 +86,24 @@ const TitleAndDescription = () => {
             </Heading>
           </Flex>
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
-            <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
+            {/* <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
               The best way to stake ICP and pool your staking rewards
-            </Text>
+            </Text> */}
+            <div className="Bio">
+              {text.map((el, i) => (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 8 }}
+                  transition={{
+                    duration: 0.15,
+                    delay: i / 10,
+                  }}
+                  key={i}
+                >
+                  {el}{" "}
+                </motion.span>
+              ))}
+            </div>
             <SocialButtonList />
           </Box>
         </Box>

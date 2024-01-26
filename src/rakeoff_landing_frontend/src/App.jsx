@@ -12,6 +12,7 @@ import {
   StepTwo,
   StepThree,
   StepFour,
+  Features,
 } from "./sections";
 
 const App = () => {
@@ -30,8 +31,9 @@ const AppLayout = () => {
   return (
     <Box>
       <Banner />
-      <RakeoffStakingFeatures />
+      {/* <RakeoffStakingFeatures /> */}
       <SocialProof />
+      {/* <Features /> */}
 
       <Stepone />
       <StepTwo />

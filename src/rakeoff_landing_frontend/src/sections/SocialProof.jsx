@@ -36,7 +36,7 @@ const itemAnimation = {
     y: 40,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.5, // Duration of the animation for each child
       ease: "easeInOut",
     },
   },
