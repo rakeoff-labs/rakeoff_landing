@@ -30,18 +30,34 @@ export default App;
 const AppLayout = () => {
   return (
     <Box>
-      <Banner />
-      {/* <RakeoffStakingFeatures /> */}
-      <SocialProof />
-      {/* <Features /> */}
+      <BackgroundSection>
+        <Banner />
 
-      <Stepone />
-      <StepTwo />
-      <StepThree />
-      <StepFour />
-      {/* <ThreeSteps /> */}
-      <MoreOnRakeoff />
-      <Footer />
+        {/* <RakeoffStakingFeatures /> */}
+
+        <Features />
+
+        <Stepone />
+        <StepTwo />
+        <StepThree />
+        <StepFour />
+
+        {/* <SocialProof /> */}
+        {/* <ThreeSteps /> */}
+        <MoreOnRakeoff />
+        <Footer />
+      </BackgroundSection>
+    </Box>
+  );
+};
+
+const BackgroundSection = ({ children }) => {
+  return (
+    <Box
+      bg="linear-gradient(#292e40 2px, transparent 1px), linear-gradient(to right, #292e40 2px, #1b2030 1px)"
+      backgroundSize=" 120px 120px"
+    >
+      {children}
     </Box>
   );
 };

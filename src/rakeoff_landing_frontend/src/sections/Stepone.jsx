@@ -12,9 +12,9 @@ import {
   Button,
   Image,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import gif from "../../assets/area.gif";
-import { scroll } from "framer-motion/dom";
 
 import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
@@ -43,7 +43,6 @@ const Stepone = () => {
       <Center mb={8}>
         <Heading
           size={{ base: "3xl", md: "3xl" }}
-          //   mt={{ base: 16, md: "8rem" }}
           mb={{ base: -12, md: 0 }}
           color="white"
         >
@@ -62,7 +61,11 @@ const Stepone = () => {
             fontWeight={600}
             fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
           >
-            <Text textAlign="center" mt={{ base: 12, md: 0 }}>
+            <Text
+              textAlign="center"
+              color={"gray.100"}
+              mt={{ base: 12, md: 4 }}
+            >
               Step 1
             </Text>
             <br />
@@ -73,7 +76,7 @@ const Stepone = () => {
             ) : (
               <Text
                 textAlign="center"
-                mb={{ base: 2, md: 0 }}
+                mt={{ base: 2, md: 10 }}
                 color={"purple.400"}
               >
                 Log in with your Internet Identity
@@ -82,13 +85,15 @@ const Stepone = () => {
           </Heading>
           <Text
             textAlign={isDesktop ? "left" : "center"}
-            color={"gray.500"}
+            color={"gray.100"}
+            fontSize="xl"
             mb={{ base: 4, md: 0 }}
           >
-            Access the Rakeoff dApp securely with your Internet Identity, the
-            preferred alternative to traditional email and password logins in
+            Securely access the Rakeoff dApp using your Internet Identity, a
+            more secure alternative to traditional email and password logins in
             the Web3 ecosystem.
           </Text>
+
           <Stack
             spacing={{ base: 1, sm: 6 }}
             align="center"
@@ -106,6 +111,7 @@ const Stepone = () => {
             </Button>
           </Stack>
         </Stack>
+
         <Flex
           flex={1}
           justify={"center"}
@@ -117,7 +123,6 @@ const Stepone = () => {
             position={"relative"}
             height={isDesktop ? "300px" : "200px"}
             rounded={"2xl"}
-            boxShadow={"2xl"}
             width={"full"}
             overflow={"hidden"}
             variants={cardVariants}
@@ -126,15 +131,12 @@ const Stepone = () => {
             viewport={{ once: true, amount: 0.2 }}
             bg={boxBackgroundColor}
             border={boxBorderColor}
+            borderColor="black"
+            boxShadow={useColorModeValue(
+              "10px 10px 0 purple",
+              "10px 10px 0 blueviolet"
+            )}
           >
-            {/* <Image
-              alt={"Hero Image"}
-              fit={isDesktop ? "cover" : "scale-down"}
-              align={"center"}
-              w={"100%"}
-              h={"100%"}
-              src={screen}
-            /> */}
             <AspectRatio ratio={21 / 10}>
               <Image src={gif} alt="naruto" objectFit="cover" />
             </AspectRatio>

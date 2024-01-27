@@ -6,6 +6,7 @@ import {
   Text,
   Center,
   Container,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import rakeoffBank from "../../assets/rakeoff_bank.png";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -43,6 +44,11 @@ const MoreOnRakeoff = () => {
                 bg={boxBackgroundColor}
                 border={boxBorderColor}
                 borderRadius="3xl"
+                borderColor="black"
+                boxShadow={useColorModeValue(
+                  "10px 10px 0 purple",
+                  "10px 10px 0 blueviolet"
+                )}
                 py={12}
                 px={8}
                 transition="transform 0.3s"
@@ -113,6 +119,11 @@ const StoryBoxAndImage = ({ heading, link, info }) => {
         _hover={{ transform: "translateY(-5px)" }}
         cursor="pointer"
         align="center"
+        borderColor="black"
+        boxShadow={useColorModeValue(
+          "10px 10px 0 purple",
+          "10px 10px 0 blueviolet"
+        )}
       >
         <Heading size="lg" textAlign="center" mb={3} color="white">
           {heading} <ExternalLinkIcon color="white" mb={1} />

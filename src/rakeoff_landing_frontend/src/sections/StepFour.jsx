@@ -9,6 +9,7 @@ import {
   Image,
   useBreakpointValue,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import gif from "../../assets/area5.gif";
@@ -64,8 +65,11 @@ const StepFour = () => {
               viewport={{ once: true, amount: 0.2 }}
               bg={boxBackgroundColor}
               border={boxBorderColor}
-
-              // border="red"
+              borderColor="black"
+              boxShadow={useColorModeValue(
+                "10px 10px 0 purple",
+                "10px 10px 0 blueviolet"
+              )}
             >
               <AspectRatio ratio={21 / 10}>
                 <Image src={gif} alt="naruto" objectFit="cover" />
@@ -84,17 +88,11 @@ const StepFour = () => {
                 Disburse your rewards
               </Text>
             </Heading>
-            <Text color={"gray.500"}>
-              Once you accumulate a minimum of 1 ICP in staking rewards, you
-              have the option to either convert them back into ICP or
-              participate in ICP's first no-loss prize pool for an opportunity
-              to increase your earnings. The process is straightforward and
-              user-friendly
+            <Text color={"gray.100"} fontSize="xl">
+              Earn at least 1 ICP in staking rewards and choose to disburse it
+              back to ICP or enter the no-loss prize pool for a chance to boost
+              earnings. The process is easy and straightforward.
             </Text>
-            <Stack
-              spacing={{ base: 4, sm: 6 }}
-              direction={{ base: "column", sm: "row" }}
-            ></Stack>
           </Stack>
         </Stack>
       ) : (
@@ -128,12 +126,13 @@ const StepFour = () => {
             </Heading>
             <Text
               textAlign={isDesktop ? "left" : "center"}
-              color={"gray.500"}
+              color={"gray.100"}
               mb={{ base: 4, md: 0 }}
+              fontSize="md"
             >
-              Access the Rakeoff dApp securely with your Internet Identity, the
-              preferred alternative to traditional email and password logins in
-              the Web3 ecosystem
+              Earn at least 1 ICP in staking rewards and choose to disburse it
+              back to ICP or enter the no-loss prize pool for a chance to boost
+              earnings. The process is easy and straightforward.
             </Text>
           </Stack>
           <Flex
@@ -147,7 +146,6 @@ const StepFour = () => {
               position={"relative"}
               height={isDesktop ? "300px" : "200px"}
               rounded={"2xl"}
-              boxShadow={"2xl"}
               width={"full"}
               overflow={"hidden"}
               variants={cardVariants}
@@ -156,6 +154,11 @@ const StepFour = () => {
               viewport={{ once: true, amount: 0.2 }}
               bg={boxBackgroundColor}
               border={boxBorderColor}
+              borderColor="black"
+              boxShadow={useColorModeValue(
+                "10px 10px 0 purple",
+                "10px 10px 0 blueviolet"
+              )}
             >
               <AspectRatio ratio={21 / 10}>
                 <Image src={gif} alt="naruto" objectFit="cover" />

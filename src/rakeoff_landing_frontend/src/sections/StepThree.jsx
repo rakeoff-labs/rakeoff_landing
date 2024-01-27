@@ -9,10 +9,11 @@ import {
   Image,
   useBreakpointValue,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import gif from "../../assets/area4.gif";
 
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import { boxBackgroundColor, boxBorderColor } from "../colors";
 
 import { motion } from "framer-motion";
 import screen from "../../assets/stk2.png";
@@ -52,7 +53,7 @@ const StepThree = () => {
             <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
-                Simply click 'Stake'
+                Just click 'Stake'
               </Text>
             ) : (
               <Text
@@ -64,13 +65,13 @@ const StepThree = () => {
           </Heading>
           <Text
             textAlign={isDesktop ? "left" : "center"}
-            color={"gray.500"}
+            color={"gray.100"}
             mb={{ base: 4, md: 0 }}
+            fontSize="xl"
           >
-            Staking with a minimum of 1 ICP is essential for earning rewards,
-            and the amount is locked for at least 6 months. We streamline the
-            process by eliminating complexities like the 'dissolve delay',
-            simplifying your staking experience.
+            Stake a minimum of 1 ICP to earn rewards, with a 6-month lock-in
+            period. We simplify the process by removing complexities such as the
+            'dissolve delay', making your staking experience that simple.
           </Text>
         </Stack>
         <Flex
@@ -84,7 +85,6 @@ const StepThree = () => {
             position={"relative"}
             height={isDesktop ? "300px" : "200px"}
             rounded={"2xl"}
-            boxShadow={"2xl"}
             width={"full"}
             overflow={"hidden"}
             variants={cardVariants}
@@ -93,6 +93,11 @@ const StepThree = () => {
             viewport={{ once: true, amount: 0.2 }}
             bg={boxBackgroundColor}
             border={boxBorderColor}
+            borderColor="black"
+            boxShadow={useColorModeValue(
+              "10px 10px 0 purple",
+              "10px 10px 0 blueviolet"
+            )}
           >
             <AspectRatio ratio={21 / 10}>
               <Image src={gif} alt="naruto" objectFit="cover" />

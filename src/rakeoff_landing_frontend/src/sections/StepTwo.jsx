@@ -9,6 +9,7 @@ import {
   Image,
   useBreakpointValue,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import gif from "../../assets/area2.gif";
@@ -62,6 +63,11 @@ const StepTwo = () => {
               viewport={{ once: true, amount: 0.2 }}
               bg={boxBackgroundColor}
               border={boxBorderColor}
+              borderColor="black"
+              boxShadow={useColorModeValue(
+                "10px 10px 0 purple",
+                "10px 10px 0 blueviolet"
+              )}
             >
               <AspectRatio ratio={21 / 10}>
                 <Image src={gif} alt="naruto" objectFit="cover" />
@@ -80,11 +86,10 @@ const StepTwo = () => {
                 Add a minimum of 1 ICP to your wallet
               </Text>
             </Heading>
-            <Text color={"gray.500"}>
-              To transfer ICP to your wallet, first click the 'Receive' button
-              and copy your wallet address. Next, paste this address into the
-              relevant field on any exchange platform and specify the amount of
-              ICP you want to transfer to your wallet.
+            <Text color={"gray.100"} fontSize="xl">
+              To transfer ICP to your wallet, click 'Receive', copy your wallet
+              address, then paste it into the exchange platform's field and
+              enter the amount of ICP you wish to transfer.
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -119,18 +124,19 @@ const StepTwo = () => {
                   mb={{ base: 2, md: 0 }}
                   color={"purple.400"}
                 >
-                  Log in with your Internet Identity
+                  Add a minimum of 1 ICP to your wallet
                 </Text>
               )}
             </Heading>
             <Text
               textAlign={isDesktop ? "left" : "center"}
-              color={"gray.500"}
+              color={"gray.100"}
               mb={{ base: 4, md: 0 }}
+              fontSize="lg"
             >
-              Access the Rakeoff dApp securely with your Internet Identity, the
-              preferred alternative to traditional email and password logins in
-              the Web3 ecosystem
+              To transfer ICP to your wallet, click 'Receive', copy your wallet
+              address, then paste it into the exchange platform's field and
+              enter the amount of ICP you wish to transfer.
             </Text>
           </Stack>
           <Flex
@@ -144,7 +150,6 @@ const StepTwo = () => {
               position={"relative"}
               height={isDesktop ? "300px" : "200px"}
               rounded={"2xl"}
-              boxShadow={"2xl"}
               width={"full"}
               overflow={"hidden"}
               variants={cardVariants}
@@ -153,6 +158,11 @@ const StepTwo = () => {
               viewport={{ once: true, amount: 0.2 }}
               bg={boxBackgroundColor}
               border={boxBorderColor}
+              borderColor="black"
+              boxShadow={useColorModeValue(
+                "10px 10px 0 purple",
+                "10px 10px 0 blueviolet"
+              )}
             >
               <AspectRatio ratio={21 / 10}>
                 <Image src={gif} alt="naruto" objectFit="cover" />

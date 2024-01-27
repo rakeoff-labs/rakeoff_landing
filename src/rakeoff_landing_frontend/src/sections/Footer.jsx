@@ -30,12 +30,7 @@ const Footer = () => {
         <NewsletterSubscribe />
       </Center>
 
-      <Box
-        borderTopWidth={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.700")}
-        mt={{ base: 12, md: "5rem" }}
-      >
+      <Box mt={{ base: 12, md: "5rem" }}>
         <Container
           as={Stack}
           maxW={"7xl"}

@@ -128,7 +128,7 @@ const NewsletterSubscribe = () => {
 
   return (
     <Box
-      bgGradient={`linear(to-br, ${boxBackgroundColor}, purple.500, ${RakeoffRed})`}
+      bgGradient={`linear(to-bl, ${boxBackgroundColor}, purple.500, #6229a8)`}
       bgSize="150% 150%"
       textAlign="center"
       color="white"
