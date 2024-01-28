@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import gif from "../../assets/area5.gif";
 export const MotionBox = motion(Box);
 
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
 
 const StepFour = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });

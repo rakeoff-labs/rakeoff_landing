@@ -1,54 +1,5 @@
-// import React, { useRef } from "react";
-// import { motion, useScroll, useTransform } from "framer-motion";
-// import rakeoffBank from "../../assets/rakeoff_bank.png";
-
-// const Features = () => {
-//   const containerRef = useRef(null);
-
-//   const { scrollYProgress } = useScroll({
-//     target: containerRef,
-//     offset: ["start end", "end end"],
-//   });
-
-//   const bottomShadowValue = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     ["-100%", "0%"]
-//   );
-//   const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
-//   const topShadowValue = useTransform(
-//     scrollYProgress,
-//     [0, 1],
-//     ["-25%", "100%"]
-//   );
-
-//   return (
-//     <section className="scroll-container" ref={containerRef}>
-//       <div className="copy">
-//         <h2>Lorem ipsum dolor sit amet</h2>
-//       </div>
-//       <div className="img-container">
-//         <motion.div className="img-inner" style={{ translateX: imageValue }}>
-//           <motion.div
-//             className="bottom-shadow"
-//             style={{ translateX: bottomShadowValue }}
-//           />
-//           <img src={rakeoffBank} alt="a green plant" />
-//           <motion.div
-//             className="top-shadow"
-//             style={{ translateX: topShadowValue }}
-//           />
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Features;
-
-"use client";
-import React from "react";
-import { useState } from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Box,
   Heading,
@@ -65,11 +16,29 @@ import motokoBadge from "../../assets/motoko_badge.png";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Features = () => {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"],
+  });
+
+  const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const topShadowValue = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-25%", "100%"]
+  );
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+    <Container
+      maxW="7xl"
+      mt={{ base: 12, md: "5rem" }}
+      ref={containerRef}
+      p={0}
+    >
       <Center mb={8}>
         <Heading size={{ base: "2xl", md: "3xl" }} color="white">
-          Why Stake with Rakeoff?
+          Staking with Rakeoff
         </Heading>
       </Center>
       <SimpleGrid
@@ -77,21 +46,34 @@ const Features = () => {
         mx={{ base: 3, md: 3, lg: 0 }}
         gap={{ base: 4, md: 8 }}
       >
-        <FeaturesCard image={motokoBadge} heading={"Secure"} text={"dap"} />
+        <FeaturesCard
+          image={motokoBadge}
+          heading={"Secured with Motoko"}
+          text={"Built with robust & tramperproof smart contracts"}
+          imageValue={imageValue}
+          topShadowValue={topShadowValue}
+        />
         <FeaturesCard
           image={motokoBadge}
           heading={"Simple staking"}
-          text={"dap"}
+          text={"Simply transfer ICP to your wallet and click 'Stake'"}
+          imageValue={imageValue}
+          topShadowValue={topShadowValue}
         />
-        <FeaturesCard
-          image={motokoBadge}
-          heading={"Liquid staking (coming soon)"}
-          text={"dap"}
-        />
+
         <FeaturesCard
           image={motokoBadge}
           heading={"No-loss prize pool"}
-          text={"dap"}
+          text={"Disburse your staked rewards into the pool"}
+          imageValue={imageValue}
+          topShadowValue={topShadowValue}
+        />
+        <FeaturesCard
+          image={motokoBadge}
+          heading={"Liquid staking"}
+          text={"Coming soon..."}
+          imageValue={imageValue}
+          topShadowValue={topShadowValue}
         />
       </SimpleGrid>
     </Container>
@@ -100,15 +82,14 @@ const Features = () => {
 
 export default Features;
 
-const FeaturesCard = ({ image, heading, text }) => {
+const FeaturesCard = ({ image, heading, text, imageValue }) => {
   return (
     <Center py={6}>
       <Box
         w="2xl"
-        rounded={"2xl"}
+        borderRadius="3xl"
         overflow={"hidden"}
-        bg={boxBackgroundColor}
-        border={"1px"}
+        bg={"white"}
         borderColor="black"
         boxShadow={useColorModeValue(
           "10px 10px 0 purple",
@@ -116,25 +97,30 @@ const FeaturesCard = ({ image, heading, text }) => {
         )}
       >
         <Box h={"250px"} borderBottom={"1px"} borderColor="black">
-          <Image
-            src={image}
-            roundedTop={"sm"}
-            h={60}
-            w="full"
-            alt={"Blog Image"}
-          />
+          <motion.div
+            className="img-container"
+            style={{ translateX: imageValue }}
+          >
+            <Image
+              src={image}
+              roundedTop={"sm"}
+              h={60}
+              w="full"
+              alt={"Blog Image"}
+            />
+          </motion.div>
         </Box>
-        <Box p={4}>
-          <Text fontSize={"xs"} fontWeight="medium">
-            {text}
-          </Text>
-
-          <Heading color={"black"} fontSize={"2xl"} noOfLines={1}>
+        <Box bg={boxBackgroundColor} p={4}>
+          <Heading color={"grey.100"} fontSize={"3xl"} noOfLines={1}>
             {heading}
           </Heading>
+          <Text color="grey.400" fontSize={"lg"} fontWeight="medium">
+            {text}
+          </Text>
         </Box>
         <HStack borderTop={"1px"} color="black">
           <Flex
+            bg={boxBackgroundColor}
             p={4}
             alignItems="center"
             justifyContent={"space-between"}

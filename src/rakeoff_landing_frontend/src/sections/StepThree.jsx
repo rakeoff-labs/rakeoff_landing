@@ -13,10 +13,9 @@ import {
 } from "@chakra-ui/react";
 import gif from "../../assets/area4.gif";
 
-import { boxBackgroundColor, boxBorderColor } from "../colors";
+import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 import { motion } from "framer-motion";
-import screen from "../../assets/stk2.png";
 export const MotionBox = motion(Box);
 const StepThree = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });

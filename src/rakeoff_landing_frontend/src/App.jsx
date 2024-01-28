@@ -3,16 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import {
   Banner,
-  ThreeSteps,
   MoreOnRakeoff,
   Footer,
-  RakeoffStakingFeatures,
-  SocialProof,
+  Features,
   Stepone,
   StepTwo,
   StepThree,
   StepFour,
-  Features,
+  Rakeoff,
 } from "./sections";
 
 const App = () => {
@@ -36,14 +34,12 @@ const AppLayout = () => {
         {/* <RakeoffStakingFeatures /> */}
 
         <Features />
-
+        <Rakeoff />
         <Stepone />
         <StepTwo />
         <StepThree />
         <StepFour />
 
-        {/* <SocialProof /> */}
-        {/* <ThreeSteps /> */}
         <MoreOnRakeoff />
         <Footer />
       </BackgroundSection>

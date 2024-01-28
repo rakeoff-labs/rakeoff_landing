@@ -11,4 +11,5 @@ export { default as Stepone } from "./Stepone";
 export { default as StepTwo } from "./StepTwo";
 export { default as StepThree } from "./StepThree";
 export { default as StepFour } from "./StepFour";
+export { default as Rakeoff } from "./Rakeoff";
 export { default as Features } from "./Features";

@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import {
   Box,
   Flex,
-  Text,
   Container,
   Heading,
   Image as ChakraImage,
@@ -16,7 +15,7 @@ import xLogo from "../../assets/x_logo.svg";
 import discordLogo from "../../assets/discord_logo.svg";
 import mediumLogo from "../../assets/medium_logo.svg";
 import screen from "../../assets/Rakeoff_Screen.png";
-import { RakeoffGrey, boxBackgroundColor } from "../colors";
+import { RakeoffGrey } from "../colors";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
@@ -44,11 +43,7 @@ const Banner = () => {
           repeatType: "reverse",
         }}
       >
-        <Box
-          h={{ base: "90vh", md: "600px" }}
-          overflow="hidden"
-          // bgSize="150% 150%"
-        >
+        <Box h={{ base: "90vh", md: "600px" }} overflow="hidden">
           <Navbar />
           <TitleAndDescription />
         </Box>
@@ -85,10 +80,8 @@ const TitleAndDescription = () => {
               dApp
             </Heading>
           </Flex>
+
           <Box maxW={{ base: "xs", md: "lg" }} mt={3}>
-            {/* <Text fontSize={{ base: "xl", md: "3xl" }} color="white">
-              The best way to stake ICP and pool your staking rewards
-            </Text> */}
             <div className="Bio">
               {text.map((el, i) => (
                 <motion.span
@@ -107,7 +100,9 @@ const TitleAndDescription = () => {
             <SocialButtonList />
           </Box>
         </Box>
+
         <Spacer />
+
         <Box w={{ base: "100%", md: "auto" }} align="center">
           <ChakraImage
             src={screen}

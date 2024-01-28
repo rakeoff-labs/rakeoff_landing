@@ -17,7 +17,7 @@ import {
 import gif from "../../assets/area.gif";
 
 import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
 
 export const MotionBox = motion(Box);
 const Stepone = () => {
@@ -122,7 +122,7 @@ const Stepone = () => {
           <MotionBox
             position={"relative"}
             height={isDesktop ? "300px" : "200px"}
-            rounded={"2xl"}
+            rounded={"3xl"}
             width={"full"}
             overflow={"hidden"}
             variants={cardVariants}
@@ -130,7 +130,7 @@ const Stepone = () => {
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
             bg={boxBackgroundColor}
-            border={boxBorderColor}
+            // border={boxBorderColor}
             borderColor="black"
             boxShadow={useColorModeValue(
               "10px 10px 0 purple",

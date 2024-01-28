@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import gif from "../../assets/area2.gif";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
 
 export const MotionBox = motion(Box);
 const StepTwo = () => {
