@@ -15,12 +15,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import gif from "../../assets/area.gif";
+export const MotionButton = motion(Button);
 
-import { ArrowForwardIcon, ArrowDownIcon } from "@chakra-ui/icons";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { boxBackgroundColor, boxBorderColor } from "../colors";
 
 export const MotionBox = motion(Box);
-const Stepone = () => {
+const StepOne = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   const cardVariants = {
@@ -61,13 +62,6 @@ const Stepone = () => {
             fontWeight={600}
             fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
           >
-            <Text
-              textAlign="center"
-              color={"gray.100"}
-              mt={{ base: 12, md: 4 }}
-            >
-              Step 1
-            </Text>
             <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
@@ -99,16 +93,23 @@ const Stepone = () => {
             align="center"
             direction={{ base: "column", sm: "row" }}
           >
-            <Button
-              align="center"
-              rounded={"full"}
-              size={"lg"}
-              fontWeight={"normal"}
-              px={6}
-              rightIcon={<ArrowForwardIcon h={4} w={4} color={"gray.300"} />}
+            <MotionButton
+              rightIcon={<ArrowForwardIcon />}
+              as="a"
+              href="https://identity.ic0.app/"
+              target="_blank"
+              bg={boxBackgroundColor}
+              _hover={{
+                boxShadow: `0px 0px 10px 6px white`,
+              }}
+              boxShadow={`0px 0px 10px 3px white `}
+              color="white"
+              className="box"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               Get an Internet Identity
-            </Button>
+            </MotionButton>
           </Stack>
         </Stack>
 
@@ -130,7 +131,7 @@ const Stepone = () => {
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
             bg={boxBackgroundColor}
-            // border={boxBorderColor}
+            border={boxBorderColor}
             borderColor="black"
             boxShadow={useColorModeValue(
               "10px 10px 0 purple",
@@ -147,4 +148,4 @@ const Stepone = () => {
   );
 };
 
-export default Stepone;
+export default StepOne;

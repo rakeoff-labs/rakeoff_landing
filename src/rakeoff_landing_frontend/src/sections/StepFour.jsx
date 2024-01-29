@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import gif from "../../assets/area5.gif";
 export const MotionBox = motion(Box);
 
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
+import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 const StepFour = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -35,12 +35,12 @@ const StepFour = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: -2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
         <Stack
           align={"center"}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
+          spacing={{ base: 2, md: 10 }}
+          py={{ base: 20, md: 20 }}
           direction={{ base: "column", md: "row" }}
         >
           <Flex
@@ -54,10 +54,8 @@ const StepFour = () => {
               position={"relative"}
               height={"300px"}
               rounded={"2xl"}
-              // boxShadow={"2xl"}
               width={"full"}
               overflow={"hidden"}
-              // boxShadow="outline"
               borderRadius="2xl"
               variants={cardVariants}
               initial="offscreen"
@@ -80,12 +78,10 @@ const StepFour = () => {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
             >
-              <Text textAlign="center">Step 4</Text>
-              <br />
               <Text as={"span"} color={"purple.400"}>
-                Disburse your rewards
+                4. Disburse your rewards
               </Text>
             </Heading>
             <Text color={"gray.100"} fontSize="xl">
@@ -93,13 +89,17 @@ const StepFour = () => {
               back to ICP or enter the no-loss prize pool for a chance to boost
               earnings. The process is easy and straightforward.
             </Text>
+            <Stack
+              spacing={{ base: 4, sm: 6 }}
+              direction={{ base: "column", sm: "row" }}
+            ></Stack>
           </Stack>
         </Stack>
       ) : (
         <Stack
           align={"center"}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
+          spacing={{ base: 2, md: 10 }}
+          py={{ base: 4, md: 0 }}
           direction={{ base: "column", md: "row" }}
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -108,21 +108,13 @@ const StepFour = () => {
               fontWeight={600}
               fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
             >
-              <Text textAlign="center">Step 4</Text>
-              <br />
-              {isDesktop ? (
-                <Text as={"span"} color={"purple.400"}>
-                  Log in with your Internet Identity
-                </Text>
-              ) : (
-                <Text
-                  textAlign="center"
-                  mb={{ base: 2, md: 0 }}
-                  color={"purple.400"}
-                >
-                  Log in with your Internet Identity
-                </Text>
-              )}
+              <Text
+                textAlign="center"
+                mb={{ base: 2, md: 0 }}
+                color={"purple.400"}
+              >
+                4. Disburse your rewards
+              </Text>
             </Heading>
             <Text
               textAlign={isDesktop ? "left" : "center"}

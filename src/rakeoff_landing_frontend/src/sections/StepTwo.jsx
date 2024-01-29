@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import gif from "../../assets/area2.gif";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "./../colors";
+import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 export const MotionBox = motion(Box);
 const StepTwo = () => {
@@ -35,7 +35,7 @@ const StepTwo = () => {
   };
 
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: -2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
         <Stack
           align={"center"}
@@ -78,12 +78,11 @@ const StepTwo = () => {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
             >
-              <Text textAlign="center">Step 2</Text>
               <br />
               <Text as={"span"} color={"purple.400"}>
-                Add a minimum of 1 ICP to your wallet
+                2. Add a minimum of 1 ICP to your wallet
               </Text>
             </Heading>
             <Text color={"gray.100"} fontSize="xl">
@@ -98,6 +97,8 @@ const StepTwo = () => {
           </Stack>
         </Stack>
       ) : (
+        ////////MOBILE///////
+        ////////////////////
         <Stack
           align={"center"}
           spacing={{ base: 2, md: 10 }}
@@ -110,7 +111,7 @@ const StepTwo = () => {
               fontWeight={600}
               fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
             >
-              <Text textAlign="center" mt={{ base: 12, md: 0 }}>
+              <Text textAlign="center" mt={{ base: 12, md: 1 }}>
                 Step 2
               </Text>
               <br />
@@ -124,7 +125,7 @@ const StepTwo = () => {
                   mb={{ base: 2, md: 0 }}
                   color={"purple.400"}
                 >
-                  Add a minimum of 1 ICP to your wallet
+                  2. Add a minimum of 1 ICP to your wallet
                 </Text>
               )}
             </Heading>

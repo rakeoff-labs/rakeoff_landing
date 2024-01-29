@@ -12,30 +12,12 @@ import {
   Container,
   Image,
 } from "@chakra-ui/react";
-import motokoBadge from "../../assets/motoko_badge.png";
-import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
+import ether from "../../assets/ether.png";
+import { boxBackgroundColor } from "../colors";
 
 const Features = () => {
-  const containerRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end end"],
-  });
-
-  const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
-  const topShadowValue = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["-25%", "100%"]
-  );
   return (
-    <Container
-      maxW="7xl"
-      mt={{ base: 12, md: "5rem" }}
-      ref={containerRef}
-      p={0}
-    >
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>
         <Heading size={{ base: "2xl", md: "3xl" }} color="white">
           Staking with Rakeoff
@@ -47,33 +29,25 @@ const Features = () => {
         gap={{ base: 4, md: 8 }}
       >
         <FeaturesCard
-          image={motokoBadge}
+          image={ether}
           heading={"Secured with Motoko"}
           text={"Built with robust & tramperproof smart contracts"}
-          imageValue={imageValue}
-          topShadowValue={topShadowValue}
         />
         <FeaturesCard
-          image={motokoBadge}
+          image={ether}
           heading={"Simple staking"}
           text={"Simply transfer ICP to your wallet and click 'Stake'"}
-          imageValue={imageValue}
-          topShadowValue={topShadowValue}
         />
 
         <FeaturesCard
-          image={motokoBadge}
+          image={ether}
           heading={"No-loss prize pool"}
           text={"Disburse your staked rewards into the pool"}
-          imageValue={imageValue}
-          topShadowValue={topShadowValue}
         />
         <FeaturesCard
-          image={motokoBadge}
+          image={ether}
           heading={"Liquid staking"}
           text={"Coming soon..."}
-          imageValue={imageValue}
-          topShadowValue={topShadowValue}
         />
       </SimpleGrid>
     </Container>
@@ -82,7 +56,7 @@ const Features = () => {
 
 export default Features;
 
-const FeaturesCard = ({ image, heading, text, imageValue }) => {
+const FeaturesCard = ({ image, heading, text }) => {
   return (
     <Center py={6}>
       <Box
@@ -97,18 +71,13 @@ const FeaturesCard = ({ image, heading, text, imageValue }) => {
         )}
       >
         <Box h={"250px"} borderBottom={"1px"} borderColor="black">
-          <motion.div
-            className="img-container"
-            style={{ translateX: imageValue }}
-          >
-            <Image
-              src={image}
-              roundedTop={"sm"}
-              h={60}
-              w="full"
-              alt={"Blog Image"}
-            />
-          </motion.div>
+          <Image
+            src={image}
+            roundedTop={"sm"}
+            h={80}
+            w="full"
+            alt={"Blog Image"}
+          />
         </Box>
         <Box bg={boxBackgroundColor} p={4}>
           <Heading color={"grey.100"} fontSize={"3xl"} noOfLines={1}>

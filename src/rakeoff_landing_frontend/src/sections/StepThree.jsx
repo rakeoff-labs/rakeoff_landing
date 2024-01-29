@@ -5,6 +5,7 @@ import {
   Stack,
   Flex,
   Box,
+  Button,
   Text,
   Image,
   useBreakpointValue,
@@ -12,8 +13,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import gif from "../../assets/area4.gif";
+export const MotionButton = motion(Button);
 
-import { boxBackgroundColor, boxBorderColor } from "./../colors";
+import { boxBackgroundColor, boxBorderColor } from "../colors";
 
 import { motion } from "framer-motion";
 export const MotionBox = motion(Box);
@@ -35,11 +37,11 @@ const StepThree = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: -2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 4, md: 20 }}
         direction={{ base: "column", md: "row" }}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -48,18 +50,19 @@ const StepThree = () => {
             fontWeight={600}
             fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
           >
-            <Text textAlign="center">Step 3</Text>
             <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
-                Just click 'Stake'
+                3. Just click 'Stake'
               </Text>
             ) : (
               <Text
                 textAlign="center"
-                mb={{ base: 2, md: 0 }}
+                mb={{ base: 2, md: 1 }}
                 color={"purple.400"}
-              ></Text>
+              >
+                3. Just click 'Stake'
+              </Text>
             )}
           </Heading>
           <Text
@@ -72,6 +75,12 @@ const StepThree = () => {
             period. We simplify the process by removing complexities such as the
             'dissolve delay', making your staking experience that simple.
           </Text>
+
+          <Stack
+            spacing={{ base: 1, sm: 6 }}
+            align="center"
+            direction={{ base: "column", sm: "row" }}
+          ></Stack>
         </Stack>
         <Flex
           flex={1}

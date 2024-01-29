@@ -9,11 +9,16 @@ import {
   Text,
   Container,
   Center,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import rakeoff from "../../assets/dark.png";
-import { RakeoffGrey, boxBackgroundColor } from "../colors";
+import { RakeoffPurpleHue, boxBackgroundColor } from "../colors";
+export const MotionButton = motion(Button);
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const Rakeoff = () => {
+  const isDesktop = useBreakpointValue({ base: false, lg: true });
+
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -22,6 +27,7 @@ const Rakeoff = () => {
 
   const imageValue = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
   const shadowValue = useTransform(scrollYProgress, [0, 1], ["-25%", "100%"]);
+  const opacityValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
     <Container
@@ -35,47 +41,61 @@ const Rakeoff = () => {
         <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
           <Flex p={8} flex={1} align={"center"} justify={"center"}>
             <Stack spacing={6} w={"full"} maxW={"lg"}>
-              <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+              <Heading size={{ base: "2xl", md: "2xl" }}>
                 What is Rakeoff?
                 <br />
               </Heading>
-              <Text
-                fontSize={{ base: "md", lg: "lg" }}
-                color={"gray.500"}
-              ></Text>
+              <Text fontSize={{ base: "md", lg: "xl" }} color={"grey.100"}>
+                We are a cryptocurrency staking rewards application built on the
+                ICP blockchain. We provide an ICP wallet with simplified
+                staking, real-time asset tracking, and a no-loss prize pool for
+                staking rewards. Enhance your staking experience with
+                achievement-based ICP bonuses, all within a compact,
+                user-friendly application.
+              </Text>
               <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-                <Button
-                  rounded={"full"}
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={
-                    {
-                      // bg: "blue.500",
-                    }
-                  }
+                <MotionButton
+                  rightIcon={<ArrowForwardIcon />}
+                  as="a"
+                  href="https://app.rakeoff.io/"
+                  target="_blank"
+                  bg={boxBackgroundColor}
+                  _hover={{
+                    boxShadow: `0px 0px 10px 6px ${RakeoffPurpleHue}`,
+                  }}
+                  boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
+                  color="white"
+                  className="box"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   Launch dApp
-                </Button>
-                <Button rounded={"full"}>How It Works</Button>
+                </MotionButton>
               </Stack>
             </Stack>
           </Flex>
-          <motion.div
-            className="img-container"
-            style={{
-              translateX: imageValue,
-              boxShadow: `10px 10px 20px rgba(0, 0, 0, ${shadowValue})`,
-            }}
-          >
-            <Image
-              alt="Login Image"
-              objectFit="cover"
-              src={rakeoff}
-              ml={9}
-              h={{ base: 670, md: 640 }}
-              w={1100}
-            />
-          </motion.div>
+          {isDesktop ? (
+            <motion.div
+              className="img-container"
+              style={{
+                translateX: imageValue,
+                boxShadow: `10px 10px 20px rgba(0, 0, 0, ${shadowValue})`,
+                opacity: opacityValue,
+              }}
+            >
+              <Image
+                alt="rakeoff"
+                objectFit="cover"
+                src={rakeoff}
+                mt={12}
+                ml={14}
+                h={{ base: 670, md: 640 }}
+                w={"100%"}
+              />
+            </motion.div>
+          ) : (
+            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mt={6} />
+          )}
         </Stack>
       </Center>
     </Container>

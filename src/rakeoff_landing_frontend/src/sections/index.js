@@ -7,7 +7,7 @@ export { default as MoreOnRakeoff } from "./MoreOnRakeoff";
 export { default as Statistics } from "./Statistics";
 export { default as SocialProof } from "./SocialProof";
 export { default as RakeoffStakingFeatures } from "./RakeoffStakingFeatures";
-export { default as Stepone } from "./Stepone";
+export { default as StepOne } from "./StepOne";
 export { default as StepTwo } from "./StepTwo";
 export { default as StepThree } from "./StepThree";
 export { default as StepFour } from "./StepFour";

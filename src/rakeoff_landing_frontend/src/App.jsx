@@ -6,7 +6,7 @@ import {
   MoreOnRakeoff,
   Footer,
   Features,
-  Stepone,
+  StepOne,
   StepTwo,
   StepThree,
   StepFour,
@@ -31,11 +31,9 @@ const AppLayout = () => {
       <BackgroundSection>
         <Banner />
 
-        {/* <RakeoffStakingFeatures /> */}
-
         <Features />
         <Rakeoff />
-        <Stepone />
+        <StepOne />
         <StepTwo />
         <StepThree />
         <StepFour />

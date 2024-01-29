@@ -14,7 +14,7 @@ import {
   getRakeoffStats,
   icpToDollars,
 } from "../components/tools";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import {
   boxBackgroundColor,
   boxBorderColor,
@@ -50,6 +50,8 @@ const Statistics = () => {
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
   const fetchStats = async () => {
+    const count = useMotionValue(0);
+    const rounded = useTransform(count, Math.round);
     const [apy, stats] = await Promise.all([
       getApyEstimate(),
       getRakeoffStats(),
