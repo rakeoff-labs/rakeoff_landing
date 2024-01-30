@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   HStack,
-  useColorModeValue,
   Image as ChakraImage,
   Center,
   Flex,

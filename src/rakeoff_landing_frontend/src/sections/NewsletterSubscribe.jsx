@@ -14,7 +14,7 @@ import {
 import { Button as ChakraButton } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import emailImage from "../../assets/email_image.png";
-import { RakeoffRed, boxBackgroundColor } from "../colors";
+import { boxBackgroundColor } from "../colors";
 
 const NewsletterSubscribe = () => {
   const toast = useToast();

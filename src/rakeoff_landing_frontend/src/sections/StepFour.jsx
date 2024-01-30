@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import gif from "../../assets/area5.gif";
+import gif from "../../assets/step4.gif";
 export const MotionBox = motion(Box);
 
 import { boxBackgroundColor, boxBorderColor } from "./../colors";
@@ -96,6 +96,8 @@ const StepFour = () => {
           </Stack>
         </Stack>
       ) : (
+        ////////MOBILE///////
+        ////////////////////
         <Stack
           align={"center"}
           spacing={{ base: 2, md: 10 }}
@@ -106,11 +108,12 @@ const StepFour = () => {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
+              mx={isDesktop ? 0 : 2}
             >
               <Text
                 textAlign="center"
-                mb={{ base: 2, md: 0 }}
+                mt={{ base: 8, md: 0 }}
                 color={"purple.400"}
               >
                 4. Disburse your rewards
@@ -119,12 +122,12 @@ const StepFour = () => {
             <Text
               textAlign={isDesktop ? "left" : "center"}
               color={"gray.100"}
-              mb={{ base: 4, md: 0 }}
-              fontSize="md"
+              mt={2}
+              fontSize="lg"
+              mx={isDesktop ? 0 : 2}
             >
-              Earn at least 1 ICP in staking rewards and choose to disburse it
-              back to ICP or enter the no-loss prize pool for a chance to boost
-              earnings. The process is easy and straightforward.
+              Earn at least 1 ICP in rewards and disburse it back to ICP or
+              enter our no-loss prize pool for a chance to earn more.
             </Text>
           </Stack>
           <Flex
@@ -132,13 +135,14 @@ const StepFour = () => {
             justify={"center"}
             align={"center"}
             position={"relative"}
-            w={isDesktop ? "100%" : 400}
+            w={"100%"}
           >
             <MotionBox
+              mb={4}
               position={"relative"}
-              height={isDesktop ? "300px" : "200px"}
+              height={isDesktop ? "300px" : "180px"}
               rounded={"2xl"}
-              width={"full"}
+              width={"380px"}
               overflow={"hidden"}
               variants={cardVariants}
               initial="offscreen"

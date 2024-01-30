@@ -11,7 +11,7 @@ import {
   Center,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import rakeoff from "../../assets/dark.png";
+import rakeoff from "../../assets/rakeoff_dashboard.png";
 import { RakeoffPurpleHue, boxBackgroundColor } from "../colors";
 export const MotionButton = motion(Button);
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -41,11 +41,18 @@ const Rakeoff = () => {
         <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
           <Flex p={8} flex={1} align={"center"} justify={"center"}>
             <Stack spacing={6} w={"full"} maxW={"lg"}>
-              <Heading size={{ base: "2xl", md: "2xl" }}>
+              <Heading
+                size={{ base: "2xl", md: "2xl" }}
+                textAlign={isDesktop ? undefined : "center"}
+              >
                 What is Rakeoff?
                 <br />
               </Heading>
-              <Text fontSize={{ base: "md", lg: "xl" }} color={"grey.100"}>
+              <Text
+                fontSize={{ base: "lg", lg: "xl" }}
+                color={"grey.100"}
+                textAlign={isDesktop ? undefined : "center"}
+              >
                 We are a cryptocurrency staking rewards application built on the
                 ICP blockchain. We provide an ICP wallet with simplified
                 staking, real-time asset tracking, and a no-loss prize pool for
@@ -53,7 +60,10 @@ const Rakeoff = () => {
                 achievement-based ICP bonuses, all within a compact,
                 user-friendly application.
               </Text>
-              <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+              <Stack
+                direction={{ base: "column", md: "row" }}
+                spacing={{ base: 1, sm: 6 }}
+              >
                 <MotionButton
                   rightIcon={<ArrowForwardIcon />}
                   as="a"
@@ -94,7 +104,7 @@ const Rakeoff = () => {
               />
             </motion.div>
           ) : (
-            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mt={6} />
+            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mb={10} />
           )}
         </Stack>
       </Center>

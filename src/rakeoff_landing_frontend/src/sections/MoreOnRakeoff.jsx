@@ -11,28 +11,8 @@ import {
 import rakeoffBank from "../../assets/rakeoff_bank.png";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
-import { motion } from "framer-motion";
+
 const MoreOnRakeoff = () => {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>

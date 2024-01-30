@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import gif from "../../assets/area2.gif";
+import gif from "../../assets/step2.gif";
 import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 export const MotionBox = motion(Box);
@@ -109,35 +109,27 @@ const StepTwo = () => {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
             >
-              <Text textAlign="center" mt={{ base: 12, md: 1 }}>
-                Step 2
+              <Text
+                textAlign="center"
+                mt={{ base: 8, md: 0 }}
+                color={"purple.400"}
+                mx={2}
+              >
+                2. Add a minimum of 1 ICP to your wallet
               </Text>
-              <br />
-              {isDesktop ? (
-                <Text as={"span"} color={"purple.400"}>
-                  Log in with your Internet Identity
-                </Text>
-              ) : (
-                <Text
-                  textAlign="center"
-                  mb={{ base: 2, md: 0 }}
-                  color={"purple.400"}
-                >
-                  2. Add a minimum of 1 ICP to your wallet
-                </Text>
-              )}
             </Heading>
             <Text
               textAlign={isDesktop ? "left" : "center"}
               color={"gray.100"}
-              mb={{ base: 4, md: 0 }}
+              mt={{ base: 4, md: 0 }}
               fontSize="lg"
+              mx={2}
             >
-              To transfer ICP to your wallet, click 'Receive', copy your wallet
-              address, then paste it into the exchange platform's field and
-              enter the amount of ICP you wish to transfer.
+              Transfer ICP to your wallet, click 'Receive', copy your address,
+              then paste it into the exchange platform's field and enter the
+              amount of ICP you wish to transfer.
             </Text>
           </Stack>
           <Flex
@@ -145,13 +137,14 @@ const StepTwo = () => {
             justify={"center"}
             align={"center"}
             position={"relative"}
-            w={isDesktop ? "100%" : 400}
+            w={"100%"}
           >
             <MotionBox
+              mb={isDesktop ? 0 : 4}
               position={"relative"}
-              height={isDesktop ? "300px" : "200px"}
+              height={"180px"}
               rounded={"2xl"}
-              width={"full"}
+              width={"380px"}
               overflow={"hidden"}
               variants={cardVariants}
               initial="offscreen"

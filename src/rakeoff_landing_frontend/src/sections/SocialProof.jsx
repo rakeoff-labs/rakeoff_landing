@@ -17,18 +17,6 @@ import podcastBadge from "../../assets/podcast_badge.png";
 import { boxBorderColor, boxFontColor } from "../colors";
 import { motion } from "framer-motion";
 
-// const marqueeVariants = {
-//   animate: {
-//     x: [0, -2070], // This should be double the width of your total content
-//     transition: {
-//       x: {
-//         repeat: Infinity,
-//         duration: 8,
-//         ease: "linear",
-//       },
-//     },
-//   },
-// };
 const SocialProof = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} bg="red" p={0}>

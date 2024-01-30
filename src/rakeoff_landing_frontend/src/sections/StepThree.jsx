@@ -12,7 +12,7 @@ import {
   AspectRatio,
   useColorModeValue,
 } from "@chakra-ui/react";
-import gif from "../../assets/area4.gif";
+import gif from "../../assets/step3.gif";
 export const MotionButton = motion(Button);
 
 import { boxBackgroundColor, boxBorderColor } from "../colors";
@@ -48,7 +48,8 @@ const StepThree = () => {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
+            fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
+            mx={isDesktop ? 0 : 2}
           >
             <br />
             {isDesktop ? (
@@ -68,12 +69,13 @@ const StepThree = () => {
           <Text
             textAlign={isDesktop ? "left" : "center"}
             color={"gray.100"}
-            mb={{ base: 4, md: 0 }}
-            fontSize="xl"
+            mt={{ base: 4, md: 0 }}
+            fontSize={isDesktop ? "xl" : "lg"}
+            mx={isDesktop ? 0 : 2}
           >
-            Stake a minimum of 1 ICP to earn rewards, with a 6-month lock-in
-            period. We simplify the process by removing complexities such as the
-            'dissolve delay', making your staking experience that simple.
+            Stake a minimum of 1 ICP, with a 6-month lock-in period. We simplify
+            the process by removing complexities behind the scenes making your
+            staking experience that simple.
           </Text>
 
           <Stack
@@ -87,13 +89,14 @@ const StepThree = () => {
           justify={"center"}
           align={"center"}
           position={"relative"}
-          w={isDesktop ? "100%" : 400}
+          w="100%"
         >
           <MotionBox
+            mb={isDesktop ? 0 : 4}
             position={"relative"}
-            height={isDesktop ? "300px" : "200px"}
+            height={isDesktop ? "300px" : "180px"}
             rounded={"2xl"}
-            width={"full"}
+            width={isDesktop ? "full" : "380px"}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"

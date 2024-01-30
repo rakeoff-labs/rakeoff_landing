@@ -5,8 +5,6 @@ export { default as NewsletterSubscribe } from "./NewsletterSubscribe";
 export { default as ThreeSteps } from "./ThreeSteps";
 export { default as MoreOnRakeoff } from "./MoreOnRakeoff";
 export { default as Statistics } from "./Statistics";
-export { default as SocialProof } from "./SocialProof";
-export { default as RakeoffStakingFeatures } from "./RakeoffStakingFeatures";
 export { default as StepOne } from "./StepOne";
 export { default as StepTwo } from "./StepTwo";
 export { default as StepThree } from "./StepThree";

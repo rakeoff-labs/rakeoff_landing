@@ -44,7 +44,7 @@ const AppLayout = () => {
     </Box>
   );
 };
-
+// checkered pattern
 const BackgroundSection = ({ children }) => {
   return (
     <Box

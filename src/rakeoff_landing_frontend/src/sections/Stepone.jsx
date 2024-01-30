@@ -14,7 +14,7 @@ import {
   AspectRatio,
   useColorModeValue,
 } from "@chakra-ui/react";
-import gif from "../../assets/area.gif";
+import step1 from "../../assets/step1.gif";
 export const MotionButton = motion(Button);
 
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -60,12 +60,13 @@ const StepOne = () => {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
+            fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
+            mx={isDesktop ? 0 : 2}
           >
             <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
-                Log in with your Internet Identity
+                1. Log in with your Internet Identity
               </Text>
             ) : (
               <Text
@@ -73,27 +74,29 @@ const StepOne = () => {
                 mt={{ base: 2, md: 10 }}
                 color={"purple.400"}
               >
-                Log in with your Internet Identity
+                1.Log in with your Internet Identity
               </Text>
             )}
           </Heading>
           <Text
             textAlign={isDesktop ? "left" : "center"}
             color={"gray.100"}
-            fontSize="xl"
-            mb={{ base: 4, md: 0 }}
+            fontSize={isDesktop ? "xl" : "lg"}
+            mt={{ base: 4, md: 0 }}
+            mx={isDesktop ? 0 : 2}
           >
             Securely access the Rakeoff dApp using your Internet Identity, a
             more secure alternative to traditional email and password logins in
-            the Web3 ecosystem.
+            Web3.
           </Text>
 
           <Stack
-            spacing={{ base: 1, sm: 6 }}
+            // spacing={{ base: 1, sm: 6 }}
             align="center"
             direction={{ base: "column", sm: "row" }}
           >
             <MotionButton
+              mt={{ base: 8, md: 0 }}
               rightIcon={<ArrowForwardIcon />}
               as="a"
               href="https://identity.ic0.app/"
@@ -118,13 +121,13 @@ const StepOne = () => {
           justify={"center"}
           align={"center"}
           position={"relative"}
-          w={isDesktop ? "100%" : 400}
+          w={"100%"}
         >
           <MotionBox
             position={"relative"}
-            height={isDesktop ? "300px" : "200px"}
+            height={isDesktop ? "300px" : "180px"}
             rounded={"3xl"}
-            width={"full"}
+            width={isDesktop ? "full" : "380px"}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"
@@ -139,7 +142,7 @@ const StepOne = () => {
             )}
           >
             <AspectRatio ratio={21 / 10}>
-              <Image src={gif} alt="naruto" objectFit="cover" />
+              <Image src={step1} alt="naruto" objectFit="cover" />
             </AspectRatio>
           </MotionBox>
         </Flex>
