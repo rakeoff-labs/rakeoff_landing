@@ -41,7 +41,7 @@ const StepThree = () => {
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
-        py={{ base: 0, md: 28 }}
+        py={{ base: 0, md: 20 }}
         direction={{ base: "column", md: "row" }}
         pt={{ base: 6, md: 0 }}
       >

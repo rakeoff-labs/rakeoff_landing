@@ -37,7 +37,7 @@ const StepTwo = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
-        <Stack align={"center"} spacing={10} py={28} direction={"row"}>
+        <Stack align={"center"} spacing={10} py={20} direction={"row"}>
           <Flex
             flex={1}
             justify={"center"}

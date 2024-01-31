@@ -40,7 +40,7 @@ const StepOne = () => {
   };
 
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: "8rem" }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       <Center mb={8}>
         <Heading
           size={{ base: "3xl", md: "3xl" }}
@@ -53,11 +53,15 @@ const StepOne = () => {
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
-        py={{ base: 0, md: 28 }}
+        py={{ base: 0, md: 20 }}
         direction={{ base: "column", md: "row" }}
         pt={{ base: 6, md: 0 }}
       >
-        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
+        <Stack
+          flex={{ base: 0, md: 1 }}
+          mt={{ base: 0, md: 14 }}
+          spacing={{ base: 0, md: 10 }}
+        >
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -92,7 +96,7 @@ const StepOne = () => {
 
           <Stack align="center" direction={{ base: "column", sm: "row" }}>
             <MotionButton
-              mt={{ base: 8, md: 0 }}
+              mt={{ base: 8, md: 4 }}
               rightIcon={<ArrowForwardIcon />}
               as="a"
               href="https://identity.ic0.app/"

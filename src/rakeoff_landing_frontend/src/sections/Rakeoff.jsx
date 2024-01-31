@@ -21,7 +21,7 @@ const Rakeoff = () => {
 
   const variants = {
     hidden: {
-      translateX: "100%",
+      translateX: "2%",
       opacity: 0,
     },
     visible: {
@@ -32,26 +32,33 @@ const Rakeoff = () => {
 
   return (
     <Container
-      maxW="8xl"
+      maxW={{ base: "8xl", md: "7xl", lg: "7xl" }}
       mt={{ base: 12, md: "5rem" }}
       bgGradient={`linear(to-bl, ${boxBackgroundColor}, purple.500, #6229a8)`}
       p={0}
     >
       <Center mb={8}>
-        <Stack minH={"80vh"} direction={{ base: "column", md: "row" }}>
-          <Flex p={8} flex={1} align={"center"} justify={"center"}>
-            <Stack spacing={6} w={"full"} maxW={"lg"}>
+        <Stack
+          minH={"80vh"}
+          direction={{ base: "column", md: "row" }}
+          width="100%"
+          spacing={8}
+        >
+          <Flex p={8} flex={1} alignItems="center" justifyContent="center">
+            <Stack spacing={4} width={"100%"}>
               <Heading
-                size={{ base: "2xl", md: "2xl" }}
+                size={{ base: "2xl", md: "3xl" }}
                 textAlign={isDesktop ? undefined : "center"}
               >
                 What is Rakeoff?
-                <br />
               </Heading>
               <Text
                 fontSize={{ base: "lg", lg: "xl" }}
                 color={"grey.100"}
-                textAlign={isDesktop ? undefined : "center"}
+                fontWeight={400}
+                textAlign={isDesktop ? "start" : "center"}
+                as={"span"}
+                position={"relative"}
               >
                 We are a cryptocurrency staking rewards application built on the
                 ICP blockchain. We provide an ICP wallet with simplified
@@ -97,7 +104,7 @@ const Rakeoff = () => {
                 alt="rakeoff"
                 objectFit="cover"
                 src={rakeoff}
-                mt={12}
+                mt={20}
                 ml={14}
                 h={{ base: 670, md: 640 }}
                 w={"100%"}
