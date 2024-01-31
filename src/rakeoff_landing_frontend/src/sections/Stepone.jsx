@@ -40,11 +40,11 @@ const StepOne = () => {
   };
 
   return (
-    <Container maxW="7xl" mt={{ base: 16, md: "8rem" }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "8rem" }} p={0}>
       <Center mb={8}>
         <Heading
           size={{ base: "3xl", md: "3xl" }}
-          mb={{ base: -12, md: 0 }}
+          mb={{ base: 2, md: 0 }}
           color="white"
         >
           How it works
@@ -52,18 +52,18 @@ const StepOne = () => {
       </Center>
       <Stack
         align={"center"}
-        spacing={{ base: 2, md: 10 }}
-        py={{ base: 4, md: 0 }}
+        spacing={{ base: 0, md: 10 }}
+        py={{ base: 0, md: 28 }}
         direction={{ base: "column", md: "row" }}
+        pt={{ base: 6, md: 0 }}
       >
-        <Stack flex={1} spacing={{ base: 2, md: 10 }}>
+        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
             mx={isDesktop ? 0 : 2}
           >
-            <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
                 1. Log in with your Internet Identity
@@ -71,10 +71,10 @@ const StepOne = () => {
             ) : (
               <Text
                 textAlign="center"
-                mt={{ base: 2, md: 10 }}
+                mb={{ base: 2, md: 1 }}
                 color={"purple.400"}
               >
-                1.Log in with your Internet Identity
+                1. Log in with your Internet Identity
               </Text>
             )}
           </Heading>
@@ -90,11 +90,7 @@ const StepOne = () => {
             Web3.
           </Text>
 
-          <Stack
-            // spacing={{ base: 1, sm: 6 }}
-            align="center"
-            direction={{ base: "column", sm: "row" }}
-          >
+          <Stack align="center" direction={{ base: "column", sm: "row" }}>
             <MotionButton
               mt={{ base: 8, md: 0 }}
               rightIcon={<ArrowForwardIcon />}
@@ -117,17 +113,19 @@ const StepOne = () => {
         </Stack>
 
         <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
+          flex={{ base: 0, md: 1 }}
+          justify={isDesktop ? "center" : undefined}
+          align={isDesktop ? "center" : undefined}
           position={"relative"}
           w={"100%"}
         >
           <MotionBox
             position={"relative"}
-            height={isDesktop ? "300px" : "180px"}
-            rounded={"3xl"}
-            width={isDesktop ? "full" : "380px"}
+            mb={isDesktop ? 0 : 4}
+            height={isDesktop ? "300px" : "158px"}
+            rounded={"2xl"}
+            width={"full"}
+            mx={isDesktop ? 0 : 3}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"
@@ -142,7 +140,7 @@ const StepOne = () => {
             )}
           >
             <AspectRatio ratio={21 / 10}>
-              <Image src={step1} alt="naruto" objectFit="cover" />
+              <Image src={step1} alt="step1" objectFit="cover" />
             </AspectRatio>
           </MotionBox>
         </Flex>

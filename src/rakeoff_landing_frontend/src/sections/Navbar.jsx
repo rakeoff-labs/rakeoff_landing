@@ -61,17 +61,7 @@ const Navbar = () => {
               >
                 Analytics <ExternalLinkIcon mb={1} />
               </Text>
-              <Text
-                fontSize="lg"
-                as="a"
-                href="https://docs.rakeoff.io/"
-                target="_blank"
-                color={boxFontColor}
-                _hover={{ color: "white", cursor: "pointer" }}
-                fontWeight={500}
-              >
-                Docs <ExternalLinkIcon mb={1} />
-              </Text>
+
               <Text
                 fontSize="lg"
                 as="a"
@@ -166,17 +156,6 @@ const MobileMenu = () => {
                 fontWeight={500}
               >
                 Analytics <ExternalLinkIcon mb={1} />
-              </Text>
-              <Divider />
-              <Text
-                fontSize={28}
-                as="a"
-                href="https://docs.rakeoff.io/"
-                target="_blank"
-                color={boxFontColor}
-                fontWeight={500}
-              >
-                Docs <ExternalLinkIcon mb={1} />
               </Text>
               <Divider />
               <Text

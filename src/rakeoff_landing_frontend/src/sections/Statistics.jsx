@@ -14,7 +14,7 @@ import {
   getRakeoffStats,
   icpToDollars,
 } from "../components/tools";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   boxBackgroundColor,
   boxBorderColor,

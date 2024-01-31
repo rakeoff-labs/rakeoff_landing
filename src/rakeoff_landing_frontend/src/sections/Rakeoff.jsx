@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Button,
   Flex,
@@ -19,22 +19,22 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 const Rakeoff = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end end"],
-  });
-
-  const imageValue = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
-  const shadowValue = useTransform(scrollYProgress, [0, 1], ["-25%", "100%"]);
-  const opacityValue = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const variants = {
+    hidden: {
+      translateX: "100%",
+      opacity: 0,
+    },
+    visible: {
+      translateX: "0%",
+      opacity: 1,
+    },
+  };
 
   return (
     <Container
       maxW="8xl"
       mt={{ base: 12, md: "5rem" }}
       bgGradient={`linear(to-bl, ${boxBackgroundColor}, purple.500, #6229a8)`}
-      ref={containerRef}
       p={0}
     >
       <Center mb={8}>
@@ -87,11 +87,11 @@ const Rakeoff = () => {
           {isDesktop ? (
             <motion.div
               className="img-container"
-              style={{
-                translateX: imageValue,
-                boxShadow: `10px 10px 20px rgba(0, 0, 0, ${shadowValue})`,
-                opacity: opacityValue,
-              }}
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
             >
               <Image
                 alt="rakeoff"

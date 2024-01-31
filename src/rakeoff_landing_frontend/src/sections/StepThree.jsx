@@ -12,7 +12,7 @@ import {
   AspectRatio,
   useColorModeValue,
 } from "@chakra-ui/react";
-import gif from "../../assets/step3.gif";
+import step3 from "../../assets/step3.gif";
 export const MotionButton = motion(Button);
 
 import { boxBackgroundColor, boxBorderColor } from "../colors";
@@ -40,18 +40,18 @@ const StepThree = () => {
     <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       <Stack
         align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 4, md: 20 }}
+        spacing={{ base: 0, md: 10 }}
+        py={{ base: 0, md: 28 }}
         direction={{ base: "column", md: "row" }}
+        pt={{ base: 6, md: 0 }}
       >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
             mx={isDesktop ? 0 : 2}
           >
-            <br />
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
                 3. Just click 'Stake'
@@ -77,26 +77,21 @@ const StepThree = () => {
             the process by removing complexities behind the scenes making your
             staking experience that simple.
           </Text>
-
-          <Stack
-            spacing={{ base: 1, sm: 6 }}
-            align="center"
-            direction={{ base: "column", sm: "row" }}
-          ></Stack>
         </Stack>
         <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
+          flex={{ base: 0, md: 1 }}
+          justify={isDesktop ? "center" : undefined}
+          align={isDesktop ? "center" : undefined}
           position={"relative"}
           w="100%"
         >
           <MotionBox
             mb={isDesktop ? 0 : 4}
             position={"relative"}
-            height={isDesktop ? "300px" : "180px"}
+            height={isDesktop ? "300px" : "158px"}
             rounded={"2xl"}
-            width={isDesktop ? "full" : "380px"}
+            mx={isDesktop ? 0 : 3}
+            width={"full"}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"
@@ -111,7 +106,7 @@ const StepThree = () => {
             )}
           >
             <AspectRatio ratio={21 / 10}>
-              <Image src={gif} alt="naruto" objectFit="cover" />
+              <Image src={step3} alt="step3" objectFit="cover" />
             </AspectRatio>
           </MotionBox>
         </Flex>

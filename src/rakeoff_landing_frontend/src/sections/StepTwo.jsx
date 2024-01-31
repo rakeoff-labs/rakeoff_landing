@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import gif from "../../assets/step2.gif";
+import step2 from "../../assets/step2.gif";
 import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 export const MotionBox = motion(Box);
@@ -37,12 +37,7 @@ const StepTwo = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
-        <Stack
-          align={"center"}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
-          direction={{ base: "column", md: "row" }}
-        >
+        <Stack align={"center"} spacing={10} py={28} direction={"row"}>
           <Flex
             flex={1}
             justify={"center"}
@@ -52,7 +47,7 @@ const StepTwo = () => {
           >
             <MotionBox
               position={"relative"}
-              height={"300px"}
+              height={"284px"}
               rounded={"2xl"}
               width={"full"}
               overflow={"hidden"}
@@ -70,16 +65,12 @@ const StepTwo = () => {
               )}
             >
               <AspectRatio ratio={21 / 10}>
-                <Image src={gif} alt="naruto" objectFit="cover" />
+                <Image src={step2} alt="step2" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>
-          <Stack flex={1} spacing={{ base: 5, md: 10 }} align="end">
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
-            >
+          <Stack flex={1} spacing={10} align="end">
+            <Heading lineHeight={1.1} fontWeight={600} fontSize={"5xl"}>
               <br />
               <Text as={"span"} color={"purple.400"}>
                 2. Add a minimum of 1 ICP to your wallet
@@ -99,31 +90,17 @@ const StepTwo = () => {
       ) : (
         ////////MOBILE///////
         ////////////////////
-        <Stack
-          align={"center"}
-          spacing={{ base: 2, md: 10 }}
-          py={{ base: 4, md: 0 }}
-          direction={{ base: "column", md: "row" }}
-        >
-          <Stack flex={1} spacing={{ base: 2, md: 10 }}>
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
-            >
-              <Text
-                textAlign="center"
-                mt={{ base: 8, md: 0 }}
-                color={"purple.400"}
-                mx={2}
-              >
+        <Stack align={"center"} pt={6} direction={"column"}>
+          <Stack>
+            <Heading lineHeight={1.1} fontWeight={600} fontSize={"3xl"} mx={2}>
+              <Text textAlign="center" color={"purple.400"}>
                 2. Add a minimum of 1 ICP to your wallet
               </Text>
             </Heading>
             <Text
-              textAlign={isDesktop ? "left" : "center"}
+              textAlign={"center"}
               color={"gray.100"}
-              mt={{ base: 4, md: 0 }}
+              mt={4}
               fontSize="lg"
               mx={2}
             >
@@ -132,19 +109,14 @@ const StepTwo = () => {
               amount of ICP you wish to transfer.
             </Text>
           </Stack>
-          <Flex
-            flex={1}
-            justify={"center"}
-            align={"center"}
-            position={"relative"}
-            w={"100%"}
-          >
+          <Flex position={"relative"} w={"100%"}>
             <MotionBox
-              mb={isDesktop ? 0 : 4}
+              mb={4}
               position={"relative"}
-              height={"180px"}
+              height={"158px"}
               rounded={"2xl"}
-              width={"380px"}
+              width={"full"}
+              mx={3}
               overflow={"hidden"}
               variants={cardVariants}
               initial="offscreen"
@@ -159,7 +131,7 @@ const StepTwo = () => {
               )}
             >
               <AspectRatio ratio={21 / 10}>
-                <Image src={gif} alt="naruto" objectFit="cover" />
+                <Image src={step2} alt="step2" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>

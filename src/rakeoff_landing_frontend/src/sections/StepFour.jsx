@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import gif from "../../assets/step4.gif";
+import step4 from "../../assets/step4.gif";
 export const MotionBox = motion(Box);
 
 import { boxBackgroundColor, boxBorderColor } from "./../colors";
@@ -37,12 +37,7 @@ const StepFour = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
-        <Stack
-          align={"center"}
-          spacing={{ base: 2, md: 10 }}
-          py={{ base: 20, md: 20 }}
-          direction={{ base: "column", md: "row" }}
-        >
+        <Stack align={"center"} spacing={10} py={20} direction={"row"}>
           <Flex
             flex={1}
             justify={"center"}
@@ -70,16 +65,12 @@ const StepFour = () => {
               )}
             >
               <AspectRatio ratio={21 / 10}>
-                <Image src={gif} alt="naruto" objectFit="cover" />
+                <Image src={step4} alt="step4" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: "5xl", sm: "4xl", lg: "5xl" }}
-            >
+          <Stack flex={1} spacing={10}>
+            <Heading lineHeight={1.1} fontWeight={600} fontSize={"5xl"}>
               <Text as={"span"} color={"purple.400"}>
                 4. Disburse your rewards
               </Text>
@@ -98,51 +89,32 @@ const StepFour = () => {
       ) : (
         ////////MOBILE///////
         ////////////////////
-        <Stack
-          align={"center"}
-          spacing={{ base: 2, md: 10 }}
-          py={{ base: 4, md: 0 }}
-          direction={{ base: "column", md: "row" }}
-        >
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
-              mx={isDesktop ? 0 : 2}
-            >
-              <Text
-                textAlign="center"
-                mt={{ base: 8, md: 0 }}
-                color={"purple.400"}
-              >
+        <Stack align={"center"} pt={6} direction={"column"}>
+          <Stack>
+            <Heading lineHeight={1.1} fontWeight={600} fontSize={"3xl"} mx={2}>
+              <Text textAlign="center" color={"purple.400"}>
                 4. Disburse your rewards
               </Text>
             </Heading>
             <Text
-              textAlign={isDesktop ? "left" : "center"}
+              textAlign={"center"}
               color={"gray.100"}
-              mt={2}
+              mt={4}
               fontSize="lg"
-              mx={isDesktop ? 0 : 2}
+              mx={2}
             >
               Earn at least 1 ICP in rewards and disburse it back to ICP or
               enter our no-loss prize pool for a chance to earn more.
             </Text>
           </Stack>
-          <Flex
-            flex={1}
-            justify={"center"}
-            align={"center"}
-            position={"relative"}
-            w={"100%"}
-          >
+          <Flex position={"relative"} w={"100%"}>
             <MotionBox
-              mb={4}
+              mb={12}
+              mx={3}
               position={"relative"}
-              height={isDesktop ? "300px" : "180px"}
+              height={"158px"}
               rounded={"2xl"}
-              width={"380px"}
+              width={"full"}
               overflow={"hidden"}
               variants={cardVariants}
               initial="offscreen"
@@ -157,7 +129,7 @@ const StepFour = () => {
               )}
             >
               <AspectRatio ratio={21 / 10}>
-                <Image src={gif} alt="naruto" objectFit="cover" />
+                <Image src={step4} alt="step4" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>
