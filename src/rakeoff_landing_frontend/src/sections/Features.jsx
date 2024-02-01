@@ -11,11 +11,11 @@ import {
   Container,
   Image,
 } from "@chakra-ui/react";
-import chart from "../../assets/analysis_chart.svg";
-import prize from "../../assets/prize_pool.svg";
-import bonus from "../../assets/bonus_staking.svg";
+import chart from "../../assets/feature_analysis_chart.svg";
+import prize from "../../assets/feature_prize_pool.svg";
+import bonus from "../../assets/feature_bonus_staking.svg";
 
-import simple from "../../assets/simplified_staking.svg";
+import simple from "../../assets/feature_simplified_staking.svg";
 
 import { boxBackgroundColor } from "../colors";
 

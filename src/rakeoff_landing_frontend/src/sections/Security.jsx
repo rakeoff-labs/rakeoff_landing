@@ -13,10 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import motoko from "../../assets/motoko_shield.svg";
-import dfinity from "../../assets/dfinity_logo.svg";
-import team from "../../assets/team_photo.svg";
-import tvl from "../../assets/tvl_image.svg";
+import motoko from "../../assets/socialproof_motoko_shield.svg";
+import dfinity from "../../assets/socialproof_dfinity_logo.svg";
+import team from "../../assets/socialproof_team_photo.svg";
+import tvl from "../../assets/socialproof_tvl_chart.svg";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Security = () => {
