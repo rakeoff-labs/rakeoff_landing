@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  Flex,
   Text,
   Heading,
   Image,
@@ -9,8 +8,6 @@ import {
   Container,
   Center,
   Box,
-  VStack,
-  useBreakpointValue,
   useColorModeValue,
   SimpleGrid,
 } from "@chakra-ui/react";
