@@ -11,7 +11,13 @@ import {
   Container,
   Image,
 } from "@chakra-ui/react";
-import ether from "../../assets/ether.png";
+import motoko from "../../assets/motoko.svg";
+import prize from "../../assets/prize.svg";
+
+import simple from "../../assets/simple.svg";
+
+import tap from "../../assets/tap.svg";
+
 import { boxBackgroundColor } from "../colors";
 
 const Features = () => {
@@ -28,23 +34,23 @@ const Features = () => {
         gap={{ base: 4, md: 8 }}
       >
         <FeaturesCard
-          image={ether}
+          image={motoko}
           heading={"Secured with Motoko"}
           text={"Built with robust & tramperproof smart contracts"}
         />
         <FeaturesCard
-          image={ether}
+          image={simple}
           heading={"Simple staking"}
-          text={"Simply transfer ICP to your wallet and click 'Stake'"}
+          text={"We remove the additional steps to stake "}
         />
 
         <FeaturesCard
-          image={ether}
+          image={prize}
           heading={"No-loss prize pool"}
           text={"Disburse your staked rewards into the pool"}
         />
         <FeaturesCard
-          image={ether}
+          image={tap}
           heading={"Liquid staking"}
           text={"Coming soon..."}
         />
@@ -62,22 +68,20 @@ const FeaturesCard = ({ image, heading, text }) => {
         w="2xl"
         borderRadius="3xl"
         overflow={"hidden"}
-        bg={"white"}
         borderColor="black"
         boxShadow={useColorModeValue(
           "10px 10px 0 purple",
           "10px 10px 0 blueviolet"
         )}
       >
-        <Box h={"250px"} borderBottom={"1px"} borderColor="black">
-          <Image
-            src={image}
-            roundedTop={"sm"}
-            h={80}
-            w="full"
-            alt={"Blog Image"}
-          />
-        </Box>
+        <Image
+          src={image}
+          h={60}
+          w="100%"
+          objectFit="cover"
+          alt={"Rakeoff feature Image"}
+        />
+
         <Box bg={boxBackgroundColor} p={4}>
           <Heading color={"grey.100"} fontSize={"3xl"} noOfLines={1}>
             {heading}

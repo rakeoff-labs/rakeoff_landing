@@ -37,7 +37,7 @@ const StepThree = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
@@ -45,7 +45,11 @@ const StepThree = () => {
         direction={{ base: "column", md: "row" }}
         pt={{ base: 6, md: 0 }}
       >
-        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
+        <Stack
+          flex={{ base: 0, md: 1 }}
+          mb={{ base: 0, md: 8 }}
+          spacing={{ base: 0, md: 10 }}
+        >
           <Heading
             lineHeight={1.1}
             fontWeight={600}

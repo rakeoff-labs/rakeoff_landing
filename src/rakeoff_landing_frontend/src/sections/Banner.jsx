@@ -15,7 +15,7 @@ import xLogo from "../../assets/x_logo.svg";
 import discordLogo from "../../assets/discord_logo.svg";
 import mediumLogo from "../../assets/medium_logo.svg";
 import screen from "../../assets/Rakeoff_Screen.png";
-import { RakeoffGrey } from "../colors";
+import { RakeoffGrey, boxBackgroundColor } from "../colors";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
@@ -23,32 +23,16 @@ import Statistics from "./Statistics";
 const Banner = () => {
   return (
     <Box>
-      <motion.div
-        style={{
-          // width: "100vw",
-          // height: "65vh",
-
-          backgroundColor: `rgba(183, 136, 233, 0.61)`,
-        }}
-        animate={{
-          backgroundColor: [
-            "purple.400",
-            "rgba(180, 126, 236, 0.61)",
-            "rgba(153, 55, 255, 0.61)",
-          ],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+      <Box
+        h={{ base: "90vh", md: "600px" }}
+        overflow="hidden"
+        bgGradient={`linear(to-bl, ${boxBackgroundColor}, purple.500, #6229a8)`}
+        bgSize="150% 150%"
       >
-        <Box h={{ base: "90vh", md: "600px" }} overflow="hidden">
-          <Navbar />
-          <TitleAndDescription />
-        </Box>
-        <Statistics />
-      </motion.div>
+        <Navbar />
+        <TitleAndDescription />
+      </Box>
+      <Statistics />
     </Box>
   );
 };
