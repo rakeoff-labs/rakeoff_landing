@@ -11,12 +11,11 @@ import {
   Container,
   Image,
 } from "@chakra-ui/react";
-import motoko from "../../assets/motoko.svg";
+import chart from "../../assets/chart.svg";
 import prize from "../../assets/prize.svg";
+import bonus from "../../assets/bonus.svg";
 
 import simple from "../../assets/simple.svg";
-
-import tap from "../../assets/tap.svg";
 
 import { boxBackgroundColor } from "../colors";
 
@@ -34,25 +33,25 @@ const Features = () => {
         gap={{ base: 4, md: 8 }}
       >
         <FeaturesCard
-          image={motoko}
-          heading={"Secured with Motoko"}
-          text={"Built with robust & tramperproof smart contracts"}
-        />
-        <FeaturesCard
           image={simple}
           heading={"Simple staking"}
-          text={"We remove the additional steps to stake "}
+          text={"Begin staking with just the click of a button"}
         />
-
         <FeaturesCard
           image={prize}
           heading={"No-loss prize pool"}
           text={"Disburse your staked rewards into the pool"}
         />
         <FeaturesCard
-          image={tap}
-          heading={"Liquid staking"}
-          text={"Coming soon..."}
+          image={bonus}
+          heading={"Staked ICP bonuses"}
+          text={"Stake ICP with us and earn bonus rewards"}
+        />
+
+        <FeaturesCard
+          image={chart}
+          heading={"Analysis & Insights"}
+          text={"View your portfolio's performance"}
         />
       </SimpleGrid>
     </Container>

@@ -129,7 +129,7 @@ const StoryBoxAndImage = ({ heading, link, info }) => {
         <Heading size="lg" textAlign="center" mb={3} color="white">
           {heading} <ExternalLinkIcon color="white" mb={1} />
         </Heading>
-        <Text textAlign="center" maxW={"sm"} color={boxFontColor}>
+        <Text textAlign="center" maxW={"sm"} color={"grey.100"}>
           {info}
         </Text>
       </Box>

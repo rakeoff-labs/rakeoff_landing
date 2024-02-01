@@ -10,3 +10,4 @@ export { default as StepThree } from "./StepThree";
 export { default as StepFour } from "./StepFour";
 export { default as Rakeoff } from "./Rakeoff";
 export { default as Features } from "./Features";
+export { default as Security } from "./Security";

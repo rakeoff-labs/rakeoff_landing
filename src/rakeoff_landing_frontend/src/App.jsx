@@ -12,6 +12,7 @@ import {
   StepFour,
   Rakeoff,
 } from "./sections";
+import Security from "./sections/Security";
 
 const App = () => {
   return (
@@ -37,7 +38,7 @@ const AppLayout = () => {
         <StepTwo />
         <StepThree />
         <StepFour />
-
+        <Security />
         <MoreOnRakeoff />
         <Footer />
       </BackgroundSection>
