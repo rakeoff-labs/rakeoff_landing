@@ -13,10 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import motoko from "../../assets/motoko.svg";
-import dfinity from "../../assets/dfinity.svg";
-import team from "../../assets/team.svg";
-import tvl from "../../assets/tvl.svg";
+import motoko from "../../assets/motoko_shield.svg";
+import dfinity from "../../assets/dfinity_logo.svg";
+import team from "../../assets/team_photo.svg";
+import tvl from "../../assets/tvl_image.svg";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Security = () => {
@@ -84,13 +84,18 @@ const SecuirtyBox = ({ image, link, heading }) => {
       >
         <Image
           src={image}
-          h={60}
+          h={{ base: 80, md: 60 }}
           w="100%"
           objectFit="cover"
           alt={"Rakeoff feature Image"}
         />
         <Stack mt="6" mb={4} spacing="3">
-          <Text textAlign="center" fontSize="md" mb={2} color={"gray.100"}>
+          <Text
+            textAlign="center"
+            fontSize={{ base: "lg", md: "md" }}
+            mb={2}
+            color={"gray.100"}
+          >
             {heading} <ExternalLinkIcon color={boxFontColor} mb={1} />
           </Text>
         </Stack>
