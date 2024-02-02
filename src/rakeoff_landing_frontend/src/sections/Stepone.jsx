@@ -126,7 +126,7 @@ const StepOne = () => {
           <MotionBox
             position={"relative"}
             mb={{ base: 4, md: 0 }}
-            height={{ base: "158px", md: "300px" }}
+            height={{ base: "220px", md: "300px" }}
             rounded={"2xl"}
             width={"full"}
             mx={{ base: 3, md: 0 }}
@@ -143,9 +143,15 @@ const StepOne = () => {
               "10px 10px 0 blueviolet"
             )}
           >
-            <AspectRatio ratio={21 / 10}>
-              <Image src={step1} alt="step1" objectFit="cover" />
-            </AspectRatio>
+            {isDesktop ? (
+              <AspectRatio ratio={21 / 10}>
+                <Image src={step1} alt="step1" objectFit="cover" />
+              </AspectRatio>
+            ) : (
+              <AspectRatio ratio={16 / 9}>
+                <Image src={step1} alt="step1" objectFit="cover" />
+              </AspectRatio>
+            )}
           </MotionBox>
         </Flex>
       </Stack>

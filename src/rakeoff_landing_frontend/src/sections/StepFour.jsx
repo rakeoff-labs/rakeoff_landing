@@ -112,7 +112,7 @@ const StepFour = () => {
               mb={12}
               mx={3}
               position={"relative"}
-              height={"158px"}
+              height={"220x"}
               rounded={"2xl"}
               width={"full"}
               overflow={"hidden"}
@@ -128,7 +128,7 @@ const StepFour = () => {
                 "10px 10px 0 blueviolet"
               )}
             >
-              <AspectRatio ratio={21 / 10}>
+              <AspectRatio ratio={16 / 9}>
                 <Image src={step4} alt="step4" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
