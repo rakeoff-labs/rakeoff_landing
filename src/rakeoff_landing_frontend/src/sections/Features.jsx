@@ -75,17 +75,26 @@ const FeaturesCard = ({ image, heading, text }) => {
       >
         <Image
           src={image}
-          h={60}
+          h={{ base: 80, md: 60 }}
           w="100%"
           objectFit="cover"
           alt={"Rakeoff feature Image"}
         />
 
         <Box bg={boxBackgroundColor} p={4}>
-          <Heading color={"grey.100"} fontSize={"3xl"} noOfLines={1}>
+          <Heading
+            textAlign={{ base: "center", md: "start" }}
+            color={"grey.100"}
+            fontSize={"3xl"}
+            noOfLines={1}
+          >
             {heading}
           </Heading>
-          <Text color="grey.400" fontSize={"lg"} fontWeight="medium">
+          <Text
+            textAlign={{ base: "center", md: "start" }}
+            color="grey.400"
+            fontSize={{ base: "md", md: "lg" }}
+          >
             {text}
           </Text>
         </Box>

@@ -54,7 +54,7 @@ const StepThree = () => {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
-            mx={isDesktop ? 0 : 2}
+            mx={{ base: 2, md: 0 }}
           >
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
@@ -71,11 +71,11 @@ const StepThree = () => {
             )}
           </Heading>
           <Text
-            textAlign={isDesktop ? "left" : "center"}
+            textAlign={{ base: "center", md: "left" }}
             color={"gray.100"}
             mt={{ base: 4, md: 0 }}
-            fontSize={isDesktop ? "xl" : "lg"}
-            mx={isDesktop ? 0 : 2}
+            fontSize={{ base: "lg", md: "xl" }}
+            mx={{ base: 2, md: 0 }}
           >
             Stake a minimum of 1 ICP, with a 6-month lock-in period. We simplify
             the process by removing complexities behind the scenes making your
@@ -90,11 +90,11 @@ const StepThree = () => {
           w="100%"
         >
           <MotionBox
-            mb={isDesktop ? 0 : 4}
+            mb={{ base: 4, md: 0 }}
             position={"relative"}
-            height={isDesktop ? "300px" : "158px"}
+            height={{ base: "158px", md: "300px" }}
             rounded={"2xl"}
-            mx={isDesktop ? 0 : 3}
+            mx={{ base: 3, md: 0 }}
             width={"full"}
             overflow={"hidden"}
             variants={cardVariants}

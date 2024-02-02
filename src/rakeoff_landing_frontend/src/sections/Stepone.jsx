@@ -66,7 +66,7 @@ const StepOne = () => {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
-            mx={isDesktop ? 0 : 2}
+            mx={{ base: 2, md: 0 }}
           >
             {isDesktop ? (
               <Text as={"span"} color={"purple.400"}>
@@ -83,11 +83,11 @@ const StepOne = () => {
             )}
           </Heading>
           <Text
-            textAlign={isDesktop ? "left" : "center"}
+            textAlign={{ base: "center", md: "left" }}
             color={"gray.100"}
-            fontSize={isDesktop ? "xl" : "lg"}
+            fontSize={{ base: "lg", md: "xl" }}
             mt={{ base: 4, md: 0 }}
-            mx={isDesktop ? 0 : 2}
+            mx={{ base: 2, md: 0 }}
           >
             Securely access the Rakeoff dApp using your Internet Identity, a
             more secure alternative to traditional email and password logins in
@@ -125,11 +125,11 @@ const StepOne = () => {
         >
           <MotionBox
             position={"relative"}
-            mb={isDesktop ? 0 : 4}
-            height={isDesktop ? "300px" : "158px"}
+            mb={{ base: 4, md: 0 }}
+            height={{ base: "158px", md: "300px" }}
             rounded={"2xl"}
             width={"full"}
-            mx={isDesktop ? 0 : 3}
+            mx={{ base: 3, md: 0 }}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"
