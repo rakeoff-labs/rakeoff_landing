@@ -24,7 +24,7 @@ const MoreOnRakeoff = () => {
       <Center>
         <SimpleGrid
           columns={[1, 1, 2]}
-          spacing={{ base: 3, md: 8 }}
+          spacing={8}
           mx={{ base: 3, md: 3, lg: 0 }}
           w="100%"
           templateAreas={[
@@ -66,9 +66,15 @@ const MoreOnRakeoff = () => {
                   Visit the Rakeoff documentation{" "}
                   <ExternalLinkIcon color="white" mb={1} />
                 </Heading>
-                <Text textAlign="center" my={5} color={boxFontColor}>
-                  Guides, video tutorials, smart contract documentation and
-                  more.
+                <Text
+                  textAlign="center"
+                  fontSize={{ base: "lg", lg: "xl" }}
+                  fontWeight={400}
+                  color={"grey.100"}
+                  my={5}
+                >
+                  Step-by-step guides, video tutorials, smart contract
+                  documentation and more.
                 </Text>
               </Box>
             </a>
@@ -129,7 +135,13 @@ const StoryBoxAndImage = ({ heading, link, info }) => {
         <Heading size="lg" textAlign="center" mb={3} color="white">
           {heading} <ExternalLinkIcon color="white" mb={1} />
         </Heading>
-        <Text textAlign="center" maxW={"sm"} color={"grey.100"}>
+        <Text
+          textAlign="center"
+          fontSize={{ base: "lg", lg: "xl" }}
+          fontWeight={400}
+          maxW={"sm"}
+          color={"grey.100"}
+        >
           {info}
         </Text>
       </Box>

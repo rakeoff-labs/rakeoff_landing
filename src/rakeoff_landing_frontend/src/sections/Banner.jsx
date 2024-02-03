@@ -9,7 +9,6 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
-import "./style.css";
 import githubLogo from "../../assets/github_logo.svg";
 import xLogo from "../../assets/x_logo.svg";
 import discordLogo from "../../assets/discord_logo.svg";

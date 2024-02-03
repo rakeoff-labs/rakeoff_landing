@@ -37,13 +37,12 @@ const StepThree = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
-        py={{ base: 0, md: 20 }}
+        pt={{ base: 12, lg: 20 }}
         direction={{ base: "column", md: "row" }}
-        pt={{ base: 6, md: 0 }}
       >
         <Stack
           flex={{ base: 0, md: 1 }}
@@ -77,9 +76,9 @@ const StepThree = () => {
             fontSize={{ base: "lg", md: "xl" }}
             mx={{ base: 2, md: 0 }}
           >
-            Stake a minimum of 1 ICP, with a 6-month lock-in period. We simplify
-            the process by removing complexities behind the scenes making your
-            staking experience that simple.
+            With a minimum of 1 ICP, click the "Stake" button and confirm the
+            amount you wish to stake. Your staked ICP will be locked and start
+            earning ICP rewards.
           </Text>
         </Stack>
         <Flex

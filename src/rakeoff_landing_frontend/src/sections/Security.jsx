@@ -13,10 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import motoko from "../../assets/socialproof_motoko_shield.svg";
-import dfinity from "../../assets/socialproof_dfinity_logo.svg";
-import team from "../../assets/socialproof_team_photo.svg";
-import tvl from "../../assets/socialproof_tvl_chart.svg";
+import motoko from "../../assets/socialproof_motoko_shield.webp";
+import dfinity from "../../assets/socialproof_dfinity_logo.webp";
+import team from "../../assets/socialproof_team_photo.webp";
+import tvl from "../../assets/socialproof_tvl_chart.webp";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Security = () => {
@@ -32,14 +32,10 @@ const Security = () => {
         </Heading>
       </Center>
 
-      <SimpleGrid
-        columns={[1, null, 4]}
-        mx={{ base: 3, md: 3, lg: 0 }}
-        gap={{ base: 4, md: 8 }}
-      >
+      <SimpleGrid columns={[1, null, 4]} mx={{ base: 3, md: 3, lg: 0 }} gap={8}>
         <SecuirtyBox
           image={tvl}
-          heading={"Over $100k total value locked"}
+          heading={"Over $100k TVL"}
           link={"https://analytics.rakeoff.io/"}
         />
         <SecuirtyBox
@@ -49,12 +45,12 @@ const Security = () => {
         />
         <SecuirtyBox
           image={dfinity}
-          heading={"Part of the grants programme"}
+          heading={"Dfinity grant recipient"}
           link={"https://dfinity.org/grants"}
         />
         <SecuirtyBox
           image={team}
-          heading={"Learn more about the Team"}
+          heading={"Learn about the team"}
           link={"https://docs.rakeoff.io/rakeoff/team"}
         />
       </SimpleGrid>
@@ -84,7 +80,7 @@ const SecuirtyBox = ({ image, link, heading }) => {
       >
         <Image
           src={image}
-          h={{ base: 80, md: 60 }}
+          h={"100%"}
           w="100%"
           objectFit="cover"
           alt={"Rakeoff feature Image"}
@@ -92,7 +88,8 @@ const SecuirtyBox = ({ image, link, heading }) => {
         <Stack mt="6" mb={4} spacing="3">
           <Text
             textAlign="center"
-            fontSize={{ base: "lg", md: "md" }}
+            fontSize={{ base: "lg", lg: "xl" }}
+            fontWeight={400}
             mb={2}
             color={"gray.100"}
           >

@@ -35,9 +35,9 @@ const StepFour = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: 2 }} pb={{ base: 2, md: 12 }}>
       {isDesktop ? (
-        <Stack align={"center"} spacing={10} py={20} direction={"row"}>
+        <Stack align={"center"} spacing={10} pt={20} direction={"row"}>
           <Flex
             flex={1}
             justify={"center"}
@@ -76,9 +76,9 @@ const StepFour = () => {
               </Text>
             </Heading>
             <Text color={"gray.100"} fontSize="xl">
-              Earn at least 1 ICP in staking rewards and choose to disburse it
-              back to ICP or enter the no-loss prize pool for a chance to boost
-              earnings. The process is easy and straightforward.
+              Once you have accrued 1 ICP in rewards, explore our disbursement
+              options, such as entering the no-loss prize pool for a chance to
+              win big, or withdrawing your ICP to your wallet.
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -89,7 +89,7 @@ const StepFour = () => {
       ) : (
         ////////MOBILE///////
         ////////////////////
-        <Stack align={"center"} pt={6} direction={"column"}>
+        <Stack align={"center"} pt={12} direction={"column"}>
           <Stack>
             <Heading lineHeight={1.1} fontWeight={600} fontSize={"3xl"} mx={2}>
               <Text textAlign="center" color={"purple.400"}>

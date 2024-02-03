@@ -40,28 +40,18 @@ const StepOne = () => {
   };
 
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
+    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>
-        <Heading
-          size={{ base: "3xl", md: "3xl" }}
-          mb={{ base: 2, md: 0 }}
-          color="white"
-        >
-          How it works
+        <Heading size={{ base: "2xl", md: "3xl" }} color="white">
+          How does it work?
         </Heading>
       </Center>
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
-        py={{ base: 0, md: 20 }}
         direction={{ base: "column", md: "row" }}
-        pt={{ base: 6, md: 0 }}
       >
-        <Stack
-          flex={{ base: 0, md: 1 }}
-          mt={{ base: 0, md: 14 }}
-          spacing={{ base: 0, md: 10 }}
-        >
+        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -89,31 +79,10 @@ const StepOne = () => {
             mt={{ base: 4, md: 0 }}
             mx={{ base: 2, md: 0 }}
           >
-            Securely access the Rakeoff dApp using your Internet Identity, a
-            more secure alternative to traditional email and password logins in
-            Web3.
+            Access the Rakeoff dApp securely using your Internet Identity, which
+            offers a more secure option compared to traditional email and
+            password logins in the Web2 space.
           </Text>
-
-          <Stack align="center" direction={{ base: "column", sm: "row" }}>
-            <MotionButton
-              mt={{ base: 8, md: 4 }}
-              rightIcon={<ArrowForwardIcon />}
-              as="a"
-              href="https://identity.ic0.app/"
-              target="_blank"
-              bg={boxBackgroundColor}
-              _hover={{
-                boxShadow: `0px 0px 10px 6px white`,
-              }}
-              boxShadow={`0px 0px 10px 3px white `}
-              color="white"
-              className="box"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Get an Internet Identity
-            </MotionButton>
-          </Stack>
         </Stack>
 
         <Flex

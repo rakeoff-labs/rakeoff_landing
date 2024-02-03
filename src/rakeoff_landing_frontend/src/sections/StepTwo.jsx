@@ -37,7 +37,7 @@ const StepTwo = () => {
   return (
     <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
       {isDesktop ? (
-        <Stack align={"center"} spacing={10} py={20} direction={"row"}>
+        <Stack align={"center"} spacing={10} pt={20} direction={"row"}>
           <Flex
             flex={1}
             justify={"center"}
@@ -77,9 +77,9 @@ const StepTwo = () => {
               </Text>
             </Heading>
             <Text color={"gray.100"} fontSize="xl">
-              To transfer ICP to your wallet, click 'Receive', copy your wallet
-              address, then paste it into the exchange platform's field and
-              enter the amount of ICP you wish to transfer.
+              To deposit ICP into your wallet, click 'Receive' to copy your wallet
+              address. Then, go to any cryptocurrency exchange and send ICP to
+              your Rakeoff wallet address.
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -90,7 +90,7 @@ const StepTwo = () => {
       ) : (
         ////////MOBILE///////
         ////////////////////
-        <Stack align={"center"} pt={6} direction={"column"}>
+        <Stack align={"center"} pt={12} direction={"column"}>
           <Stack>
             <Heading lineHeight={1.1} fontWeight={600} fontSize={"3xl"} mx={2}>
               <Text textAlign="center" color={"purple.400"}>

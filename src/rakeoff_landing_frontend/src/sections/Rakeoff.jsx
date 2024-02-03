@@ -39,7 +39,6 @@ const Rakeoff = () => {
     >
       <Center mb={8}>
         <Stack
-          minH={"80vh"}
           direction={{ base: "column", md: "row" }}
           width="100%"
           spacing={8}
@@ -72,6 +71,7 @@ const Rakeoff = () => {
                 spacing={{ base: 1, sm: 6 }}
               >
                 <MotionButton
+                  size="lg"
                   rightIcon={<ArrowForwardIcon />}
                   as="a"
                   href="https://app.rakeoff.io/"
@@ -104,14 +104,14 @@ const Rakeoff = () => {
                 alt="rakeoff"
                 objectFit="cover"
                 src={rakeoff}
-                mt={20}
+                mt={8}
                 ml={14}
                 h={{ base: 670, md: 640 }}
                 w={"100%"}
               />
             </motion.div>
           ) : (
-            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mb={10} />
+            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mb={14} />
           )}
         </Stack>
       </Center>

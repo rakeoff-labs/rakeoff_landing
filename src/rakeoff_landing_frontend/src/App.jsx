@@ -31,7 +31,6 @@ const AppLayout = () => {
     <Box>
       <BackgroundSection>
         <Banner />
-
         <Features />
         <Rakeoff />
         <StepOne />
