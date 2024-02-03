@@ -35,7 +35,12 @@ const StepFour = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} pb={{ base: 2, md: 12 }}>
+    <Container
+      maxW="7xl"
+      mt={{ base: 12, md: 2 }}
+      pb={{ base: 2, md: 12 }}
+      px={0}
+    >
       {isDesktop ? (
         <Stack align={"center"} spacing={10} pt={20} direction={"row"}>
           <Flex
