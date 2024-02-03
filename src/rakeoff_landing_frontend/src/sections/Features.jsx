@@ -15,7 +15,7 @@ import bonus from "../../assets/feature_bonus_staking.webp";
 
 import simple from "../../assets/feature_simplified_staking.webp";
 
-import { boxBackgroundColor } from "../colors";
+import { boxBackgroundColor, boxFontColor } from "../colors";
 
 const Features = () => {
   return (
@@ -78,7 +78,7 @@ const FeaturesCard = ({ image, heading, text }) => {
         <Box bg={boxBackgroundColor} px={{ base: 4, md: 6, lg: 8 }} py={6}>
           <Heading
             textAlign={{ base: "center", md: "start" }}
-            color={"grey.100"}
+            color={"white"}
             fontSize={"3xl"}
             noOfLines={1}
           >
@@ -86,7 +86,7 @@ const FeaturesCard = ({ image, heading, text }) => {
           </Heading>
           <Text
             textAlign={{ base: "center", md: "start" }}
-            color="grey.400"
+            color={boxFontColor}
             fontSize={{ base: "lg", lg: "xl" }}
           >
             {text}

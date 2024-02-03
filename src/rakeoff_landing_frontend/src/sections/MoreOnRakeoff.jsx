@@ -70,7 +70,7 @@ const MoreOnRakeoff = () => {
                   textAlign="center"
                   fontSize={{ base: "lg", lg: "xl" }}
                   fontWeight={400}
-                  color={"grey.100"}
+                  color={boxFontColor}
                   my={5}
                 >
                   Step-by-step guides, video tutorials, smart contract
@@ -140,7 +140,7 @@ const StoryBoxAndImage = ({ heading, link, info }) => {
           fontSize={{ base: "lg", lg: "xl" }}
           fontWeight={400}
           maxW={"sm"}
-          color={"grey.100"}
+          color={boxFontColor}
         >
           {info}
         </Text>

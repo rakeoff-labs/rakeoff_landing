@@ -91,7 +91,7 @@ const SecuirtyBox = ({ image, link, heading }) => {
             fontSize={{ base: "lg", lg: "xl" }}
             fontWeight={400}
             mb={2}
-            color={"gray.100"}
+            color={boxFontColor}
           >
             {heading} <ExternalLinkIcon color={boxFontColor} mb={1} />
           </Text>

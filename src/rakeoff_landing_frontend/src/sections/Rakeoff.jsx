@@ -48,12 +48,13 @@ const Rakeoff = () => {
               <Heading
                 size={{ base: "2xl", md: "3xl" }}
                 textAlign={isDesktop ? undefined : "center"}
+                color="white"
               >
                 What is Rakeoff?
               </Heading>
               <Text
                 fontSize={{ base: "lg", lg: "xl" }}
-                color={"grey.100"}
+                color={"white"}
                 fontWeight={400}
                 textAlign={isDesktop ? "start" : "center"}
                 as={"span"}
