@@ -77,9 +77,9 @@ const StepTwo = () => {
               </Text>
             </Heading>
             <Text color={"gray.100"} fontSize="xl">
-              To deposit ICP into your wallet, click 'Receive' to copy your wallet
-              address. Then, go to any cryptocurrency exchange and send ICP to
-              your Rakeoff wallet address.
+              To deposit ICP into your wallet, click 'Receive' to copy your
+              wallet address. Then, go to any cryptocurrency exchange and send
+              ICP to your Rakeoff wallet address.
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -104,9 +104,9 @@ const StepTwo = () => {
               fontSize="lg"
               mx={2}
             >
-              Transfer ICP to your wallet, click 'Receive', copy your address,
-              then paste it into the exchange platform's field and enter the
-              amount of ICP you wish to transfer.
+              To deposit ICP into your wallet, click 'Receive' to copy your
+              wallet address. Then, go to any cryptocurrency exchange and send
+              ICP to your Rakeoff wallet address.
             </Text>
           </Stack>
           <Flex position={"relative"} w={"100%"}>

@@ -108,8 +108,9 @@ const StepFour = () => {
               fontSize="lg"
               mx={2}
             >
-              Earn at least 1 ICP in rewards and disburse it back to ICP or
-              enter our no-loss prize pool for a chance to earn more.
+              Once you have accrued 1 ICP in rewards, explore our disbursement
+              options, such as entering the no-loss prize pool for a chance to
+              win big, or withdrawing your ICP to your wallet.
             </Text>
           </Stack>
           <Flex position={"relative"} w={"100%"}>
