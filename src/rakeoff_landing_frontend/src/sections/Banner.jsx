@@ -42,7 +42,7 @@ const TitleAndDescription = () => {
   const text = "The best way to stake ICP and pool your staking rewards".split(
     " "
   );
-  console.log(text)
+
   return (
     <Container maxW="7xl" h={"500px"}>
       <Stack
