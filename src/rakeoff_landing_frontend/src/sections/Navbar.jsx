@@ -26,8 +26,6 @@ import {
   HamburgerIcon,
 } from "@chakra-ui/icons";
 import { RakeoffPurpleHue, boxBackgroundColor, boxFontColor } from "../colors";
-import { motion } from "framer-motion";
-export const MotionButton = motion(Button);
 
 const Navbar = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -86,7 +84,7 @@ const Navbar = () => {
               </Text>
             </HStack>
 
-            <MotionButton
+            <Button
               rightIcon={<ArrowForwardIcon />}
               as="a"
               href="https://app.rakeoff.io/"
@@ -97,12 +95,9 @@ const Navbar = () => {
               }}
               boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
               color="white"
-              className="box"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               Launch dApp
-            </MotionButton>
+            </Button>
           </>
         ) : null}
         {!isDesktop ? <MobileMenu /> : null}

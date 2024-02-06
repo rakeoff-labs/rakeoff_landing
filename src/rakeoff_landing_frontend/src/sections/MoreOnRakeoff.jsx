@@ -24,7 +24,7 @@ const MoreOnRakeoff = () => {
       <Center>
         <SimpleGrid
           columns={[1, 1, 2]}
-          spacing={8}
+          gap={8}
           mx={{ base: 3, md: 3, lg: 0 }}
           w="100%"
           templateAreas={[

@@ -16,8 +16,6 @@ import {
 } from "@chakra-ui/react";
 import step1 from "../../assets/step1.gif";
 export const MotionButton = motion(Button);
-
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { boxBackgroundColor, boxBorderColor } from "../colors";
 
 export const MotionBox = motion(Box);

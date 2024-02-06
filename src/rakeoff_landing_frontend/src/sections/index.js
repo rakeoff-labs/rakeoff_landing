@@ -4,7 +4,7 @@ export { default as Footer } from "./Footer";
 export { default as NewsletterSubscribe } from "./NewsletterSubscribe";
 export { default as MoreOnRakeoff } from "./MoreOnRakeoff";
 export { default as Statistics } from "./Statistics";
-export { default as StepOne } from "./StepOne";
+export { default as StepOne } from "./Stepone";
 export { default as StepTwo } from "./StepTwo";
 export { default as StepThree } from "./StepThree";
 export { default as StepFour } from "./StepFour";

@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import rakeoff from "../../assets/rakeoff_dashboard.png";
 import { RakeoffPurpleHue, boxBackgroundColor } from "../colors";
-export const MotionButton = motion(Button);
+
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const Rakeoff = () => {
@@ -71,7 +71,7 @@ const Rakeoff = () => {
                 direction={{ base: "column", md: "row" }}
                 spacing={{ base: 1, sm: 6 }}
               >
-                <MotionButton
+                <Button
                   size="lg"
                   rightIcon={<ArrowForwardIcon />}
                   as="a"
@@ -83,12 +83,9 @@ const Rakeoff = () => {
                   }}
                   boxShadow={`0px 0px 10px 3px ${RakeoffPurpleHue}`}
                   color="white"
-                  className="box"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   Launch dApp
-                </MotionButton>
+                </Button>
               </Stack>
             </Stack>
           </Flex>

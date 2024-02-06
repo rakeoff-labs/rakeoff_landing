@@ -10,6 +10,7 @@ import {
   Box,
   useColorModeValue,
   SimpleGrid,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -20,6 +21,8 @@ import tvl from "../../assets/socialproof_tvl_chart.webp";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Security = () => {
+  const isDesktop = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mb={8}>
@@ -32,10 +35,17 @@ const Security = () => {
         </Heading>
       </Center>
 
-      <SimpleGrid columns={[1, null, 4]} mx={{ base: 3, md: 3, lg: 0 }} gap={8}>
+      <SimpleGrid
+        columns={[2, null, 4]}
+        mx={{ base: 3, md: 3, lg: 0 }}
+        spacingX={{ base: 6, md: 8 }}
+        spacingY={8}
+      >
         <SecuirtyBox
           image={tvl}
-          heading={"Over $100k TVL"}
+          heading={
+            isDesktop ? "Over $100k TVL" : "Over $100k total value locked"
+          }
           link={"https://analytics.rakeoff.io/"}
         />
         <SecuirtyBox
@@ -45,12 +55,14 @@ const Security = () => {
         />
         <SecuirtyBox
           image={dfinity}
-          heading={"Dfinity grant recipient"}
+          heading={"Dfinity grant recipients"}
           link={"https://dfinity.org/grants"}
         />
         <SecuirtyBox
           image={team}
-          heading={"Learn about the team"}
+          heading={
+            isDesktop ? "Learn about the team" : "Learn more about the team"
+          }
           link={"https://docs.rakeoff.io/rakeoff/team"}
         />
       </SimpleGrid>
@@ -85,12 +97,11 @@ const SecuirtyBox = ({ image, link, heading }) => {
           objectFit="cover"
           alt={"Rakeoff feature Image"}
         />
-        <Stack mt="6" mb={4} spacing="3">
+        <Stack p={{ base: 3, lg: 6 }}>
           <Text
             textAlign="center"
-            fontSize={{ base: "lg", lg: "xl" }}
+            fontSize={{ base: "md", lg: "xl" }}
             fontWeight={400}
-            mb={2}
             color={boxFontColor}
           >
             {heading} <ExternalLinkIcon color={boxFontColor} mb={1} />
