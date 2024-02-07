@@ -9,6 +9,7 @@ import {
   Text,
   Container,
   Center,
+  Box,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import rakeoff from "../../assets/rakeoff_dashboard.png";
@@ -17,7 +18,12 @@ import { RakeoffPurpleHue, boxBackgroundColor } from "../colors";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const Rakeoff = () => {
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: true,
+    xl: true,
+  });
 
   const variants = {
     hidden: {
@@ -39,21 +45,21 @@ const Rakeoff = () => {
     >
       <Center mb={8}>
         <Stack
-          direction={{ base: "column", md: "row" }}
+          direction={{ base: "column", md: "column", lg: "row" }}
           width="100%"
           spacing={8}
         >
           <Flex p={8} flex={1} alignItems="center" justifyContent="center">
             <Stack spacing={4} width={"100%"}>
               <Heading
-                size={{ base: "2xl", md: "3xl" }}
+                size={{ base: "2xl", md: "2xl", lg: "3xl" }}
                 textAlign={isDesktop ? undefined : "center"}
                 color="white"
               >
                 What is Rakeoff?
               </Heading>
               <Text
-                fontSize={{ base: "lg", lg: "xl" }}
+                fontSize={{ base: "lg", md: "xl", lg: "xl" }}
                 color={"white"}
                 fontWeight={400}
                 textAlign={isDesktop ? "start" : "center"}
@@ -68,10 +74,12 @@ const Rakeoff = () => {
                 user-friendly application.
               </Text>
               <Stack
-                direction={{ base: "column", md: "row" }}
+                direction={{ base: "column", md: "column", lg: "row" }}
                 spacing={{ base: 1, sm: 6 }}
               >
                 <Button
+                  m={{ base: 0, md: 2, lg: 0 }}
+                  p={{ base: 0, md: 8, lg: 4 }}
                   size="lg"
                   rightIcon={<ArrowForwardIcon />}
                   as="a"
@@ -102,14 +110,22 @@ const Rakeoff = () => {
                 alt="rakeoff"
                 objectFit="cover"
                 src={rakeoff}
-                mt={8}
-                ml={14}
-                h={{ base: 670, md: 640 }}
+                p={{ lg: 4, xl: 0 }}
+                mt={{ lg: 24, xl: 8 }}
+                mb={{ lg: 0 }}
+                ml={{ lg: 0, xl: 14 }}
+                h={{ lg: 470, xl: 620 }}
                 w={"100%"}
               />
             </motion.div>
           ) : (
-            <Image alt="rakeoff" objectFit="cover" src={rakeoff} mb={14} />
+            <Image
+              alt="rakeoff"
+              objectFit="cover"
+              src={rakeoff}
+              p={{ base: 0, md: 4 }}
+              mb={{ base: 14, md: 2 }}
+            />
           )}
         </Stack>
       </Center>
