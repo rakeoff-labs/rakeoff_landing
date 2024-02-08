@@ -12,12 +12,12 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import step2 from "../../assets/step2.gif";
+
 import { boxBackgroundColor, boxBorderColor } from "./../colors";
 
 export const MotionBox = motion(Box);
-const StepTwo = () => {
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
+const StepsEven = ({ stepGif, heading, description }) => {
+  const isDesktop = useBreakpointValue({ base: false, md: true, lg: true });
 
   const cardVariants = {
     offscreen: {
@@ -35,7 +35,12 @@ const StepTwo = () => {
   };
 
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
+    <Container
+      maxW="7xl"
+      mb={{ base: 12, md: 0 }}
+      mt={{ base: 12, md: 4, lg: 2, xl: "2rem" }}
+      p={0}
+    >
       {isDesktop ? (
         <Stack align={"center"} spacing={10} pt={20} direction={"row"}>
           <Flex
@@ -46,9 +51,11 @@ const StepTwo = () => {
             w={"full"}
           >
             <MotionBox
+              mb={{ base: 0, md: 8, lg: 4, xl: 8 }}
               position={"relative"}
-              height={"284px"}
+              height={{ base: "220px", md: "200px", lg: "240px", xl: "300px" }}
               rounded={"2xl"}
+              mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
               width={"full"}
               overflow={"hidden"}
               borderRadius="2xl"
@@ -64,22 +71,41 @@ const StepTwo = () => {
                 "10px 10px 0 blueviolet"
               )}
             >
-              <AspectRatio ratio={21 / 10}>
-                <Image src={step2} alt="step2" objectFit="cover" />
+              <AspectRatio ratio={{ base: 16 / 9, md: 16 / 9, lg: 21 / 10 }}>
+                <Image src={stepGif} alt="step" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>
-          <Stack flex={1} spacing={10} align="end">
-            <Heading lineHeight={1.1} fontWeight={600} fontSize={"5xl"}>
-              <br />
-              <Text as={"span"} color={"purple.400"}>
-                2. Add a minimum of 1 ICP to your wallet
+          <Stack flex={1} spacing={10}>
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ md: "2xl", lg: "4xl", xl: "5xl" }}
+            >
+              <Text
+                mt={{ base: 0, md: 6, lg: 16, xl: 0 }}
+                textAlign={{
+                  base: "center",
+                  md: "center",
+                  lg: "center",
+                  xl: "start",
+                }}
+                color={"purple.400"}
+              >
+                {heading}
               </Text>
             </Heading>
-            <Text color={"gray.100"} fontSize="xl">
-              To deposit ICP into your wallet, click 'Receive' to copy your
-              wallet address. Then, go to any cryptocurrency exchange and send
-              ICP to your Rakeoff wallet address.
+            <Text
+              color={"gray.100"}
+              textAlign={{
+                base: "center",
+                md: "center",
+                lg: "center",
+                xl: "start",
+              }}
+              fontSize="lg"
+            >
+              {description}
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -94,7 +120,7 @@ const StepTwo = () => {
           <Stack>
             <Heading lineHeight={1.1} fontWeight={600} fontSize={"3xl"} mx={2}>
               <Text textAlign="center" color={"purple.400"}>
-                2. Add a minimum of 1 ICP to your wallet
+                {heading}
               </Text>
             </Heading>
             <Text
@@ -104,14 +130,12 @@ const StepTwo = () => {
               fontSize="lg"
               mx={2}
             >
-              To deposit ICP into your wallet, click 'Receive' to copy your
-              wallet address. Then, go to any cryptocurrency exchange and send
-              ICP to your Rakeoff wallet address.
+              {description}
             </Text>
           </Stack>
           <Flex position={"relative"} w={"100%"}>
             <MotionBox
-              mb={4}
+              mb={12}
               position={"relative"}
               height={"220px"}
               rounded={"2xl"}
@@ -131,7 +155,7 @@ const StepTwo = () => {
               )}
             >
               <AspectRatio ratio={16 / 9}>
-                <Image src={step2} alt="step2" objectFit="cover" />
+                <Image src={stepGif} alt="step" objectFit="cover" />
               </AspectRatio>
             </MotionBox>
           </Flex>
@@ -141,4 +165,4 @@ const StepTwo = () => {
   );
 };
 
-export default StepTwo;
+export default StepsEven;

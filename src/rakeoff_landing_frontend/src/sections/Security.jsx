@@ -21,7 +21,12 @@ import tvl from "../../assets/socialproof_tvl_chart.webp";
 import { boxBackgroundColor, boxBorderColor, boxFontColor } from "../colors";
 
 const Security = () => {
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: false,
+    xl: true,
+  });
 
   return (
     <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>

@@ -6,10 +6,7 @@ import {
   MoreOnRakeoff,
   Footer,
   Features,
-  StepOne,
-  StepTwo,
-  StepThree,
-  StepFour,
+  Steps,
   Rakeoff,
 } from "./sections";
 import Security from "./sections/Security";
@@ -33,10 +30,7 @@ const AppLayout = () => {
         <Banner />
         <Features />
         <Rakeoff />
-        <StepOne />
-        <StepTwo />
-        <StepThree />
-        <StepFour />
+        <Steps />
         <Security />
         <MoreOnRakeoff />
         <Footer />

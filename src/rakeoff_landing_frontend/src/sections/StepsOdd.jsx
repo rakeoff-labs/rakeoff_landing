@@ -1,25 +1,21 @@
 import React from "react";
+import { boxBackgroundColor, boxBorderColor } from "../colors";
+import { motion } from "framer-motion";
 import {
   Heading,
-  Container,
   Stack,
   Flex,
-  Box,
-  Button,
+  useBreakpointValue,
   Text,
   Image,
-  useBreakpointValue,
   AspectRatio,
   useColorModeValue,
+  Box,
+  Container,
 } from "@chakra-ui/react";
-import step3 from "../../assets/step3.gif";
-export const MotionButton = motion(Button);
 
-import { boxBackgroundColor, boxBorderColor } from "../colors";
-
-import { motion } from "framer-motion";
 export const MotionBox = motion(Box);
-const StepThree = () => {
+const StepsOdd = ({ heading, description, stepgif, HIW }) => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   const cardVariants = {
@@ -37,64 +33,68 @@ const StepThree = () => {
     },
   };
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: 2 }} p={0}>
+    <Container
+      maxW="7xl"
+      mb={{ base: 12, md: 0 }}
+      mt={{ base: 12, md: 4, lg: 12, xl: "4rem" }}
+      p={0}
+    >
       <Stack
         align={"center"}
         spacing={{ base: 0, md: 10 }}
-        pt={{ base: 12, lg: 20 }}
         direction={{ base: "column", md: "row" }}
       >
-        <Stack
-          flex={{ base: 0, md: 1 }}
-          mb={{ base: 0, md: 8 }}
-          spacing={{ base: 0, md: 10 }}
-        >
+        <Stack flex={{ base: 0, md: 1 }} spacing={{ base: 0, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "3xl", sm: "3xl", lg: "5xl" }}
+            fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
             mx={{ base: 2, md: 0 }}
           >
-            {isDesktop ? (
-              <Text as={"span"} color={"purple.400"}>
-                3. Just click 'Stake'
-              </Text>
-            ) : (
-              <Text
-                textAlign="center"
-                mb={{ base: 2, md: 1 }}
-                color={"purple.400"}
-              >
-                3. Just click 'Stake'
-              </Text>
-            )}
+            <Text
+              mt={{ base: 0, md: 12, lg: 12, xl: 0 }}
+              textAlign={{
+                base: "center",
+                md: "center",
+                lg: "center",
+                xl: "start",
+              }}
+              mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
+              color={"purple.400"}
+            >
+              {heading}
+            </Text>
           </Heading>
           <Text
-            textAlign={{ base: "center", md: "left" }}
+            textAlign={{
+              base: "center",
+              md: "center",
+              lg: "center",
+              xl: "start",
+            }}
             color={"gray.100"}
-            mt={{ base: 4, md: 0 }}
             fontSize={{ base: "lg", md: "xl" }}
+            mt={{ base: 4, md: 0 }}
             mx={{ base: 2, md: 0 }}
           >
-            With a minimum of 1 ICP, click the "Stake" button and confirm the
-            amount you wish to stake. Your staked ICP will be locked and start
-            earning ICP rewards.
+            {description}
           </Text>
         </Stack>
+
         <Flex
           flex={{ base: 0, md: 1 }}
           justify={isDesktop ? "center" : undefined}
           align={isDesktop ? "center" : undefined}
           position={"relative"}
-          w="100%"
+          w={"100%"}
         >
           <MotionBox
-            mb={{ base: 4, md: 0 }}
             position={"relative"}
-            height={{ base: "220px", md: "300px" }}
+            height={{ base: "220px", md: "200px", lg: "240px", xl: "300px" }}
             rounded={"2xl"}
-            mx={{ base: 3, md: 0 }}
             width={"full"}
+            mb={{ base: 0, md: 4, lg: 0, xl: 0 }}
+            mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
             overflow={"hidden"}
             variants={cardVariants}
             initial="offscreen"
@@ -108,15 +108,9 @@ const StepThree = () => {
               "10px 10px 0 blueviolet"
             )}
           >
-            {isDesktop ? (
-              <AspectRatio ratio={21 / 10}>
-                <Image src={step3} alt="step3" objectFit="cover" />
-              </AspectRatio>
-            ) : (
-              <AspectRatio ratio={16 / 9}>
-                <Image src={step3} alt="step1" objectFit="cover" />
-              </AspectRatio>
-            )}
+            <AspectRatio ratio={{ base: 16 / 9, md: 16 / 9, lg: 21 / 10 }}>
+              <Image src={stepgif} alt="step" objectFit="cover" />
+            </AspectRatio>
           </MotionBox>
         </Flex>
       </Stack>
@@ -124,4 +118,4 @@ const StepThree = () => {
   );
 };
 
-export default StepThree;
+export default StepsOdd;

@@ -59,7 +59,7 @@ const Rakeoff = () => {
                 What is Rakeoff?
               </Heading>
               <Text
-                fontSize={{ base: "lg", md: "xl", lg: "xl" }}
+                fontSize={{ base: "lg", md: "2xl", lg: "xl" }}
                 color={"white"}
                 fontWeight={400}
                 textAlign={isDesktop ? "start" : "center"}
