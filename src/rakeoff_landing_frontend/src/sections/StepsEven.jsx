@@ -96,6 +96,7 @@ const StepsEven = ({ stepGif, heading, description }) => {
               </Text>
             </Heading>
             <Text
+              p={{ md: 2, lg: 0, xl: 0 }}
               color={"gray.100"}
               textAlign={{
                 base: "center",

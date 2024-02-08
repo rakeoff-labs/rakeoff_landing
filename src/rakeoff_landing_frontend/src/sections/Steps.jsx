@@ -18,8 +18,7 @@ const Steps = () => {
       <StepsOdd
         HIW={"How does it work?"}
         heading={"1. Login with Internet Identity"}
-        description={`
-           Access the Rakeoff dApp securely using your Internet Identity, which
+        description={`Access the Rakeoff dApp securely using your Internet Identity, which
            offers a more secure option compared to traditional email and
            password logins in the Web2 space.
       `}
@@ -34,8 +33,7 @@ const Steps = () => {
       />
       <StepsOdd
         heading={`3. Just click 'Stake'`}
-        description={`
-        With a minimum of 1 ICP, click the "Stake" button and confirm the
+        description={`With a minimum of 1 ICP, click the "Stake" button and confirm the
         amount you wish to stake. Your staked ICP will be locked and start
         earning ICP rewards.
       `}
@@ -43,7 +41,7 @@ const Steps = () => {
       />
       <StepsEven
         heading={"4. Disburse your rewards"}
-        description={`  Once you have accrued 1 ICP in rewards, explore our disbursement
+        description={`Once you have accrued 1 ICP in rewards, explore our disbursement
         options, such as entering the no-loss prize pool for a chance to
         win big, or withdrawing your ICP to your wallet.`}
         stepGif={step4}

@@ -76,6 +76,7 @@ const StepsOdd = ({ heading, description, stepgif, HIW }) => {
             fontSize={{ base: "lg", md: "xl" }}
             mt={{ base: 4, md: 0 }}
             mx={{ base: 2, md: 0 }}
+            p={{ md: 2, lg: 0, xl: 0 }}
           >
             {description}
           </Text>
