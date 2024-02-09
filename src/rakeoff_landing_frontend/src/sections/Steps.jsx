@@ -12,7 +12,7 @@ const Steps = () => {
     <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Center mt={4}>
         <Heading size={{ base: "2xl", md: "3xl" }} color="white">
-          How it Works
+          How does it Work?
         </Heading>
       </Center>
       <StepsOdd

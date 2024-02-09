@@ -36,7 +36,11 @@ const StepsOdd = ({ heading, description, stepgif, first }) => {
     <Container
       maxW="7xl"
       mb={{ base: 12, md: 0 }}
-      mt={first ? null : { base: 12, md: 4, lg: 12, xl: "5rem" }}
+      mt={
+        first
+          ? { base: 8, md: null, lg: null, xl: null }
+          : { base: 12, md: 4, lg: 12, xl: "5rem" }
+      }
       p={0}
     >
       <Stack
