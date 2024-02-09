@@ -38,7 +38,7 @@ const StepsOdd = ({ heading, description, stepgif, first }) => {
       mb={{ base: 12, md: 0 }}
       mt={
         first
-          ? { base: 8, md: null, lg: null, xl: null }
+          ? { base: 8, md: 0, lg: 0, xl: 0 }
           : { base: 12, md: 4, lg: 12, xl: "5rem" }
       }
       p={0}
