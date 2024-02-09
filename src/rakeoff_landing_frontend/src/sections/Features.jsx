@@ -66,6 +66,7 @@ const FeaturesCard = ({ image, heading, text }) => {
           "10px 10px 0 purple",
           "10px 10px 0 blueviolet"
         )}
+        mx={{ lg: 3 }}
       >
         <Image
           src={image}

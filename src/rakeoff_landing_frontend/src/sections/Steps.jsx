@@ -16,7 +16,7 @@ const Steps = () => {
         </Heading>
       </Center>
       <StepsOdd
-        HIW={"How does it work?"}
+        first
         heading={"1. Login with Internet Identity"}
         description={`Access the Rakeoff dApp securely using your Internet Identity, which
            offers a more secure option compared to traditional email and

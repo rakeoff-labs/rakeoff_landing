@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 export const MotionBox = motion(Box);
-const StepsOdd = ({ heading, description, stepgif, HIW }) => {
+const StepsOdd = ({ heading, description, stepgif, first }) => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   const cardVariants = {
@@ -36,7 +36,7 @@ const StepsOdd = ({ heading, description, stepgif, HIW }) => {
     <Container
       maxW="7xl"
       mb={{ base: 12, md: 0 }}
-      mt={{ base: 12, md: 4, lg: 12, xl: "4rem" }}
+      mt={first ? null : { base: 12, md: 4, lg: 12, xl: "5rem" }}
       p={0}
     >
       <Stack
@@ -75,7 +75,7 @@ const StepsOdd = ({ heading, description, stepgif, HIW }) => {
             color={"gray.100"}
             fontSize={{ base: "lg", md: "xl" }}
             mt={{ base: 4, md: 0 }}
-            mx={{ base: 2, md: 0 }}
+            mx={{ base: 2, md: 0, lg: 2 }}
             p={{ md: 2, lg: 0, xl: 0 }}
           >
             {description}
