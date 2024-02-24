@@ -8,7 +8,6 @@ import {
   Features,
   Rakeoff,
   AllSteps,
-  Security,
 } from "./sections";
 
 const App = () => {
@@ -31,7 +30,6 @@ const AppLayout = () => {
         <Features />
         <Rakeoff />
         <AllSteps />
-        <Security />
         <MoreOnRakeoff />
         <Footer />
       </BackgroundSection>

@@ -6,6 +6,5 @@ export { default as MoreOnRakeoff } from "./MoreOnRakeoff";
 export { default as Statistics } from "./Statistics";
 export { default as Rakeoff } from "./Rakeoff";
 export { default as Features } from "./Features";
-export { default as Security } from "./Security";
 export { default as AllSteps } from "./AllSteps";
 export { default as Step } from "./Step";
