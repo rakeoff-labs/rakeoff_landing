@@ -86,7 +86,6 @@ const App = () => {
                 <List maxW="md" align="start">
                   <StyledListItem text="A known neuron on the Network Nervous System that always votes." />
                   <StyledListItem text="Advocates for an open and permissionless ICP with many voices." />
-                  <StyledListItem text="Currently following Krzysztof Żelazko on all topics." />
                   <StyledListItem text="Follow the new @NeuronPool X account for updates." />
                 </List>
               </Flex>
