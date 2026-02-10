@@ -106,7 +106,7 @@ const App = () => {
             fontFamily="'Roboto Mono', monospace"
             size="sm"
           >
-            crew@rakeoff.io
+            hello@neuronpool.com
           </Heading>
           <Spacer />
           <Flex align="center" gap={3}>
